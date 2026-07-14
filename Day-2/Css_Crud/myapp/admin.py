@@ -1,0 +1,8 @@
+from django.contrib import admin
+from myapp.models import *
+
+class Productview(admin.ModelAdmin):
+    list_display = ('name','qty','price')
+
+
+admin.site.register(Product,Productview)
