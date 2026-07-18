@@ -66,6 +66,7 @@
                     <th>Email</th>
                     <th>Age</th>
                     <th>Contact</th>
+                    <th>Image</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
@@ -78,6 +79,7 @@
                     <td>{{u.email}}</td>
                     <td>{{u.age}}</td>
                     <td>{{u.contact}}</td>
+                    <td><img src="/media/{{u.image}}" alt="j1.jpg" height="50px" width="50px"></td>
                     <td><a href="{% url 'delete'%}?id={{u.id}}" class="btn btn-danger">Delete</a></td>
                     <td><a href="{% url 'edit'%}?id={{u.id}}" class="btn btn-primary">Edit</a></td>
 

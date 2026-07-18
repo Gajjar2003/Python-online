@@ -58,10 +58,11 @@ def useradd(request):
     email = request.POST.get('email')
     age = request.POST.get('age')
     contact = request.POST.get('contact')
+    image = request.FILES.get('image')
 
     if not id:
 
-        Useradd.objects.create(name=name,email=email,age=age,contact=contact)
+        Useradd.objects.create(name=name,email=email,age=age,contact=contact,image=image)
         return render(request,"home.html",{'meg':'Useradd Successfully Done!!!'})
     else:
         u = Useradd.objects.get(pk=id)
@@ -69,6 +70,8 @@ def useradd(request):
         u.email =email
         u.age = age
         u.contact =contact
+        if image:
+            u.image=image
         u.save()
         return render(request,"home.html",{'meg':'Update Successfully Done!!!'})
     

@@ -52,7 +52,7 @@
 <div class="register-box">
     <h2>User Registration</h2>
 
-    <form method="post" action="{%url 'useradd'%}">
+    <form method="post" action="{%url 'useradd'%}" enctype="multipart/form-data">
         {%csrf_token%}
         <span class="text-success">{{meg}}</span>
         <input type="hidden" value="{{u.id}}" name="id">
@@ -74,7 +74,12 @@
         <div class="mb-3">
             <label class="form-label">Contact Number</label>
             <input type="tel" class="form-control" placeholder="Enter your contact number" name="contact"  value="{{u.contact}}">
-        </div>
+        </div><br>
+        {% if u%}
+        <img src="/media/{{u.image}}" alt="j1.jpg" height="50px " width="50px">
+        {%endif%}<br>
+        <br>
+        <input type="file" name="image" value="{{u.image}}" class="form-control"><br>
 
         <button type="submit" class="btn btn-success ">
             Register

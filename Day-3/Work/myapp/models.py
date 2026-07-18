@@ -7,3 +7,5 @@ class Useradd(models.Model):
     email = models.CharField(max_length=50)
     age = models.IntegerField()
     contact = models.IntegerField()
+    image = models.ImageField(unique=True,default="j1.jpg")
+    
