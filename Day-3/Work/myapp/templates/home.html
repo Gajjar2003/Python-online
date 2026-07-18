@@ -55,25 +55,25 @@
     <form method="post" action="{%url 'useradd'%}">
         {%csrf_token%}
         <span class="text-success">{{meg}}</span>
-
+        <input type="hidden" value="{{u.id}}" name="id">
         <div class="mb-3">
             <label class="form-label">Full Name</label>
-            <input type="text" class="form-control" placeholder="Enter your name" name="name">
+            <input type="text" class="form-control" placeholder="Enter your name" name="name" value="{{u.name}}">
         </div>
 
         <div class="mb-3">
             <label class="form-label">Email Address</label>
-            <input type="email" class="form-control" placeholder="Enter your email" name="email">
+            <input type="email" class="form-control" placeholder="Enter your email" name="email"  value="{{u.email}}">
         </div>
 
         <div class="mb-3">
             <label class="form-label">Age</label>
-            <input type="number" class="form-control" placeholder="Enter your age" name="age">
+            <input type="number" class="form-control" placeholder="Enter your age" name="age"  value="{{u.age}}">
         </div>
 
         <div class="mb-3">
             <label class="form-label">Contact Number</label>
-            <input type="tel" class="form-control" placeholder="Enter your contact number" name="contact">
+            <input type="tel" class="form-control" placeholder="Enter your contact number" name="contact"  value="{{u.contact}}">
         </div>
 
         <button type="submit" class="btn btn-success ">

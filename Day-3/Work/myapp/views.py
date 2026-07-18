@@ -6,7 +6,7 @@ from myapp.models import *
 
 
 
-# Create your views here.
+
 def index(request):
     if request.method == 'POST':
         fname = request.POST['fname']
@@ -51,16 +51,43 @@ def user_logout(request):
      logout(request)
      return render(request,"user-login.html")
 
+@login_required(login_url='user-login')
 def useradd(request):
+    id = request.POST.get('id')
     name = request.POST.get('name')
     email = request.POST.get('email')
     age = request.POST.get('age')
     contact = request.POST.get('contact')
 
-    Useradd.objects.create(name=name,email=email,age=age,contact=contact)
+    if not id:
 
-    return render(request,"home.html",{'meg':'Useradd Successfully Done!!!'})
+        Useradd.objects.create(name=name,email=email,age=age,contact=contact)
+        return render(request,"home.html",{'meg':'Useradd Successfully Done!!!'})
+    else:
+        u = Useradd.objects.get(pk=id)
+        u.name=name
+        u.email =email
+        u.age = age
+        u.contact =contact
+        u.save()
+        return render(request,"home.html",{'meg':'Update Successfully Done!!!'})
+    
+  
 
+@login_required(login_url='user-login')
 def userview(request):
      users = Useradd.objects.all()
      return render(request,"userview.html",{'users':users})
+
+@login_required(login_url='user-login')
+def delete(request):
+    id = request.GET.get('id')
+    u = Useradd.objects.get(pk=id)
+    u.delete()
+    return redirect('userview')
+
+@login_required(login_url='user-login')
+def edit(request):
+    id = request.GET.get('id')
+    u = Useradd.objects.get(pk=id)
+    return render(request,"home.html",{'u':u}) 

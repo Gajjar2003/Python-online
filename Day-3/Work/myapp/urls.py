@@ -7,5 +7,7 @@ urlpatterns = [
     path('home',home,name='home'),
     path("user-logout",user_logout,name="user-logout"),
     path("useradd",useradd,name="useradd"),
-    path("userview",userview,name="userview")
+    path("userview",userview,name="userview"),
+    path("delete",delete,name="delete"),
+    path("edit",edit,name="edit")
 ]
