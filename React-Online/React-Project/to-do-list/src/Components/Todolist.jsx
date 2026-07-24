@@ -20,7 +20,7 @@ function Todolist() {
             <input type="date" />
           </div>
           <div class="col">
-            <button type="button" class="btn btn-success">
+            <button type="button" class="btn btn-success w-50">
               Add
             </button>
           </div>
@@ -36,7 +36,7 @@ function Todolist() {
           22/06/2026
           </div>
           <div class="col">
-            <button type="button" class="btn btn-danger">
+            <button type="button" class="btn btn-danger w-50">
               Delete
             </button>
           </div>
@@ -52,7 +52,7 @@ function Todolist() {
             11/08/2025
           </div>
           <div class="col">
-            <button type="button" class="btn btn-danger">
+            <button type="button" class="btn btn-danger w-50">
               Delete
             </button>
           </div>
