@@ -1,26 +1,42 @@
 import React from "react";
+import { useState } from "react";
 
 function Todolist(props) {
+
+  const [newlist,setlistt] = useState()
+  
+
+  const addbutton =(e)=>{
+    //console.log(e);
+    console.log(e.target.value);
+
+  
+    
+    
+  }
+
+  
+
   return (
     <div>
       <h1>Wel Come To-Do-LIst</h1>
       <h2>To-Do-App</h2>
       <br />
 
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col">
             <input
               type="text"
               placeholder="Enter Todo Here..."
-              style={{ backgroundColor: "white" }}
+              style={{ backgroundColor: "white" , color :"black"}}
             />
           </div>
-          <div class="col">
+          <div className="col">
             <input type="date" />
           </div>
-          <div class="col">
-            <button type="button" class="btn btn-success w-50">
+          <div className="col">
+            <button type="button" className="btn btn-success w-50" value="addlist" onClick={addbutton}>
               Add
             </button>
           </div>
@@ -28,13 +44,13 @@ function Todolist(props) {
       </div>
       <br />
 
-      <div class="container text-center">
+      <div className="container text-center">
         {props.itemslist.map((abc) => (
-          <div class="row">
-            <div class="col">{abc.name}</div>
-            <div class="col">{abc.duedate}</div>
-            <div class="col">
-              <button type="button" class="btn btn-danger w-50">
+          <div className="row"key={abc.name} >
+            <div className="col" >{abc.name}</div>
+            <div className="col"  >{abc.duedate}</div>
+            <div className="col"><br />
+              <button type="button" className="btn btn-danger w-50">
                 Delete
               </button>
             </div>

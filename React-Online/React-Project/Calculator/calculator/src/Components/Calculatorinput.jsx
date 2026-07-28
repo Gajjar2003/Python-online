@@ -1,16 +1,23 @@
 import React from "react";
-import "./style.css";
 import Calculatorbutton from "./Calculatorbutton";
+import "./style.css";
 
-function Calculatorinput() {
+function Calculatorinput(props) {
   return (
     <div id="calculator">
-      <h1 className="mt-3">Calculator-App</h1>
+      <h1>Calculator-App</h1>
 
-      <input type="text" id="display" />
-      
+      <input
+        type="text"
+        value={props.display || ""}
+        readOnly
+        className="p-3 w-100 bg-dark text-white rounded"
+      />
 
-      <Calculatorbutton/>
+      <Calculatorbutton
+        setcal={props.setcal}
+        addcla={props.addcla}
+      />
     </div>
   );
 }

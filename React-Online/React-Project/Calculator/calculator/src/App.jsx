@@ -1,20 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import Calculatorinput from './Components/Calculatorinput'
-import Calculatorbutton from './Components/Calculatorbutton'
+import React, { useState } from "react";
+import Calculatorinput from "./Components/Calculatorinput";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [addcla, setcal] = useState("");
 
   return (
     <>
-     <Calculatorinput/>
-     
+      <Calculatorinput
+        display={addcla}
+        setcal={setcal}
+        addcla={addcla}
+      />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
