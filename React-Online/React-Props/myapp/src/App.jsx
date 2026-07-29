@@ -20,7 +20,15 @@ function App() {
 
   // const products = ['Pc','Laptop','mouse','cpu','keyboard']
 
-    const Emplyees = ['jenil','meet','vraj','Aniket','kram','yug','Darshan','jay','Ravi','Dhruv','prem']
+    //const Emplyees = ['jenil','meet','vraj','Aniket','kram','yug','Darshan','jay','Ravi','Dhruv','prem']
+
+
+   
+    
+
+
+
+
 
   return (
     <>
@@ -31,7 +39,13 @@ function App() {
       <Color jenil={colos}/>
 
       <Product product={products}/> */}
-      <Emplayee  items = {Emplyees}/>
+     {/* <Emplayee  items = {Emplyees}/> */}
+
+   
+
+    
+
+
 
 
     </>

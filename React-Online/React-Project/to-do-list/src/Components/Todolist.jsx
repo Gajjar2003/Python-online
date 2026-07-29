@@ -1,59 +1,129 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-function Todolist(props) {
+function Todolist() {
+  const todolist = [
+    {
+      name: "Buy Car",
+      duedate: "11/08/2026",
+    },
+    {
+      name: "Go to Temple",
+      duedate: "12/08/2026",
+    },
+    {
+      name: "Rain For today",
+      duedate: "24/07/2026",
+    },
+    {
+      name: "Water level is high",
+      duedate: "12/08/2026",
+    },
+  ];
 
-  const [newlist,setlistt] = useState()
+ 
+  const [newlist, setlistt] = useState(todolist);
+
+  const [newname, setname] = useState("");
+  const [newdate, setdate] = useState("");
+
+  const addbutton = () => {
   
 
-  const addbutton =(e)=>{
-    //console.log(e);
-    console.log(e.target.value);
+    const newitem = {
+      name: newname,
+      duedate: newdate,
+    };
 
-  
-    
-    
-  }
+   
+    setlistt([...newlist, newitem]);
 
-  
+
+    setname("");
+    setdate("");
+  };
+
+  const changename = (e) => {
+    setname(e.target.value);
+  };
+
+  const chnagedate = (e) => {
+    setdate(e.target.value);
+  };
+
+
+  const itemsdelete = (index) => {
+    const newarray = newlist.filter((item, itemIndex) => {
+      return itemIndex !== index;
+    });
+
+    setlistt(newarray);
+  };
 
   return (
     <div>
-      <h1>Wel Come To-Do-LIst</h1>
+      <h1>Welcome To-Do-List</h1>
       <h2>To-Do-App</h2>
+
       <br />
 
       <div className="container text-center">
         <div className="row">
+
           <div className="col">
             <input
               type="text"
               placeholder="Enter Todo Here..."
-              style={{ backgroundColor: "white" , color :"black"}}
+              className="form-control"
+              onChange={changename}
+              value={newname}
             />
           </div>
+
           <div className="col">
-            <input type="date" />
+            <input
+              type="date"
+              className="form-control"
+              onChange={chnagedate}
+              value={newdate}
+            />
           </div>
+
           <div className="col">
-            <button type="button" className="btn btn-success w-50" value="addlist" onClick={addbutton}>
+            <button
+              type="button"
+              className="btn btn-success w-50"
+              onClick={addbutton}
+            >
               Add
             </button>
           </div>
+
         </div>
       </div>
+
       <br />
 
       <div className="container text-center">
-        {props.itemslist.map((abc) => (
-          <div className="row"key={abc.name} >
-            <div className="col" >{abc.name}</div>
-            <div className="col"  >{abc.duedate}</div>
+        {newlist.map((abc, index) => (
+          <div className="row" key={index}>
+
+            <div className="col">
+              {abc.name}
+            </div>
+
+            <div className="col" type="date">
+              {abc.duedate}
+            </div>
+
             <div className="col"><br />
-              <button type="button" className="btn btn-danger w-50">
+              <button
+                type="button"
+                className="btn btn-danger w-50"
+                onClick={() => itemsdelete(index)}>
                 Delete
               </button>
             </div>
+
           </div>
         ))}
       </div>
