@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management</title>
+
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- jQuery -->
+    <script
+        src="https://code.jquery.com/jquery-4.0.0.min.js">
+    </script>
+
+
+    <style>
+
+        body {
+
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2
+            );
+
+            min-height: 100vh;
+        }
+
+
+        .student-box {
+
+            max-width: 650px;
+
+            margin: 50px auto 30px;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.2);
+        }
+
+
+        .student-title {
+
+            text-align: center;
+
+            font-weight: 700;
+
+            margin-bottom: 30px;
+        }
+
+
+        .form-label {
+
+            font-weight: 600;
+        }
+
+
+        .form-control {
+
+            padding: 11px;
+
+            border-radius: 10px;
+        }
+
+
+        .submit-btn {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            font-weight: 600;
+
+            margin-top: 5px;
+        }
+
+
+        .table-box {
+
+            background: white;
+
+            padding: 25px;
+
+            margin-bottom: 50px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.2);
+        }
+
+
+        .table-title {
+
+            text-align: center;
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =========================
+         STUDENT FORM
+    ========================== -->
+
+    <div class="student-box">
+
+
+        <h2 class="student-title">
+
+            Student Registration
+
+        </h2>
+
+
+        <form>
+
+            {% csrf_token %}
+
+
+            <!-- Hidden ID -->
+
+            <input
+                type="hidden"
+                id="id">
+
+
+            <!-- First Name + Last Name -->
+
+            <div class="row">
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        First Name
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter first name"
+                        id="fname">
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Last Name
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter last name"
+                        id="lname">
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Email
+
+                </label>
+
+
+                <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter email"
+                    id="email">
+
+            </div>
+
+
+            <!-- Age -->
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Age
+
+                </label>
+
+
+                <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Enter age"
+                    id="age">
+
+            </div>
+
+
+            <!-- Subject -->
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Subject
+
+                </label>
+
+
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter subject"
+                    id="subject">
+
+            </div>
+
+
+            <!-- Marks -->
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Marks
+
+                </label>
+
+
+                <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Enter marks"
+                    id="marks">
+
+            </div>
+
+
+            <!-- ADD BUTTON -->
+
+            <button
+                type="button"
+                class="btn btn-primary submit-btn"
+                id="smbtn"
+                onclick="addstudent()">
+
+                Add Student
+
+            </button>
+
+
+            <!-- UPDATE BUTTON -->
+
+            <button
+                type="button"
+                class="btn btn-success submit-btn"
+                id="upbtn"
+                onclick="updatestudent()">
+
+                Update Student
+
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+
+    <!-- =========================
+         STUDENT TABLE
+    ========================== -->
+
+    <div class="table-box">
+
+
+        <h3 class="table-title">
+
+            Student List
+
+        </h3>
+
+
+        <div class="table-responsive">
+
+
+            <table
+                class="table table-bordered table-hover text-center">
+
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>First Name</th>
+
+                        <th>Last Name</th>
+
+                        <th>Email</th>
+
+                        <th>Age</th>
+
+                        <th>Subject</th>
+
+                        <th>Marks</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="tdata">
+
+                </tbody>
+
+
+            </table>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+// ==========================
+// PAGE LOAD
+// ==========================
+
+$(document).ready(function () {
+
+    viewstudent();
+
+    $("#smbtn").show();
+
+    $("#upbtn").hide();
+
+});
+
+
+
+// ==========================
+// ADD STUDENT
+// ==========================
+
+function addstudent() {
+
+
+    var fname = $("#fname").val();
+
+    var lname = $("#lname").val();
+
+    var email = $("#email").val();
+
+    var age = $("#age").val();
+
+    var subject = $("#subject").val();
+
+    var marks = $("#marks").val();
+
+
+    var csrfmiddlewaretoken =
+        $("input[name='csrfmiddlewaretoken']").val();
+
+
+    $.post(
+        "register",
+
+        {
+            csrfmiddlewaretoken: csrfmiddlewaretoken,
+
+            fname: fname,
+
+            lname: lname,
+
+            email: email,
+
+            age: age,
+
+            subject: subject,
+
+            marks: marks
+        },
+
+        function (response) {
+
+            alert(response);
+
+            viewstudent();
+
+            clearform();
+
+        }
+
+    );
+
+}
+
+
+
+// ==========================
+// DISPLAY STUDENTS
+// ==========================
+
+function viewstudent() {
+
+
+    $.get(
+        "display",
+
+        function (response) {
+
+
+            var row = "";
+
+
+            response.students.forEach(function (ele) {
+
+
+                row += `
+
+                    <tr>
+
+                        <td>${ele.id}</td>
+
+                        <td>${ele.fname}</td>
+
+                        <td>${ele.lname}</td>
+
+                        <td>${ele.email}</td>
+
+                        <td>${ele.age}</td>
+
+                        <td>${ele.subject}</td>
+
+                        <td>${ele.marks}</td>
+
+
+                        <td>
+
+
+                            <button
+                                type="button"
+                                class="btn btn-sm btn-warning"
+                                onclick="editstudents(${ele.id})">
+
+                                Edit
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="btn btn-sm btn-danger"
+                                onclick="deletestudent(${ele.id})">
+
+                                Delete
+
+                            </button>
+
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            });
+
+
+            $("#tdata").html(row);
+
+        }
+
+    );
+
+}
+
+
+
+// ==========================
+// DELETE STUDENT
+// ==========================
+
+function deletestudent(sid) {
+
+
+    $.get(
+        "delete",
+
+        {
+            sid: sid
+        },
+
+        function (response) {
+
+            alert(response);
+
+            viewstudent();
+
+        }
+
+    );
+
+}
+
+
+
+// ==========================
+// EDIT STUDENT
+// ==========================
+
+function editstudents(sid) {
+
+
+    $.get(
+        "edit",
+
+        {
+            sid: sid
+        },
+
+        function (response) {
+
+
+            var student = response.s[0];
+
+
+            $("#id").val(student.id);
+
+            $("#fname").val(student.fname);
+
+            $("#lname").val(student.lname);
+
+            $("#email").val(student.email);
+
+            $("#age").val(student.age);
+
+            $("#subject").val(student.subject);
+
+            $("#marks").val(student.marks);
+
+
+            // Hide Add
+
+            $("#smbtn").hide();
+
+
+            // Show Update
+
+            $("#upbtn").show();
+
+
+            // Scroll to form
+
+            $("html, body").animate(
+                {
+                    scrollTop: 0
+                },
+                500
+            );
+
+        }
+
+    );
+
+}
+
+
+
+// ==========================
+// UPDATE STUDENT
+// ==========================
+
+function updatestudent() {
+
+
+    var id = $("#id").val();
+
+    var fname = $("#fname").val();
+
+    var lname = $("#lname").val();
+
+    var email = $("#email").val();
+
+    var age = $("#age").val();
+
+    var subject = $("#subject").val();
+
+    var marks = $("#marks").val();
+
+
+    var csrfmiddlewaretoken =
+        $("input[name='csrfmiddlewaretoken']").val();
+
+
+    // Check ID
+
+    if (!id) {
+
+        alert("Please select student first!");
+
+        return;
+
+    }
+
+
+    $.post(
+
+        "update",
+
+        {
+
+            csrfmiddlewaretoken:
+                csrfmiddlewaretoken,
+
+            id: id,
+
+            fname: fname,
+
+            lname: lname,
+
+            email: email,
+
+            age: age,
+
+            subject: subject,
+
+            marks: marks
+
+        },
+
+
+        function (response) {
+
+
+            alert(response);
+
+
+            // Refresh table
+
+            viewstudent();
+
+
+            // Clear form
+
+            clearform();
+
+
+            // Show Add button
+
+            $("#smbtn").show();
+
+
+            // Hide Update button
+
+            $("#upbtn").hide();
+
+
+        }
+
+    );
+
+}
+
+
+
+// ==========================
+// CLEAR FORM
+// ==========================
+
+function clearform() {
+
+
+    $("#id").val("");
+
+    $("#fname").val("");
+
+    $("#lname").val("");
+
+    $("#email").val("");
+
+    $("#age").val("");
+
+    $("#subject").val("");
+
+    $("#marks").val("");
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
