@@ -2,5 +2,10 @@ from django.urls import path
 from myapp.views import *
 
 urlpatterns = [
-  path("",index,name="index")
+  path("",index,name="index"),
+  path("regiter",regiter,name="regiter"),
+  path("display",display,name="display"),
+  path("delete",delete,name="delete"),
+  path("edit",edit,name="edit"),
+  path("update",update,name="update")
 ]
