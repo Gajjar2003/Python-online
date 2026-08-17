@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BoxCricket | Premium Slot Booking</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #f4f7f6;
+    color: #17221c;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.custom-navbar {
+    background: rgba(5, 18, 12, 0.97);
+    backdrop-filter: blur(15px);
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo-icon {
+    width: 43px;
+    height: 43px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,#20c997,#198754);
+    border-radius: 13px;
+    margin-right: 9px;
+    box-shadow: 0 8px 20px rgba(32,201,151,.25);
+}
+
+.logo-text {
+    color: white;
+}
+
+.logo-text span {
+    color: #20c997;
+}
+
+.nav-link {
+    color: #d8e1dc !important;
+    font-weight: 500;
+    margin: 0 7px;
+    transition: .3s;
+}
+
+.nav-link:hover {
+    color: #20c997 !important;
+}
+
+.login-btn {
+    border: 1px solid rgba(255,255,255,.35);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+.login-btn:hover {
+    background: white;
+    color: #101820;
+}
+
+.register-btn {
+    background: linear-gradient(135deg,#20c997,#198754);
+    color: white;
+    border: none;
+    padding: 9px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.register-btn:hover {
+    background: #157347;
+    color: white;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 720px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,25,15,.72),
+            rgba(0,25,15,.42),
+            rgba(0,25,15,.10)
+        ),
+        url("https://images.unsplash.com/photo-1531415074968-036ba1b575da")
+        center / cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: rgba(32,201,151,.13);
+    border-radius: 50%;
+    filter: blur(80px);
+    right: -150px;
+    bottom: -150px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(32,201,151,.15);
+    border: 1px solid rgba(32,201,151,.45);
+    color: #55e6bd;
+    padding: 9px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #20c997;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #20c997;
+}
+
+.hero h1 {
+    font-size: clamp(42px,6vw,72px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -3px;
+    max-width: 760px;
+}
+
+.hero h1 span {
+    color: #20c997;
+}
+
+.hero p {
+    max-width: 650px;
+    color: #f0f5f2;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-top: 25px;
+}
+
+.hero-buttons {
+    margin-top: 32px;
+}
+
+.main-btn {
+    background: linear-gradient(135deg,#20c997,#198754);
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(32,201,151,.25);
+    transition: .3s;
+}
+
+.main-btn:hover {
+    transform: translateY(-3px);
+    color: white;
+}
+
+.outline-btn {
+    color: white;
+    border: 1px solid rgba(255,255,255,.5);
+    padding: 13px 26px;
+    border-radius: 12px;
+    margin-left: 10px;
+}
+
+.outline-btn:hover {
+    background: white;
+    color: #101820;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 45px;
+    margin-top: 55px;
+}
+
+.stat-number {
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+}
+
+.stat-label {
+    color: #e0e8e3;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+
+/* =========================
+   COMMON
+========================= */
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.section-tag {
+    color: #198754;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.section-description {
+    color: #6c757d;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-image-wrapper {
+    position: relative;
+}
+
+.about-image {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+}
+
+.experience-card {
+    position: absolute;
+    bottom: 25px;
+    right: -20px;
+    background: rgba(255,255,255,.96);
+    padding: 20px 25px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.15);
+}
+
+.experience-card strong {
+    font-size: 28px;
+    color: #198754;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.feature-list i {
+    color: #198754;
+    font-size: 19px;
+}
+
+
+/* =========================
+   BOOKING
+========================= */
+
+.booking-section {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(32,201,151,.10),
+            transparent 35%
+        ),
+        #eef4f1;
+}
+
+.booking-box {
+    background: white;
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 20px 60px rgba(24,55,42,.10);
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.available-badge {
+    background: #e7f8f1;
+    color: #198754;
+    padding: 8px 13px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   DURATION
+========================= */
+
+.duration-box {
+    background: #f6faf8;
+    border: 1px solid #dcebe4;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.duration-title {
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.duration-btn {
+    border: 1px solid #cfe2d9;
+    background: white;
+    color: #198754;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-right: 8px;
+    transition: .3s;
+}
+
+.duration-btn:hover {
+    background: #e7f8f1;
+    border-color: #20c997;
+}
+
+.duration-btn.active {
+    background: linear-gradient(135deg,#20c997,#198754);
+    color: white;
+    border-color: #198754;
+    box-shadow: 0 7px 18px rgba(32,201,151,.20);
+}
+
+
+/* =========================
+   SLOT
+========================= */
+
+.slot-card {
+    background: #fbfcfc;
+    border: 1px solid #e4ebe7;
+    border-radius: 17px;
+    padding: 20px;
+    transition: all .3s ease;
+}
+
+.slot-card:hover {
+    transform: translateY(-5px);
+    border-color: #20c997;
+    background: white;
+    box-shadow: 0 15px 35px rgba(32,201,151,.12);
+}
+
+.slot-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: #e6f7f1;
+    color: #198754;
+    font-size: 21px;
+}
+
+.slot-time {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.slot-period {
+    color: #8a9791;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.slot-price {
+    color: #198754;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.book-small-btn {
+    margin-top: 7px;
+    border: none;
+    background: #198754;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.book-small-btn:hover {
+    background: #146c43;
+}
+
+.slot-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #17221c;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.slot-section-title i {
+    color: #20c997;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.detail-card {
+    background: white;
+    border: 1px solid #edf1ef;
+    border-radius: 20px;
+    padding: 30px;
+    height: 100%;
+    transition: .3s;
+}
+
+.detail-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(0,0,0,.08);
+}
+
+.detail-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: #e4f7ef;
+    color: #198754;
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+.detail-card h5 {
+    font-weight: 800;
+}
+
+.detail-card p {
+    color: #7b8781;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta-box {
+    background: linear-gradient(135deg,#071c12,#0c3826);
+    border-radius: 28px;
+    padding: 60px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(32,201,151,.12);
+    border-radius: 50%;
+    right: -80px;
+    top: -100px;
+}
+
+.cta-box h2 {
+    font-weight: 800;
+    font-size: 38px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #07110c;
+    color: #8d9992;
+}
+
+footer h5 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+footer p {
+    line-height: 1.8;
+}
+
+footer a {
+    color: #8d9992;
+    text-decoration: none;
+    transition: .3s;
+}
+
+footer a:hover {
+    color: #20c997;
+}
+
+.social-icon {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #26372e;
+    border-radius: 10px;
+    margin-right: 7px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1c2b23;
+    padding-top: 20px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 991px) {
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .section-title {
+        font-size: 35px;
+    }
+
+    .experience-card {
+        right: 15px;
+    }
+}
+
+@media(max-width: 768px) {
+
+    .hero {
+        min-height: 620px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .hero-stats {
+        gap: 25px;
+    }
+
+    .outline-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .booking-box {
+        padding: 20px;
+    }
+
+    .booking-header {
+        display: block;
+    }
+
+    .available-badge {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .about-image {
+        height: 350px;
+    }
+
+    .cta-box {
+        padding: 35px 25px;
+    }
+
+    .cta-box h2 {
+        font-size: 30px;
+    }
+
+    .duration-btn {
+        margin-bottom: 8px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand d-flex align-items-center" href="#home">
+
+            <span class="logo-icon">
+                🏏
+            </span>
+
+            <span class="logo-text">
+                Box<span>Cricket</span>
+            </span>
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#booking">
+                        Booking
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                    <a class="btn login-btn" href="#">
+                        Login
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                    <a class="btn register-btn" href="#">
+                        Register
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+
+                <span class="live-dot"></span>
+
+                PREMIUM BOX CRICKET BOOKING
+
+            </div>
+
+
+            <h1>
+
+                Your Game.
+                <br>
+                Your <span>Box.</span>
+                Your Time.
+
+            </h1>
+
+
+            <p>
+
+                Book your favourite box cricket turf
+                in seconds. Choose 1, 2 or 3 hours,
+                bring your team and enjoy an exciting
+                cricket experience.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#booking" class="btn main-btn">
+
+                    <i class="bi bi-calendar-check me-2"></i>
+
+                    Book Your Slot
+
+                </a>
+
+
+                <a href="#about" class="btn outline-btn">
+
+                    Explore Box Cricket
+
+                </a>
+
+            </div>
+
+
+            <div class="hero-stats">
+
+                <div>
+
+                    <div class="stat-number">
+                        1-3 Hours
+                    </div>
+
+                    <div class="stat-label">
+                        Flexible Booking
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="stat-number">
+                        10+
+                    </div>
+
+                    <div class="stat-label">
+                        Daily Slots
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="stat-number">
+                        5 PM
+                    </div>
+
+                    <div class="stat-label">
+                        Starting Time
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section-padding" id="about">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <div class="about-image-wrapper">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e"
+                        class="about-image"
+                        alt="Cricket Player in Action">
+
+
+                    <div class="experience-card">
+
+                        <strong>
+                            100%
+                        </strong>
+
+                        <div>
+                            Premium Box Cricket Experience
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="section-tag">
+                    About Our Box Cricket
+                </div>
+
+
+                <h2 class="section-title mt-2">
+                    Where Every Match Feels Special.
+                </h2>
+
+
+                <p class="section-description mt-3">
+
+                    Enjoy an exciting box cricket experience
+                    with premium turf, professional lighting
+                    and a comfortable environment for
+                    friends and teams.
+
+                </p>
+
+
+                <ul class="feature-list mt-4">
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Professional Box Cricket Turf
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        High Quality Flood Lights
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Spacious Parking Area
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Clean Changing Room
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Drinking Water Facility
+                    </li>
+
+                </ul>
+
+
+                <div class="mt-4">
+
+                    <i class="bi bi-geo-alt-fill text-success"></i>
+
+                    <strong>
+                        Vesu, Surat, Gujarat
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BOOKING
+========================= -->
+
+<section class="section-padding booking-section" id="booking">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-tag">
+                Slot Booking
+            </div>
+
+            <h2 class="section-title mt-2">
+                Pick Your Perfect Time
+            </h2>
+
+            <p class="section-description">
+
+                Choose 1 hour, 2 hours or 3 hours according
+                to your requirement.
+
+            </p>
+
+        </div>
+
+
+        <div class="booking-box">
+
+            <div class="booking-header">
+
+                <div>
+
+                    <h4 class="fw-bold mb-1">
+                        Available Slots
+                    </h4>
+
+                    <small class="text-muted">
+                        Select your playing duration
+                    </small>
+
+                </div>
+
+
+                <span class="available-badge">
+
+                    <i
+                        class="bi bi-circle-fill me-1"
+                        style="font-size:7px;">
+                    </i>
+
+                    Slots Available
+
+                </span>
+
+            </div>
+
+
+            <!-- DURATION -->
+
+            <div class="duration-box">
+
+                <div class="duration-title">
+
+                    <i class="bi bi-clock-history text-success me-2"></i>
+
+                    Select Booking Duration
+
+                </div>
+
+
+                <button
+                    class="duration-btn active"
+                    data-duration="1">
+
+                    1 Hour
+                    <br>
+                    <small>₹700</small>
+
+                </button>
+
+
+                <button
+                    class="duration-btn"
+                    data-duration="2">
+
+                    2 Hours
+                    <br>
+                    <small>₹1,400</small>
+
+                </button>
+
+
+                <button
+                    class="duration-btn"
+                    data-duration="3">
+
+                    3 Hours
+                    <br>
+                    <small>₹2,100</small>
+
+                </button>
+
+
+                <div class="mt-3">
+
+                    <small class="text-muted">
+
+                        <i class="bi bi-info-circle me-1"></i>
+
+                        All slots from 5 PM to 2 AM are
+                        evening/night slots.
+
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- EVENING / NIGHT -->
+
+            <div class="slot-section-title">
+
+                <i class="bi bi-moon-stars-fill"></i>
+
+                Evening & Night Slots
+
+            </div>
+
+
+            <div class="row g-3">
+
+
+                <!-- 05 PM -->
+
+                <div class="col-lg-6">
+
+                    <div class="slot-card"
+                         data-start="05:00 PM"
+                         data-hour="17">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="slot-icon">
+                                <i class="bi bi-sunset"></i>
+                            </div>
+
+
+                            <div class="flex-grow-1">
+
+                                <div class="slot-time">
+                                    05:00 PM
+                                </div>
+
+                                <div class="slot-period">
+                                    Evening
+                                </div>
+
+                            </div>
+
+
+                            <div class="text-end">
+
+                                <div class="slot-price">
+                                    ₹700
+                                </div>
+
+                                <button
+                                    class="book-small-btn"
+                                    onclick="bookSlot(this)">
+
+                                    Book Now
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 06 PM -->
+
+                <div class="col-lg-6">
+
+                    <div class="slot-card"
+                         data-start="06:00 PM"
+                         data-hour="18">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="slot-icon">
+                                <i class="bi bi-sun"></i>
+                            </div>
+
+
+                            <div class="flex-grow-1">
+
+                                <div class="slot-time">
+                                    06:00 PM
+                                </div>
+
+                                <div class="slot-period">
+                                    Evening
+                                </div>
+
+                            </div>
+
+
+                            <div class="text-end">
+
+                                <div class="slot-price">
+                                    ₹700
+                                </div>
+
+                                <button
+                                    class="book-small-btn"
+                                    onclick="bookSlot(this)">
+
+                                    Book Now
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 07 PM -->
+
+                <div class="col-lg-6">
+
+                    <div class="slot-card"
+                         data-start="07:00 PM"
+                         data-hour="19">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="slot-icon">
+                                <i class="bi bi-moon"></i>
+                            </div>
+
+
+                            <div class="flex-grow-1">
+
+                                <div class="slot-time">
+                                    07:00 PM
+                                </div>
+
+                                <div class="slot-period">
+                                    Evening
+                                </div>
+
+                            </div>
+
+
+                            <div class="text-end">
+
+                                <div class="slot-price">
+                                    ₹700
+                                </div>
+
+                                <button
+                                    class="book-small-btn"
+                                    onclick="bookSlot(this)">
+
+                                    Book Now
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 08 PM -->
+
+                <div class="col-lg-6">
+
+                    <div class="slot-card"
+                         data-start="08:00 PM"
+                         data-hour="20">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="slot-icon">
+                                <i class="bi bi-moon-stars"></i>
+                            </div>
+
+
+                            <div class="flex-grow-1">
+
+                                <div class="slot-time">
+                                    08:00 PM
+                                </div>
+
+                                <div class="slot-period">
+                                    Night
+                                </div>
+
+                            </div>
+
+
+                            <div class="text-end">
+
+                                <div class="slot-price">
+                                    ₹700
+                                </div>
+
+                                <button
+                                    class="book-small-btn"
+                                    onclick="bookSlot(this)">
+
+                                    Book Now
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 09 PM -->
+
+                <div class="col-lg-6">
+
+                    <div class="slot-card"
+                         data-start="09:00 PM"
+                         data-hour="21">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="slot-icon">
+                                <i class="bi bi-moon-stars"></i>
+                            </div>
+
+
+                            <div class="flex-grow-1">
+
+                                <div class="slot-time">
+                                    09:00 PM
+                                </div>
+
+                                <div class="slot-period">
+                                    Night
+                                </div>
+
+                            </div>
+
+
+                            <div class="text-end">
+
+                                <div class="slot-price">
+                                    ₹700
+                                </div>
+
+                                <button
+                                    class="book-small-btn"
+                                    onclick="bookSlot(this)">
+
+                                    Book Now
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 10 PM -->
+
+                <div class="col-lg-6">
+
+                    <div class="slot-card"
+                         data-start="10:00 PM"
+                         data-hour="22">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="slot-icon">
+                                <i class="bi bi-moon"></i>
+                            </div>
+
+
+                            <div class="flex-grow-1">
+
+                                <div class="slot-time">
+                                    10:00 PM
+                                </div>
+
+                                <div class="slot-period">
+                                    Night
+                                </div>
+
+                            </div>
+
+
+                            <div class="text-end">
+
+                                <div class="slot-price">
+                                    ₹700
+                                </div>
+
+                                <button
+                                    class="book-small-btn"
+                                    onclick="bookSlot(this)">
+
+                                    Book Now
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 11 PM -->
+
+                <div class="col-lg-6">
+
+                    <div class="slot-card"
+                         data-start="11:00 PM"
+                         data-hour="23">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="slot-icon">
+                                <i class="bi bi-stars"></i>
+                            </div>
+
+
+                            <div class="flex-grow-1">
+
+                                <div class="slot-time">
+                                    11:00 PM
+                                </div>
+
+                                <div class="slot-period">
+                                    Night
+                                </div>
+
+                            </div>
+
+
+                            <div class="text-end">
+
+                                <div class="slot-price">
+                                    ₹700
+                                </div>
+
+                                <button
+                                    class="book-small-btn"
+                                    onclick="bookSlot(this)">
+
+                                    Book Now
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 12 AM -->
+
+                <div class="col-lg-6">
+
+                    <div class="slot-card"
+                         data-start="12:00 AM"
+                         data-hour="24">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="slot-icon">
+                                <i class="bi bi-moon-stars-fill"></i>
+                            </div>
+
+
+                            <div class="flex-grow-1">
+
+                                <div class="slot-time">
+                                    12:00 AM
+                                </div>
+
+                                <div class="slot-period">
+                                    Midnight
+                                </div>
+
+                            </div>
+
+
+                            <div class="text-end">
+
+                                <div class="slot-price">
+                                    ₹700
+                                </div>
+
+                                <button
+                                    class="book-small-btn"
+                                    onclick="bookSlot(this)">
+
+                                    Book Now
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 01 AM -->
+
+                <div class="col-lg-6">
+
+                    <div class="slot-card"
+                         data-start="01:00 AM"
+                         data-hour="25">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="slot-icon">
+                                <i class="bi bi-moon-stars-fill"></i>
+                            </div>
+
+
+                            <div class="flex-grow-1">
+
+                                <div class="slot-time">
+                                    01:00 AM
+                                </div>
+
+                                <div class="slot-period">
+                                    Late Night
+                                </div>
+
+                            </div>
+
+
+                            <div class="text-end">
+
+                                <div class="slot-price">
+                                    ₹700
+                                </div>
+
+                                <button
+                                    class="book-small-btn"
+                                    onclick="bookSlot(this)">
+
+                                    Book Now
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 02 AM -->
+
+                <div class="col-lg-6">
+
+                    <div class="slot-card"
+                         data-start="02:00 AM"
+                         data-hour="26">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="slot-icon">
+                                <i class="bi bi-moon-stars-fill"></i>
+                            </div>
+
+
+                            <div class="flex-grow-1">
+
+                                <div class="slot-time">
+                                    02:00 AM
+                                </div>
+
+                                <div class="slot-period">
+                                    Closing Time
+                                </div>
+
+                            </div>
+
+
+                            <div class="text-end">
+
+                                <div class="slot-price">
+                                    ₹700
+                                </div>
+
+                                <button
+                                    class="book-small-btn"
+                                    onclick="bookSlot(this)">
+
+                                    Book Now
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DETAILS
+========================= -->
+
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-tag">
+                Why Choose Us
+            </div>
+
+            <h2 class="section-title mt-2">
+                Everything You Need
+            </h2>
+
+            <p class="section-description">
+                Everything designed for a better box cricket experience.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="detail-card">
+
+                    <div class="detail-icon">
+                        <i class="bi bi-trophy"></i>
+                    </div>
+
+                    <h5>
+                        Premium Turf
+                    </h5>
+
+                    <p>
+                        High-quality artificial turf designed specially
+                        for box cricket matches.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="detail-card">
+
+                    <div class="detail-icon">
+                        <i class="bi bi-brightness-high"></i>
+                    </div>
+
+                    <h5>
+                        Flood Lights
+                    </h5>
+
+                    <p>
+                        Powerful flood lights for exciting and
+                        comfortable night matches.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="detail-card">
+
+                    <div class="detail-icon">
+                        <i class="bi bi-car-front"></i>
+                    </div>
+
+                    <h5>
+                        Easy Parking
+                    </h5>
+
+                    <p>
+                        Convenient parking facility available
+                        for players and teams.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="detail-card">
+
+                    <div class="detail-icon">
+                        <i class="bi bi-droplet"></i>
+                    </div>
+
+                    <h5>
+                        Drinking Water
+                    </h5>
+
+                    <p>
+                        Clean drinking water available for
+                        players during matches.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="detail-card">
+
+                    <div class="detail-icon">
+                        <i class="bi bi-door-open"></i>
+                    </div>
+
+                    <h5>
+                        Changing Room
+                    </h5>
+
+                    <p>
+                        Clean and comfortable changing area
+                        for players.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="detail-card">
+
+                    <div class="detail-icon">
+                        <i class="bi bi-clock"></i>
+                    </div>
+
+                    <h5>
+                        Open Till 2 AM
+                    </h5>
+
+                    <p>
+                        Flexible playing hours from 5 PM
+                        until 2 AM.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="pb-5">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+
+                    <h2>
+                        Ready to Play?
+                    </h2>
+
+                    <p class="mb-0 text-white-50">
+
+                        Grab your team and book your favourite
+                        1, 2 or 3-hour box cricket slot today.
+
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+
+                    <a href="#booking" class="btn main-btn">
+
+                        Book Your Slot
+
+                        <i class="bi bi-arrow-right ms-2"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="pt-5 pb-3">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+
+            <div class="col-lg-4">
+
+                <h5>
+                    🏏 BoxCricket
+                </h5>
+
+                <p>
+                    A premium box cricket slot booking
+                    platform for players, friends and teams.
+                </p>
+
+
+                <div class="mt-4">
+
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-2 col-md-4">
+
+                <h5>
+                    Navigation
+                </h5>
+
+                <p>
+                    <a href="#home">
+                        Home
+                    </a>
+                </p>
+
+                <p>
+                    <a href="#about">
+                        About
+                    </a>
+                </p>
+
+                <p>
+                    <a href="#booking">
+                        Booking
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-4">
+
+                <h5>
+                    Facilities
+                </h5>
+
+                <p>
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    Premium Turf
+                </p>
+
+                <p>
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    Flood Lights
+                </p>
+
+                <p>
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    Parking
+                </p>
+
+                <p>
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    Changing Room
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-4">
+
+                <h5>
+                    Contact
+                </h5>
+
+                <p>
+                    <i class="bi bi-geo-alt-fill text-success"></i>
+                    Vesu, Surat, Gujarat
+                </p>
+
+                <p>
+                    <i class="bi bi-telephone-fill text-success"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="bi bi-envelope-fill text-success"></i>
+                    info@boxcricket.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom mt-5">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <small>
+                        © 2026 BoxCricket. All Rights Reserved.
+                    </small>
+
+                </div>
+
+
+                <div class="col-md-6 text-md-end">
+
+                    <small>
+                        Play • Book • Enjoy
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     BOOTSTRAP JS
+========================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<script>
+
+/* =====================================
+   BOOKING SYSTEM
+===================================== */
+
+let selectedDuration = 1;
+
+
+/* =====================================
+   GET PRICE
+===================================== */
+
+function getPrice(hour, duration) {
+
+    return 700 * duration;
+
+}
+
+
+/* =====================================
+   DURATION BUTTON
+===================================== */
+
+const durationButtons =
+    document.querySelectorAll(".duration-btn");
+
+
+durationButtons.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+        durationButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        this.classList.add("active");
+
+        selectedDuration =
+            parseInt(this.dataset.duration);
+
+        updateSlotPrices();
+
+    });
+
+});
+
+
+/* =====================================
+   UPDATE SLOT PRICES
+===================================== */
+
+function updateSlotPrices() {
+
+    const slots =
+        document.querySelectorAll(".slot-card");
+
+
+    slots.forEach(slot => {
+
+        const hour =
+            parseInt(slot.dataset.hour);
+
+        const price =
+            getPrice(hour, selectedDuration);
+
+        const priceElement =
+            slot.querySelector(".slot-price");
+
+        priceElement.innerText =
+            "₹" + price.toLocaleString("en-IN");
+
+    });
+
+}
+
+
+/* =====================================
+   BOOK SLOT
+===================================== */
+
+function bookSlot(button) {
+
+    const slot =
+        button.closest(".slot-card");
+
+
+    const startHour =
+        parseInt(slot.dataset.hour);
+
+
+    /*
+        Closing time = 2 AM
+        Internal closing hour = 26
+    */
+
+    const closingHour = 26;
+
+
+    /*
+        Check duration
+    */
+
+    if (startHour + selectedDuration > closingHour) {
+
+        alert(
+            "This duration is not available for this slot.\n\n" +
+            "Box Cricket closing time is 2:00 AM."
+        );
+
+        return;
+
+    }
+
+
+    /*
+        Login message
+    */
+
+    alert("Login");
+
+}
+
+
+/* =====================================
+   INITIAL PRICE UPDATE
+===================================== */
+
+updateSlotPrices();
+
+</script>
+
+</body>
+
+</html>
