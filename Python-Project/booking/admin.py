@@ -1,54 +1,32 @@
-from django import forms
-from booking.models import Booking
+from django.contrib import admin
+from .models import *
 
 
-class BookingForm(forms.ModelForm):
+admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
 
-    class Meta:
-        model = Booking
+    list_display = (
+        "id",
+        "user",
+        "name",
+        "email",
+        "number",
+        "slot_time",
+        "duration",
+        "booking_date",
+        "price",
+        "status",
+        "created_at",
+    )
 
-        fields = [
-            "username",
-            "email",
-            "mobile",
-            "slot_time",
-            "duration",
-        ]
+    list_filter = (
+        "duration",
+        "status",
+        "booking_date",
+    )
 
-        widgets = {
-
-            "username": forms.TextInput(
-                attrs={
-                    "class": "form-control",
-                    "placeholder": "Enter username"
-                }
-            ),
-
-            "email": forms.EmailInput(
-                attrs={
-                    "class": "form-control",
-                    "placeholder": "Enter email"
-                }
-            ),
-
-            "mobile": forms.TextInput(
-                attrs={
-                    "class": "form-control",
-                    "placeholder": "Enter mobile number"
-                }
-            ),
-
-            "slot_time": forms.TextInput(
-                attrs={
-                    "class": "form-control",
-                    "readonly": True
-                }
-            ),
-
-            "duration": forms.NumberInput(
-                attrs={
-                    "class": "form-control",
-                    "readonly": True
-                }
-            ),
-        }
+    search_fields = (
+        "name",
+        "email",
+        "number",
+    )

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BoxCricket | Premium Slot Booking</title>
+    <title>BoxCricket | Premium Cricket Ground</title>
 
     <!-- Bootstrap 5 -->
     <link
@@ -18,15 +18,11 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Google Font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-
     <style>
 
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
@@ -35,658 +31,641 @@
         }
 
         body {
-            margin: 0;
-            font-family: "Inter", sans-serif;
-            background: #f4f7f6;
-            color: #17221c;
+            font-family: Arial, sans-serif;
+            background: #f5f7f9;
+            color: #14213d;
         }
 
+        /* ================= NAVBAR ================= */
 
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        .custom-navbar {
-            background: rgba(5, 18, 12, .97);
-            backdrop-filter: blur(15px);
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(255,255,255,.08);
+        .navbar {
+            background: #061b2e;
+            padding: 15px 0;
         }
 
         .navbar-brand {
-            font-size: 25px;
-            font-weight: 800;
+            color: white !important;
+            font-size: 28px;
+            font-weight: 900;
         }
 
-        .logo-icon {
-            width: 43px;
-            height: 43px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg,#20c997,#198754);
-            border-radius: 13px;
-            margin-right: 9px;
+        .navbar-brand i {
+            color: #22c55e;
         }
 
-        .logo-text {
-            color: white;
-        }
-
-        .logo-text span {
-            color: #20c997;
+        .navbar-brand span {
+            color: #22c55e;
         }
 
         .nav-link {
-            color: #d8e1dc !important;
-            font-weight: 500;
-            margin: 0 7px;
+            color: white !important;
+            font-weight: 600;
+            margin-left: 12px;
+            padding: 8px 15px !important;
+            transition: 0.3s;
         }
 
         .nav-link:hover {
-            color: #20c997 !important;
+            color: #22c55e !important;
         }
 
         .login-btn {
-            border: 1px solid rgba(255,255,255,.35);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 10px;
-        }
-
-        .login-btn:hover {
-            background: white;
-            color: #101820;
+            border: 1px solid #22c55e;
+            border-radius: 25px;
         }
 
         .register-btn {
-            background: linear-gradient(135deg,#20c997,#198754);
-            color: white;
-            border: none;
-            padding: 9px 22px;
-            border-radius: 10px;
-            font-weight: 600;
+            background: #22c55e;
+            border-radius: 25px;
         }
 
         .register-btn:hover {
-            background: #157347;
-            color: white;
+            background: #16a34a;
+            color: white !important;
         }
 
-        .username-box {
-            display: inline-flex;
-            align-items: center;
-            color: #20c997;
-            background: rgba(32,201,151,.10);
-            border: 1px solid rgba(32,201,151,.30);
-            padding: 9px 15px;
-            border-radius: 10px;
-            font-weight: 600;
-        }
-
-        .logout-btn {
-            background: transparent;
-            color: #ff6b6b;
-            border: 1px solid rgba(255,107,107,.5);
-            padding: 8px 18px;
-            border-radius: 10px;
-            font-weight: 600;
-        }
-
-        .logout-btn:hover {
-            background: #dc3545;
-            color: white;
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
+        /* ================= HERO ================= */
 
         .hero {
-            min-height: 720px;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
 
             background:
                 linear-gradient(
-                    90deg,
-                    rgba(0,25,15,.75),
-                    rgba(0,25,15,.42),
-                    rgba(0,25,15,.10)
+                    rgba(3, 15, 27, 0.68),
+                    rgba(3, 15, 27, 0.80)
                 ),
-                url("https://images.unsplash.com/photo-1531415074968-036ba1b575da")
-                center / cover no-repeat;
+                url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=2000&q=90");
 
-            display: flex;
-            align-items: center;
+            background-size: cover;
+            background-position: center;
+
+            color: white;
         }
 
         .hero-content {
-            color: white;
+            max-width: 850px;
         }
 
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            background: rgba(32,201,151,.15);
-            border: 1px solid rgba(32,201,151,.45);
-
-            color: #55e6bd;
-
-            padding: 9px 16px;
-            border-radius: 50px;
-
-            font-size: 13px;
-            font-weight: 700;
-
-            margin-bottom: 22px;
-        }
-
-        .live-dot {
-            width: 8px;
-            height: 8px;
-            background: #20c997;
-            border-radius: 50%;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #22c55e;
+            border-radius: 30px;
+            background: rgba(34, 197, 94, 0.12);
+            color: #86efac;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
         .hero h1 {
-            font-size: clamp(42px,6vw,72px);
+            font-size: 70px;
+            font-weight: 900;
             line-height: 1.05;
-            font-weight: 800;
-            letter-spacing: -3px;
-            max-width: 760px;
-        }
-
-        .hero h1 span {
-            color: #20c997;
-        }
-
-        .hero p {
-            max-width: 650px;
-            color: #f0f5f2;
-            font-size: 18px;
-            line-height: 1.8;
             margin-top: 25px;
         }
 
-        .hero-buttons {
-            margin-top: 32px;
+        .hero h1 span {
+            color: #22c55e;
+        }
+
+        .hero p {
+            color: #dbe4ec;
+            font-size: 19px;
+            line-height: 1.8;
+            max-width: 720px;
+            margin-top: 25px;
         }
 
         .main-btn {
-            background: linear-gradient(135deg,#20c997,#198754);
-            border: none;
+            background: #22c55e;
             color: white;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-weight: 700;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-weight: 800;
+            transition: 0.3s;
         }
 
         .main-btn:hover {
+            background: #16a34a;
             color: white;
+            transform: translateY(-3px);
         }
 
         .outline-btn {
+            border: 2px solid white;
             color: white;
-            border: 1px solid rgba(255,255,255,.5);
-            padding: 13px 26px;
-            border-radius: 12px;
-            margin-left: 10px;
+            padding: 11px 28px;
+            border-radius: 30px;
+            font-weight: 700;
         }
 
         .outline-btn:hover {
             background: white;
-            color: #101820;
+            color: #061b2e;
         }
 
-        .hero-stats {
-            display: flex;
-            gap: 45px;
-            margin-top: 55px;
-        }
-
-        .stat-number {
-            font-size: 25px;
-            font-weight: 800;
-        }
-
-        .stat-label {
-            color: #e0e8e3;
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           COMMON
-        ========================= */
+        /* ================= COMMON ================= */
 
         .section-padding {
-            padding: 100px 0;
+            padding: 90px 0;
         }
 
-        .section-tag {
-            color: #198754;
-            font-size: 13px;
-            font-weight: 800;
+        .section-label {
+            color: #16a34a;
+            font-size: 14px;
+            font-weight: 900;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .section-title {
-            font-size: 42px;
-            font-weight: 800;
+            color: #061b2e;
+            font-size: 44px;
+            font-weight: 900;
+            margin-top: 8px;
         }
 
-        .section-description {
-            color: #6c757d;
+        .section-title span {
+            color: #22c55e;
+        }
+
+        .section-text {
+            color: #64748b;
             line-height: 1.8;
         }
 
+        /* ================= ABOUT ================= */
 
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about-image {
-            width: 100%;
-            height: 480px;
-            object-fit: cover;
-            border-radius: 25px;
-            box-shadow: 0 20px 50px rgba(0,0,0,.15);
+        .about-section {
+            background: white;
         }
 
-        .feature-list {
+        .about-img-box {
+            position: relative;
+            width: 100%;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            border-radius: 30px;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            background: white;
+            padding: 18px 25px;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+        }
+
+        .about-badge strong {
+            color: #16a34a;
+            font-size: 30px;
+        }
+
+        .check-list {
             list-style: none;
             padding: 0;
+            margin-top: 25px;
         }
 
-        .feature-list li {
+        .check-list li {
             margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
-        .feature-list i {
-            color: #198754;
+        .check-list i {
+            color: #22c55e;
+            margin-right: 10px;
         }
 
-
-        /* =========================
-           BOOKING
-        ========================= */
+        /* ================= SLOT TIME ================= */
 
         .booking-section {
-            background: #eef4f1;
+            background: #061b2e;
+        }
+
+        .booking-section .section-title {
+            color: white;
+        }
+
+        .booking-section .section-text {
+            color: #94a3b8;
+        }
+
+        .slot-wrapper {
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+            margin-top: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+        }
+
+        .slot-heading {
+            padding: 22px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8fafc;
+        }
+
+        .slot-heading h4 {
+            margin: 0;
+            color: #061b2e;
+            font-weight: 900;
+        }
+
+        .duration-badge {
+            background: #dcfce7;
+            color: #15803d;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 800;
+        }
+
+        .slot-table {
+            margin: 0;
+        }
+
+        .slot-table thead {
+            background: #0b253b;
+            color: white;
+        }
+
+        .slot-table th {
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .slot-table td {
+            padding: 15px;
+            vertical-align: middle;
+        }
+
+        .time-text {
+            font-weight: 800;
+            color: #061b2e;
+        }
+
+        .price-text {
+            color: #16a34a;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .available {
+            background: #dcfce7;
+            color: #15803d;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .slot-btn {
+            background: #22c55e;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 7px 18px;
+            font-weight: 800;
+        }
+
+        .slot-btn:hover {
+            background: #16a34a;
+            color: white;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services-section {
+            background: #f4f7f9;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 24px;
+            padding: 32px 25px;
+            height: 100%;
+            border: 1px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+            transition: 0.35s;
+        }
+
+        .service-card::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #dcfce7;
+            right: -35px;
+            top: -35px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+            border-color: #22c55e;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #dcfce7;
+            color: #16a34a;
+            border-radius: 20px;
+            font-size: 32px;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card h4 {
+            color: #061b2e;
+            font-weight: 900;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* ================= PRICING ================= */
+
+        .price-section {
+            background: white;
+        }
+
+        .price-card {
+            background: #f8fafc;
+            border: 2px solid #e5e7eb;
+            border-radius: 25px;
+            padding: 40px 25px;
+            text-align: center;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            border-color: #22c55e;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.10);
+        }
+
+        .price-card.popular {
+            border-color: #22c55e;
+            box-shadow: 0 15px 40px rgba(34,197,94,0.15);
+        }
+
+        .price-icon {
+            font-size: 45px;
+            color: #22c55e;
+        }
+
+        .price-card h3 {
+            margin-top: 20px;
+            font-weight: 900;
+        }
+
+        .price {
+            font-size: 42px;
+            color: #16a34a;
+            font-weight: 900;
+            margin: 15px 0;
+        }
+
+        .price-card p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .popular-badge {
+            display: inline-block;
+            background: #22c55e;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        /* ================= MY BOOKING ================= */
+
+        .my-booking {
+            background: #f4f7f9;
         }
 
         .booking-box {
             background: white;
-            border-radius: 25px;
-            padding: 35px;
-            box-shadow: 0 20px 60px rgba(24,55,42,.10);
+            border-radius: 28px;
+            padding: 60px 30px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
         }
 
-        .booking-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
+        /* ================= CTA ================= */
 
-        .available-badge {
-            background: #e7f8f1;
-            color: #198754;
-            padding: 8px 13px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 700;
-        }
+        .cta {
+            padding: 100px 20px;
 
+            background:
+                linear-gradient(
+                    rgba(6,27,46,0.90),
+                    rgba(6,27,46,0.90)
+                ),
+                url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=2000&q=90");
 
-        /* =========================
-           SLOT
-        ========================= */
-
-        .slot-card {
-            background: #fbfcfc;
-            border: 1px solid #e4ebe7;
-            border-radius: 17px;
-            padding: 20px;
-            transition: .3s;
-        }
-
-        .slot-card:hover {
-            transform: translateY(-5px);
-            border-color: #20c997;
-            background: white;
-            box-shadow: 0 15px 35px rgba(32,201,151,.12);
-        }
-
-        .slot-icon {
-            width: 48px;
-            height: 48px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 13px;
-
-            background: #e6f7f1;
-            color: #198754;
-
-            font-size: 21px;
-        }
-
-        .slot-time {
-            font-size: 17px;
-            font-weight: 800;
-        }
-
-        .slot-period {
-            color: #8a9791;
-            font-size: 12px;
-        }
-
-        .slot-price {
-            color: #198754;
-            font-size: 19px;
-            font-weight: 800;
-        }
-
-        .book-small-btn {
-            margin-top: 7px;
-            border: none;
-            background: #198754;
-            color: white;
-            padding: 7px 14px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .book-small-btn:hover {
-            background: #146c43;
+            background-size: cover;
+            background-position: center;
+            text-align: center;
             color: white;
         }
 
-        .slot-section-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #17221c;
-            font-weight: 800;
-            margin-bottom: 18px;
+        .cta h2 {
+            font-size: 50px;
+            font-weight: 900;
         }
 
-        .slot-section-title i {
-            color: #20c997;
+        .cta p {
+            color: #cbd5e1;
         }
 
-
-        /* =========================
-           DETAILS
-        ========================= */
-
-        .detail-card {
-            background: white;
-            border: 1px solid #edf1ef;
-            border-radius: 20px;
-            padding: 30px;
-            height: 100%;
-            transition: .3s;
-        }
-
-        .detail-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 18px 40px rgba(0,0,0,.08);
-        }
-
-        .detail-icon {
-            width: 58px;
-            height: 58px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 16px;
-
-            background: #e4f7ef;
-            color: #198754;
-
-            font-size: 25px;
-            margin-bottom: 22px;
-        }
-
-        .detail-card h5 {
-            font-weight: 800;
-        }
-
-        .detail-card p {
-            color: #7b8781;
-            line-height: 1.7;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
+        /* ================= FOOTER ================= */
 
         footer {
-            background: #07110c;
-            color: #8d9992;
+            background: #03101c;
+            color: #94a3b8;
         }
 
         footer h5 {
             color: white;
-            font-weight: 700;
-            margin-bottom: 20px;
+            font-weight: 900;
         }
 
         footer a {
-            color: #8d9992;
+            color: #94a3b8;
             text-decoration: none;
+            transition: 0.3s;
         }
 
         footer a:hover {
-            color: #20c997;
+            color: #22c55e;
+        }
+
+        .footer-social {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #102536;
+            margin-right: 7px;
+            transition: 0.3s;
+        }
+
+        .footer-social:hover {
+            background: #22c55e;
+            color: white;
         }
 
         .footer-bottom {
-            border-top: 1px solid #1c2b23;
-            padding-top: 20px;
+            border-top: 1px solid #1e3445;
         }
 
+        /* ================= MOBILE ================= */
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media(max-width:768px) {
+        @media(max-width: 768px) {
 
             .hero {
-                min-height: 620px;
+                min-height: 600px;
             }
 
             .hero h1 {
-                letter-spacing: -1.5px;
+                font-size: 45px;
             }
 
-            .hero-stats {
-                gap: 20px;
+            .hero p {
+                font-size: 16px;
             }
 
-            .outline-btn {
-                margin-left: 0;
-                margin-top: 10px;
+            .section-title {
+                font-size: 34px;
             }
 
-            .booking-box {
-                padding: 20px;
-            }
-
-            .booking-header {
-                display: block;
-            }
-
-            .available-badge {
-                display: inline-block;
-                margin-top: 10px;
-            }
-
-            .about-image {
+            .about-img {
                 height: 350px;
             }
+
+            .slot-heading {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .cta h2 {
+                font-size: 36px;
+            }
+
         }
 
     </style>
 
 </head>
 
-
 <body>
 
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+<!-- ================= NAVBAR ================= -->
 
-<nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+<nav class="navbar navbar-expand-lg sticky-top">
 
     <div class="container">
 
-        <a class="navbar-brand d-flex align-items-center"
-           href="{% url 'index' %}">
+        <a class="navbar-brand" href="#home">
 
-            <span class="logo-icon">
-                🏏
-            </span>
+            <i class="bi bi-trophy-fill"></i>
 
-            <span class="logo-text">
-                Box<span>Cricket</span>
-            </span>
+            Box<span>Cricket</span>
 
         </a>
 
-
         <button
-            class="navbar-toggler"
+            class="navbar-toggler bg-light"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarMenu">
+            data-bs-target="#menu">
 
             <span class="navbar-toggler-icon"></span>
 
         </button>
 
+        <div
+            class="collapse navbar-collapse"
+            id="menu">
 
-        <div class="collapse navbar-collapse" id="navbarMenu">
-
-            <ul class="navbar-nav ms-auto align-items-lg-center">
+            <ul class="navbar-nav ms-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="{% url 'index' %}">
+                    <a class="nav-link" href="#home">
                         Home
                     </a>
                 </li>
 
-
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="#about">
+                    <a class="nav-link" href="#about">
                         About
                     </a>
                 </li>
 
-
-                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#booking">
+                        Slot Time
+                    </a>
+                </li>
 
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="{% url 'my-booking' %}">
+                    <a class="nav-link" href="#services">
+                        Services
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#pricing">
+                        Pricing
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#mybooking">
                         My Booking
                     </a>
                 </li>
 
-                {% endif %}
-
-
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="#booking">
-                        Booking Slot
+                    <a class="nav-link login-btn" href="#">
+                        Login
                     </a>
                 </li>
 
-
-                {% if user.is_authenticated %}
-
-                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-
-                        <span class="username-box">
-
-                            <i class="bi bi-person-circle me-1"></i>
-
-                            {{ user.username }}
-
-                        </span>
-
-                    </li>
-
-
-                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-
-                        <a
-                            class="btn logout-btn"
-                            href="{% url 'user-logout' %}">
-
-                            <i class="bi bi-box-arrow-right me-1"></i>
-
-                            Logout
-
-                        </a>
-
-                    </li>
-
-                {% else %}
-
-                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-
-                        <a
-                            class="btn login-btn"
-                            href="{% url 'user-login' %}">
-
-                            <i class="bi bi-box-arrow-in-right me-1"></i>
-
-                            Login
-
-                        </a>
-
-                    </li>
-
-
-                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-
-                        <a
-                            class="btn register-btn"
-                            href="{% url 'user-register' %}">
-
-                            <i class="bi bi-person-plus me-1"></i>
-
-                            Register
-
-                        </a>
-
-                    </li>
-
-                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link register-btn" href="#">
+                        Register
+                    </a>
+                </li>
 
             </ul>
 
@@ -697,10 +676,7 @@
 </nav>
 
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
@@ -708,99 +684,49 @@
 
         <div class="hero-content">
 
-            <div class="hero-badge">
+            <span class="hero-badge">
 
-                <span class="live-dot"></span>
+                <i class="bi bi-stars"></i>
 
-                PREMIUM BOX CRICKET BOOKING
+                PREMIUM BOX CRICKET
 
-            </div>
-
+            </span>
 
             <h1>
 
-                Your Game.
-                <br>
+                Play Hard.
 
-                Your <span>Box.</span>
-                Your Time.
+                <span>Play Better.</span>
 
             </h1>
 
-
             <p>
 
-                Book your favourite box cricket turf
-                in seconds. Choose your preferred slot,
-                bring your team and enjoy an exciting
-                cricket experience.
+                Book your premium cricket turf and enjoy
+                an unforgettable match with your friends,
+                family and team.
 
             </p>
 
-
-            <div class="hero-buttons">
+            <div class="mt-4">
 
                 <a
                     href="#booking"
-                    class="btn main-btn">
+                    class="btn main-btn me-2">
 
-                    <i class="bi bi-calendar-check me-2"></i>
+                    <i class="bi bi-calendar-check"></i>
 
                     Book Your Slot
 
                 </a>
 
-
                 <a
                     href="#about"
                     class="btn outline-btn">
 
-                    Explore Box Cricket
+                    Explore Ground
 
                 </a>
-
-            </div>
-
-
-            <div class="hero-stats">
-
-                <div>
-
-                    <div class="stat-number">
-                        1-3 Hours
-                    </div>
-
-                    <div class="stat-label">
-                        Flexible Booking
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <div class="stat-number">
-                        10+
-                    </div>
-
-                    <div class="stat-label">
-                        Daily Slots
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <div class="stat-number">
-                        5 PM
-                    </div>
-
-                    <div class="stat-label">
-                        Starting Time
-                    </div>
-
-                </div>
 
             </div>
 
@@ -811,12 +737,11 @@
 </section>
 
 
+<!-- ================= ABOUT ================= -->
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section class="section-padding" id="about">
+<section
+    class="about-section section-padding"
+    id="about">
 
     <div class="container">
 
@@ -824,78 +749,83 @@
 
             <div class="col-lg-6">
 
-                <img
-                    src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e"
-                    class="about-image"
-                    alt="Cricket">
+                <div class="about-img-box">
+
+                    <!-- FIXED ABOUT IMAGE -->
+
+                    <img
+                        src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1200&q=85"
+                        class="about-img"
+                        alt="Cricket Ground"
+                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1200&q=85';">
+
+                    <div class="about-badge">
+
+                        <strong>5+</strong>
+
+                        <br>
+
+                        Years Experience
+
+                    </div>
+
+                </div>
 
             </div>
 
-
             <div class="col-lg-6">
 
-                <div class="section-tag">
-                    About Our Box Cricket
+                <div class="section-label">
+                    About BoxCricket
                 </div>
 
+                <h2 class="section-title">
 
-                <h2 class="section-title mt-2">
+                    Your Game.
 
-                    Where Every Match
-                    Feels Special.
+                    <span>Our Ground.</span>
 
                 </h2>
 
+                <p class="section-text mt-3">
 
-                <p class="section-description mt-3">
-
-                    Enjoy an exciting box cricket experience
-                    with premium turf, professional lighting
-                    and a comfortable environment for friends
-                    and teams.
+                    BoxCricket provides a premium,
+                    clean and professionally maintained
+                    cricket turf for players of every level.
 
                 </p>
 
-
-                <ul class="feature-list mt-4">
+                <ul class="check-list">
 
                     <li>
                         <i class="bi bi-check-circle-fill"></i>
-                        Professional Box Cricket Turf
+                        Premium cricket turf
                     </li>
 
                     <li>
                         <i class="bi bi-check-circle-fill"></i>
-                        High Quality Flood Lights
+                        Professional flood lights
                     </li>
 
                     <li>
                         <i class="bi bi-check-circle-fill"></i>
-                        Spacious Parking Area
+                        Flexible 1, 2 and 3 hour slots
                     </li>
 
                     <li>
                         <i class="bi bi-check-circle-fill"></i>
-                        Clean Changing Room
-                    </li>
-
-                    <li>
-                        <i class="bi bi-check-circle-fill"></i>
-                        Drinking Water Facility
+                        Easy online booking
                     </li>
 
                 </ul>
 
+                <a
+                    href="#booking"
+                    class="btn main-btn">
 
-                <div class="mt-4">
+                    Book Your Ground
 
-                    <i class="bi bi-geo-alt-fill text-success"></i>
-
-                    <strong>
-                        Vesu, Surat, Gujarat
-                    </strong>
-
-                </div>
+                </a>
 
             </div>
 
@@ -906,180 +836,521 @@
 </section>
 
 
-
-<!-- =====================================================
-     BOOKING
-===================================================== -->
+<!-- ================= SLOT TIME ================= -->
 
 <section
-    class="section-padding booking-section"
+    class="booking-section section-padding"
     id="booking">
 
     <div class="container">
 
         <div class="text-center mb-5">
 
-            <div class="section-tag">
-                Slot Booking
+            <div class="section-label">
+                Booking Schedule
             </div>
 
-            <h2 class="section-title mt-2">
+            <h2 class="section-title">
 
-                Pick Your Perfect Time
+                Choose Your
+
+                <span>Slot Time</span>
 
             </h2>
 
-            <p class="section-description">
+            <p class="section-text">
 
-                Choose your favourite playing slot
-                and book it easily.
+                Select your preferred time and
+                book your cricket ground.
 
             </p>
 
         </div>
 
 
-        <div class="booking-box">
+        <!-- ================= 1 HOUR ================= -->
 
-            <div class="booking-header">
+        <div class="slot-wrapper">
 
-                <div>
+            <div class="slot-heading">
 
-                    <h4 class="fw-bold mb-1">
-                        Available Slots
-                    </h4>
+                <h4>
 
-                    <small class="text-muted">
+                    <i class="bi bi-clock text-success"></i>
 
-                        Select your preferred slot
+                    1 Hour Slots
 
-                    </small>
+                </h4>
 
-                </div>
-
-
-                <span class="available-badge">
-
-                    <i
-                        class="bi bi-circle-fill me-1"
-                        style="font-size:7px;">
-                    </i>
-
-                    Slots Available
-
+                <span class="duration-badge">
+                    ₹700 / Hour
                 </span>
 
             </div>
 
+            <div class="table-responsive">
 
-            <!-- =========================
-                 EVENING / NIGHT
-            ========================= -->
+                <table class="table slot-table text-center">
 
-            <div class="slot-section-title">
+                    <thead>
 
-                <i class="bi bi-moon-stars-fill"></i>
+                        <tr>
+                            <th>No.</th>
+                            <th>Time Slot</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
 
-                Evening & Night Slots
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>01</td>
+                            <td class="time-text">05:00 AM - 06:00 AM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>02</td>
+                            <td class="time-text">06:00 AM - 07:00 AM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>03</td>
+                            <td class="time-text">07:00 AM - 08:00 AM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>04</td>
+                            <td class="time-text">08:00 AM - 09:00 AM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>05</td>
+                            <td class="time-text">09:00 AM - 10:00 AM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>06</td>
+                            <td class="time-text">10:00 AM - 11:00 AM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>07</td>
+                            <td class="time-text">11:00 AM - 12:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>08</td>
+                            <td class="time-text">12:00 PM - 01:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>09</td>
+                            <td class="time-text">01:00 PM - 02:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>10</td>
+                            <td class="time-text">02:00 PM - 03:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>11</td>
+                            <td class="time-text">03:00 PM - 04:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>12</td>
+                            <td class="time-text">04:00 PM - 05:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>13</td>
+                            <td class="time-text">05:00 PM - 06:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>14</td>
+                            <td class="time-text">06:00 PM - 07:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>15</td>
+                            <td class="time-text">07:00 PM - 08:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>16</td>
+                            <td class="time-text">08:00 PM - 09:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>17</td>
+                            <td class="time-text">09:00 PM - 10:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>18</td>
+                            <td class="time-text">10:00 PM - 11:00 PM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>19</td>
+                            <td class="time-text">11:00 PM - 12:00 AM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>20</td>
+                            <td class="time-text">12:00 AM - 01:00 AM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>21</td>
+                            <td class="time-text">01:00 AM - 02:00 AM</td>
+                            <td>1 Hour</td>
+                            <td class="price-text">₹700</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
 
             </div>
 
-
-            <div class="row g-3">
-
-
-                {% for slot in slots %}
-
-                <div class="col-lg-6">
-
-                    <div class="slot-card">
-
-                        <div class="d-flex align-items-center gap-3">
+        </div>
 
 
-                            <div class="slot-icon">
+        <!-- ================= 2 HOURS ================= -->
 
-                                {% if slot.hour < 20 %}
+        <div class="slot-wrapper">
 
-                                    <i class="bi bi-sunset"></i>
+            <div class="slot-heading">
 
-                                {% else %}
+                <h4>
+                    <i class="bi bi-clock-history text-success"></i>
+                    2 Hours Slots
+                </h4>
 
-                                    <i class="bi bi-moon-stars"></i>
+                <span class="duration-badge">
+                    ₹1,200 / 2 Hours
+                </span>
 
-                                {% endif %}
+            </div>
 
-                            </div>
+            <div class="table-responsive">
+
+                <table class="table slot-table text-center">
+
+                    <thead>
+
+                        <tr>
+                            <th>No.</th>
+                            <th>Time Slot</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>01</td>
+                            <td class="time-text">05:00 AM - 07:00 AM</td>
+                            <td>2 Hours</td>
+                            <td class="price-text">₹1,200</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>02</td>
+                            <td class="time-text">07:00 AM - 09:00 AM</td>
+                            <td>2 Hours</td>
+                            <td class="price-text">₹1,200</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>03</td>
+                            <td class="time-text">09:00 AM - 11:00 AM</td>
+                            <td>2 Hours</td>
+                            <td class="price-text">₹1,200</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>04</td>
+                            <td class="time-text">11:00 AM - 01:00 PM</td>
+                            <td>2 Hours</td>
+                            <td class="price-text">₹1,200</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>05</td>
+                            <td class="time-text">01:00 PM - 03:00 PM</td>
+                            <td>2 Hours</td>
+                            <td class="price-text">₹1,200</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>06</td>
+                            <td class="time-text">03:00 PM - 05:00 PM</td>
+                            <td>2 Hours</td>
+                            <td class="price-text">₹1,200</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>07</td>
+                            <td class="time-text">05:00 PM - 07:00 PM</td>
+                            <td>2 Hours</td>
+                            <td class="price-text">₹1,200</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>08</td>
+                            <td class="time-text">07:00 PM - 09:00 PM</td>
+                            <td>2 Hours</td>
+                            <td class="price-text">₹1,200</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>09</td>
+                            <td class="time-text">09:00 PM - 11:00 PM</td>
+                            <td>2 Hours</td>
+                            <td class="price-text">₹1,200</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>10</td>
+                            <td class="time-text">11:00 PM - 01:00 AM</td>
+                            <td>2 Hours</td>
+                            <td class="price-text">₹1,200</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>11</td>
+                            <td class="time-text">12:00 AM - 02:00 AM</td>
+                            <td>2 Hours</td>
+                            <td class="price-text">₹1,200</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
 
 
-                            <div class="flex-grow-1">
+        <!-- ================= 3 HOURS ================= -->
 
-                                <div class="slot-time">
+        <div class="slot-wrapper">
 
-                                    {{ slot.time }}
+            <div class="slot-heading">
 
-                                </div>
+                <h4>
+                    <i class="bi bi-stopwatch text-success"></i>
+                    3 Hours Slots
+                </h4>
 
-                                <div class="slot-period">
+                <span class="duration-badge">
+                    ₹1,800 / 3 Hours
+                </span>
 
-                                    {{ slot.period }}
+            </div>
 
-                                </div>
+            <div class="table-responsive">
 
-                            </div>
+                <table class="table slot-table text-center">
 
+                    <thead>
 
-                            <div class="text-end">
+                        <tr>
+                            <th>No.</th>
+                            <th>Time Slot</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
 
-                                <div class="slot-price">
+                    </thead>
 
-                                    ₹700 / Hour
+                    <tbody>
 
-                                </div>
+                        <tr>
+                            <td>01</td>
+                            <td class="time-text">05:00 AM - 08:00 AM</td>
+                            <td>3 Hours</td>
+                            <td class="price-text">₹1,800</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
 
+                        <tr>
+                            <td>02</td>
+                            <td class="time-text">08:00 AM - 11:00 AM</td>
+                            <td>3 Hours</td>
+                            <td class="price-text">₹1,800</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
 
-                                <!--
-                                    NO JAVASCRIPT
+                        <tr>
+                            <td>03</td>
+                            <td class="time-text">11:00 AM - 02:00 PM</td>
+                            <td>3 Hours</td>
+                            <td class="price-text">₹1,800</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
 
-                                    Direct Django URL
-                                -->
+                        <tr>
+                            <td>04</td>
+                            <td class="time-text">02:00 PM - 05:00 PM</td>
+                            <td>3 Hours</td>
+                            <td class="price-text">₹1,800</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
 
-                                {% if user.is_authenticated %}
+                        <tr>
+                            <td>05</td>
+                            <td class="time-text">05:00 PM - 08:00 PM</td>
+                            <td>3 Hours</td>
+                            <td class="price-text">₹1,800</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
 
-                                    <a
-                                        href="{% url 'booking-slot' %}?start_time={{ slot.time|urlencode }}&start_hour={{ slot.hour }}"
-                                        class="book-small-btn">
+                        <tr>
+                            <td>06</td>
+                            <td class="time-text">08:00 PM - 11:00 PM</td>
+                            <td>3 Hours</td>
+                            <td class="price-text">₹1,800</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
 
-                                        <i class="bi bi-calendar-check me-1"></i>
+                        <tr>
+                            <td>07</td>
+                            <td class="time-text">11:00 PM - 02:00 AM</td>
+                            <td>3 Hours</td>
+                            <td class="price-text">₹1,800</td>
+                            <td><span class="available">Available</span></td>
+                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                        </tr>
 
-                                        Book Now
+                    </tbody>
 
-                                    </a>
-
-                                {% else %}
-
-                                    <a
-                                        href="{% url 'user-login' %}"
-                                        class="book-small-btn">
-
-                                        <i class="bi bi-box-arrow-in-right me-1"></i>
-
-                                        Login to Book
-
-                                    </a>
-
-                                {% endif %}
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                {% endfor %}
-
+                </table>
 
             </div>
 
@@ -1090,128 +1361,200 @@
 </section>
 
 
+<!-- ================= SERVICES ================= -->
 
-<!-- =====================================================
-     DETAILS
-===================================================== -->
-
-<section class="section-padding">
+<section
+    class="services-section section-padding"
+    id="services">
 
     <div class="container">
 
         <div class="text-center mb-5">
 
-            <div class="section-tag">
-                Why Choose Us
+            <div class="section-label">
+                Our Facilities
             </div>
 
-            <h2 class="section-title mt-2">
+            <h2 class="section-title">
 
-                Everything You Need
+                Everything You
+
+                <span>Need</span>
 
             </h2>
 
-            <p class="section-description">
+            <p class="section-text">
 
-                Everything designed for a better
-                box cricket experience.
+                Premium facilities for a comfortable
+                and enjoyable cricket experience.
 
             </p>
 
         </div>
 
-
         <div class="row g-4">
 
+            <!-- 1 -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-3">
 
-                <div class="detail-card">
+                <div class="service-card">
 
-                    <div class="detail-icon">
-
-                        <i class="bi bi-trophy"></i>
-
+                    <div class="service-icon">
+                        <i class="bi bi-p-square-fill"></i>
                     </div>
 
-                    <h5>
-                        Premium Turf
-                    </h5>
+                    <h4>Parking</h4>
 
                     <p>
-                        High-quality artificial turf
-                        designed specially for box cricket.
+                        Safe and spacious parking
+                        facility for bikes and cars.
                     </p>
 
                 </div>
 
             </div>
 
+            <!-- 2 -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-3">
 
-                <div class="detail-card">
+                <div class="service-card">
 
-                    <div class="detail-icon">
-
-                        <i class="bi bi-brightness-high"></i>
-
+                    <div class="service-icon">
+                        <i class="bi bi-droplet-fill"></i>
                     </div>
 
-                    <h5>
-                        Flood Lights
-                    </h5>
+                    <h4>Drinking Water</h4>
 
                     <p>
-                        Powerful flood lights for exciting
-                        night matches.
+                        Clean and chilled drinking
+                        water available for players.
                     </p>
 
                 </div>
 
             </div>
 
+            <!-- 3 -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-3">
 
-                <div class="detail-card">
+                <div class="service-card">
 
-                    <div class="detail-icon">
-
-                        <i class="bi bi-car-front"></i>
-
+                    <div class="service-icon">
+                        <i class="bi bi-cup-hot-fill"></i>
                     </div>
 
-                    <h5>
-                        Easy Parking
-                    </h5>
+                    <h4>Food & Snacks</h4>
 
                     <p>
-                        Convenient parking facility
-                        for players and teams.
+                        Refreshments and snacks
+                        available at the venue.
                     </p>
 
                 </div>
 
             </div>
 
+            <!-- 4 -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-3">
 
-                <div class="detail-card">
+                <div class="service-card">
 
-                    <div class="detail-icon">
-
-                        <i class="bi bi-droplet"></i>
-
+                    <div class="service-icon">
+                        <i class="bi bi-shield-check"></i>
                     </div>
 
-                    <h5>
-                        Drinking Water
-                    </h5>
+                    <h4>Safe Ground</h4>
 
                     <p>
-                        Clean drinking water available
+                        Secure environment with
+                        professionally maintained turf.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- 5 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-stars"></i>
+                    </div>
+
+                    <h4>Clean Turf</h4>
+
+                    <p>
+                        Clean and regularly maintained
+                        cricket playing surface.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- 6 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-lightbulb-fill"></i>
+                    </div>
+
+                    <h4>Night Lights</h4>
+
+                    <p>
+                        Powerful flood lights for
+                        exciting night matches.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- 7 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+
+                    <h4>Team Friendly</h4>
+
+                    <p>
+                        Perfect venue for teams,
+                        friends and tournaments.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- 8 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-basket-fill"></i>
+                    </div>
+
+                    <h4>Cricket Equipment</h4>
+
+                    <p>
+                        Cricket equipment available
                         for players.
                     </p>
 
@@ -1219,55 +1562,6 @@
 
             </div>
 
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="detail-card">
-
-                    <div class="detail-icon">
-
-                        <i class="bi bi-door-open"></i>
-
-                    </div>
-
-                    <h5>
-                        Changing Room
-                    </h5>
-
-                    <p>
-                        Clean and comfortable changing
-                        area for players.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="detail-card">
-
-                    <div class="detail-icon">
-
-                        <i class="bi bi-clock"></i>
-
-                    </div>
-
-                    <h5>
-                        Open Till 2 AM
-                    </h5>
-
-                    <p>
-                        Flexible playing hours from
-                        5 PM until 2 AM.
-                    </p>
-
-                </div>
-
-            </div>
-
-
         </div>
 
     </div>
@@ -1275,48 +1569,131 @@
 </section>
 
 
+<!-- ================= PRICING ================= -->
 
-<!-- =====================================================
-     CTA
-===================================================== -->
-
-<section class="pb-5">
+<section
+    class="price-section section-padding"
+    id="pricing">
 
     <div class="container">
 
-        <div
-            class="p-5 rounded-4 text-white"
-            style="background:linear-gradient(135deg,#071c12,#0c3826);">
+        <div class="text-center mb-5">
 
-            <div class="row align-items-center">
+            <div class="section-label">
+                Pricing
+            </div>
 
-                <div class="col-lg-8">
+            <h2 class="section-title">
 
-                    <h2 class="fw-bold">
+                Simple &
 
-                        Ready to Play?
+                <span>Affordable</span>
 
-                    </h2>
+            </h2>
 
-                    <p class="text-white-50 mb-0">
+            <p class="section-text">
 
-                        Grab your team and book your
-                        favourite box cricket slot today.
+                Choose the duration that suits
+                your team.
 
+            </p>
+
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- 1 Hour -->
+
+            <div class="col-md-4">
+
+                <div class="price-card">
+
+                    <i class="bi bi-clock price-icon"></i>
+
+                    <h3>1 Hour</h3>
+
+                    <div class="price">
+                        ₹700
+                    </div>
+
+                    <p>
+                        Perfect for a quick cricket
+                        match with friends.
                     </p>
-
-                </div>
-
-
-                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
 
                     <a
                         href="#booking"
                         class="btn main-btn">
 
-                        Book Your Slot
+                        Select Slot
 
-                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- 2 Hours -->
+
+            <div class="col-md-4">
+
+                <div class="price-card popular">
+
+                    <span class="popular-badge">
+                        MOST POPULAR
+                    </span>
+
+                    <br><br>
+
+                    <i class="bi bi-clock-history price-icon"></i>
+
+                    <h3>2 Hours</h3>
+
+                    <div class="price">
+                        ₹1,200
+                    </div>
+
+                    <p>
+                        Best option for a complete
+                        cricket match.
+                    </p>
+
+                    <a
+                        href="#booking"
+                        class="btn main-btn">
+
+                        Select Slot
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- 3 Hours -->
+
+            <div class="col-md-4">
+
+                <div class="price-card">
+
+                    <i class="bi bi-stopwatch price-icon"></i>
+
+                    <h3>3 Hours</h3>
+
+                    <div class="price">
+                        ₹1,800
+                    </div>
+
+                    <p>
+                        Perfect for tournaments
+                        and large teams.
+                    </p>
+
+                    <a
+                        href="#booking"
+                        class="btn main-btn">
+
+                        Select Slot
 
                     </a>
 
@@ -1331,139 +1708,243 @@
 </section>
 
 
+<!-- ================= CTA ================= -->
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="pt-5 pb-3">
+<section class="cta">
 
     <div class="container">
 
-        <div class="row g-5">
+        <h2>
+            Ready To Play?
+        </h2>
 
+        <p class="lead mt-3">
+
+            Bring your team and book your
+            favourite cricket slot today.
+
+        </p>
+
+        <a
+            href="#booking"
+            class="btn main-btn mt-3">
+
+            <i class="bi bi-calendar-check"></i>
+
+            Book Your Slot
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MY BOOKING ================= -->
+
+<section
+    class="my-booking section-padding"
+    id="mybooking">
+
+    <div class="container">
+
+        <div class="booking-box text-center">
+
+            <div class="section-label">
+                My Booking
+            </div>
+
+            <h2 class="section-title">
+
+                Manage Your
+
+                <span>Booking</span>
+
+            </h2>
+
+            <p class="section-text mt-3">
+
+                Login to check your booked slots,
+                booking details and payment information.
+
+            </p>
+
+            <a
+                href="#"
+                class="btn main-btn mt-3">
+
+                <i class="bi bi-person-circle"></i>
+
+                Login To My Booking
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="pt-5">
+
+    <div class="container">
+
+        <div class="row g-5 pb-5">
+
+            <!-- Brand -->
 
             <div class="col-lg-4">
 
                 <h5>
-                    🏏 BoxCricket
+
+                    <i class="bi bi-trophy-fill text-success"></i>
+
+                    BoxCricket
+
                 </h5>
 
-                <p>
+                <p class="mt-3">
 
-                    A premium box cricket slot
-                    booking platform for players,
-                    friends and teams.
+                    Premium box cricket slot booking
+                    platform made for cricket lovers.
 
                 </p>
+
+                <div class="mt-4">
+
+                    <a href="#" class="footer-social">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" class="footer-social">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" class="footer-social">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+
+                    <a href="#" class="footer-social">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+
+                </div>
 
             </div>
 
+            <!-- Quick Links -->
 
-            <div class="col-lg-2">
+            <div class="col-6 col-lg-2">
 
                 <h5>
-                    Navigation
+                    Quick Links
                 </h5>
 
-                <p>
-                    <a href="#home">
-                        Home
-                    </a>
-                </p>
+                <ul class="list-unstyled mt-3">
 
-                <p>
-                    <a href="#about">
-                        About
-                    </a>
-                </p>
+                    <li class="mb-2">
+                        <a href="#home">Home</a>
+                    </li>
 
-                <p>
-                    <a href="#booking">
-                        Booking
-                    </a>
-                </p>
+                    <li class="mb-2">
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#booking">Slot Time</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#services">Services</a>
+                    </li>
+
+                </ul>
 
             </div>
 
+            <!-- Account -->
 
-            <div class="col-lg-3">
+            <div class="col-6 col-lg-2">
 
                 <h5>
-                    Facilities
+                    Account
                 </h5>
 
-                <p>
-                    <i class="bi bi-check-circle-fill text-success"></i>
-                    Premium Turf
-                </p>
+                <ul class="list-unstyled mt-3">
 
-                <p>
-                    <i class="bi bi-check-circle-fill text-success"></i>
-                    Flood Lights
-                </p>
+                    <li class="mb-2">
+                        <a href="#">Login</a>
+                    </li>
 
-                <p>
-                    <i class="bi bi-check-circle-fill text-success"></i>
-                    Parking
-                </p>
+                    <li class="mb-2">
+                        <a href="#">Register</a>
+                    </li>
 
-                <p>
-                    <i class="bi bi-check-circle-fill text-success"></i>
-                    Changing Room
-                </p>
+                    <li class="mb-2">
+                        <a href="#mybooking">
+                            My Booking
+                        </a>
+                    </li>
+
+                </ul>
 
             </div>
 
+            <!-- Contact -->
 
-            <div class="col-lg-3">
+            <div class="col-lg-4">
 
                 <h5>
-                    Contact
+                    Contact Us
                 </h5>
 
-                <p>
-                    <i class="bi bi-geo-alt-fill text-success"></i>
-                    Vesu, Surat, Gujarat
+                <p class="mt-3">
+
+                    <i class="bi bi-geo-alt-fill text-success me-2"></i>
+
+                    Your City, Gujarat
+
                 </p>
 
                 <p>
-                    <i class="bi bi-telephone-fill text-success"></i>
+
+                    <i class="bi bi-telephone-fill text-success me-2"></i>
+
                     +91 98765 43210
+
                 </p>
 
                 <p>
-                    <i class="bi bi-envelope-fill text-success"></i>
+
+                    <i class="bi bi-envelope-fill text-success me-2"></i>
+
                     info@boxcricket.com
+
+                </p>
+
+                <p>
+
+                    <i class="bi bi-clock-fill text-success me-2"></i>
+
+                    Open: 05:00 AM - 02:00 AM
+
                 </p>
 
             </div>
 
         </div>
 
+        <div class="footer-bottom text-center py-4">
 
-        <div class="footer-bottom mt-5">
+            <p class="mb-0">
 
-            <div class="row">
+                © 2026 BoxCricket.
+                All Rights Reserved.
 
-                <div class="col-md-6">
-
-                    <small>
-                        © 2026 BoxCricket.
-                        All Rights Reserved.
-                    </small>
-
-                </div>
-
-                <div class="col-md-6 text-md-end">
-
-                    <small>
-                        Play • Book • Enjoy
-                    </small>
-
-                </div>
-
-            </div>
+            </p>
 
         </div>
 
@@ -1472,10 +1953,11 @@
 </footer>
 
 
+<!-- Bootstrap JS -->
 
-<!-- Bootstrap JS only for navbar -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
 
 </body>
 
