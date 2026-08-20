@@ -1,8 +1,7 @@
 from django.contrib import admin
-from .models import *
+from booking.models import *
 
 
-admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
 
     list_display = (
@@ -30,3 +29,6 @@ class BookingAdmin(admin.ModelAdmin):
         "email",
         "number",
     )
+
+
+admin.site.register(Booking,BookingAdmin)

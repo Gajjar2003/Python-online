@@ -1,0 +1,1689 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BoxCricket | Services</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7f9;
+            color: #14213d;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background: #061b2e;
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        .navbar-brand i {
+            color: #22c55e;
+        }
+
+        .navbar-brand span {
+            color: #22c55e;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            margin-left: 12px;
+            padding: 8px 15px !important;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #22c55e !important;
+        }
+
+        .login-btn {
+            border: 1px solid #22c55e;
+            border-radius: 25px;
+        }
+
+        .register-btn {
+            background: #22c55e;
+            border-radius: 25px;
+        }
+
+        .register-btn:hover {
+            background: #16a34a;
+            color: white !important;
+        }
+
+        /* ================= HERO ================= */
+
+        .page-hero {
+
+            min-height: 450px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    rgba(3, 15, 27, 0.75),
+                    rgba(3, 15, 27, 0.88)
+                ),
+                url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=2000&q=90");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero-badge {
+
+            display: inline-block;
+
+            padding: 10px 20px;
+
+            border: 1px solid #22c55e;
+            border-radius: 30px;
+
+            background: rgba(34, 197, 94, 0.12);
+
+            color: #86efac;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+        .page-hero h1 {
+
+            font-size: 60px;
+
+            font-weight: 900;
+
+            margin-top: 22px;
+        }
+
+        .page-hero h1 span {
+            color: #22c55e;
+        }
+
+        .page-hero p {
+
+            color: #dbe4ec;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+
+            max-width: 700px;
+
+            margin: 20px auto;
+        }
+
+        /* ================= COMMON ================= */
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .section-label {
+
+            color: #16a34a;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .section-title {
+
+            color: #061b2e;
+
+            font-size: 44px;
+
+            font-weight: 900;
+
+            margin-top: 8px;
+        }
+
+        .section-title span {
+            color: #22c55e;
+        }
+
+        .section-text {
+
+            color: #64748b;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services-section {
+            background: #f4f7f9;
+        }
+
+        .service-card {
+
+            background: white;
+
+            border-radius: 24px;
+
+            padding: 35px 28px;
+
+            height: 100%;
+
+            border: 1px solid #e5e7eb;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.35s;
+        }
+
+        .service-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+
+            border-radius: 50%;
+
+            background: #dcfce7;
+
+            right: -45px;
+            top: -45px;
+
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.12);
+
+            border-color: #22c55e;
+        }
+
+        .service-card:hover::after {
+
+            transform: scale(1.3);
+        }
+
+        .service-icon {
+
+            width: 75px;
+            height: 75px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #dcfce7;
+
+            color: #16a34a;
+
+            border-radius: 20px;
+
+            font-size: 34px;
+
+            margin-bottom: 25px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .service-card h4 {
+
+            color: #061b2e;
+
+            font-weight: 900;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .service-card p {
+
+            color: #64748b;
+
+            line-height: 1.7;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        /* ================= FEATURE SECTION ================= */
+
+        .feature-section {
+            background: white;
+        }
+
+        .feature-box {
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+
+            height: 100%;
+
+            transition: 0.3s;
+        }
+
+        .feature-box:hover {
+
+            transform: translateY(-8px);
+
+            border-color: #22c55e;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.10);
+        }
+
+        .feature-box i {
+
+            font-size: 45px;
+
+            color: #22c55e;
+
+            margin-bottom: 20px;
+        }
+
+        .feature-box h4 {
+
+            font-weight: 900;
+
+            color: #061b2e;
+        }
+
+        .feature-box p {
+
+            color: #64748b;
+
+            line-height: 1.8;
+        }
+
+        /* ================= BOOKING INFO ================= */
+
+        .booking-section {
+
+            background: #061b2e;
+
+            color: white;
+        }
+
+        .booking-section .section-title {
+            color: white;
+        }
+
+        .booking-section .section-text {
+            color: #94a3b8;
+        }
+
+        .booking-card {
+
+            background: #0b253b;
+
+            border: 1px solid #183b55;
+
+            border-radius: 25px;
+
+            padding: 35px;
+
+            height: 100%;
+
+            transition: 0.3s;
+        }
+
+        .booking-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color: #22c55e;
+        }
+
+        .booking-card i {
+
+            font-size: 45px;
+
+            color: #22c55e;
+        }
+
+        .booking-card h4 {
+
+            margin-top: 20px;
+
+            font-weight: 900;
+
+            color: white;
+        }
+
+        .booking-card p {
+
+            color: #94a3b8;
+
+            line-height: 1.8;
+        }
+
+        /* ================= BUTTON ================= */
+
+        .main-btn {
+
+            background: #22c55e;
+
+            color: white;
+
+            border: none;
+
+            padding: 13px 28px;
+
+            border-radius: 30px;
+
+            font-weight: 800;
+
+            transition: 0.3s;
+        }
+
+        .main-btn:hover {
+
+            background: #16a34a;
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+
+            padding: 100px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(6,27,46,0.90),
+                    rgba(6,27,46,0.90)
+                ),
+                url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=2000&q=90");
+
+            background-size: cover;
+
+            background-position: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .cta h2 {
+
+            font-size: 50px;
+
+            font-weight: 900;
+        }
+
+        .cta p {
+
+            color: #cbd5e1;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #03101c;
+
+            color: #94a3b8;
+        }
+
+        footer h5 {
+
+            color: white;
+
+            font-weight: 900;
+        }
+
+        footer a {
+
+            color: #94a3b8;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+
+            color: #22c55e;
+        }
+
+        .footer-social {
+
+            width: 42px;
+            height: 42px;
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #102536;
+
+            margin-right: 7px;
+
+            transition: 0.3s;
+        }
+
+        .footer-social:hover {
+
+            background: #22c55e;
+
+            color: white;
+        }
+
+        .footer-bottom {
+
+            border-top: 1px solid #1e3445;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 768px) {
+
+            .page-hero {
+                min-height: 400px;
+            }
+
+            .page-hero h1 {
+                font-size: 42px;
+            }
+
+            .page-hero p {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .navbar-brand {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+
+    <div class="container">
+
+        <!-- LOGO -->
+
+        <a
+            class="navbar-brand"
+            href="{% url 'index' %}">
+
+            <i class="bi bi-trophy-fill"></i>
+
+            Box<span>Cricket</span>
+
+        </a>
+
+
+        <!-- MOBILE BUTTON -->
+
+        <button
+            class="navbar-toggler bg-light"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- MENU -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'index' %}">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'about' %}">
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'service' %}">
+
+                        Services
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'book_now' %}">
+
+                        Book-Now
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'my-booking' %}">
+
+                        My Booking
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link login-btn"
+                        href="{% url 'user-login'%}">
+
+                        Login
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link register-btn"
+                        href="{%url 'user-register'%}">
+
+                        Register
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+
+                <i class="bi bi-stars"></i>
+
+                OUR SERVICES
+
+            </span>
+
+
+            <h1>
+
+                Everything You Need
+
+                <span>To Play</span>
+
+            </h1>
+
+
+            <p>
+
+                Enjoy premium facilities, professional
+                cricket turf and everything you need
+                for a memorable cricket experience.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services-section section-padding">
+
+    <div class="container">
+
+
+        <!-- TITLE -->
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+
+                Our Facilities
+
+            </div>
+
+
+            <h2 class="section-title">
+
+                Premium
+
+                <span>Services</span>
+
+            </h2>
+
+
+            <p class="section-text">
+
+                We provide quality facilities to make
+                your cricket experience comfortable,
+                exciting and enjoyable.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+
+            <!-- SERVICE 1 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+
+                        <i class="bi bi-p-square-fill"></i>
+
+                    </div>
+
+                    <h4>
+
+                        Parking
+
+                    </h4>
+
+                    <p>
+
+                        Safe and spacious parking
+                        facility available for bikes
+                        and cars.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+
+                        <i class="bi bi-droplet-fill"></i>
+
+                    </div>
+
+                    <h4>
+
+                        Drinking Water
+
+                    </h4>
+
+                    <p>
+
+                        Clean and chilled drinking
+                        water is available for
+                        all players.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+
+                        <i class="bi bi-cup-hot-fill"></i>
+
+                    </div>
+
+                    <h4>
+
+                        Food & Snacks
+
+                    </h4>
+
+                    <p>
+
+                        Refreshments and snacks
+                        are available at the venue
+                        for players.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SERVICE 4 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+
+                        <i class="bi bi-shield-check"></i>
+
+                    </div>
+
+                    <h4>
+
+                        Safe Ground
+
+                    </h4>
+
+                    <p>
+
+                        Secure environment with
+                        professionally maintained
+                        cricket turf.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SERVICE 5 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+
+                        <i class="bi bi-stars"></i>
+
+                    </div>
+
+                    <h4>
+
+                        Clean Turf
+
+                    </h4>
+
+                    <p>
+
+                        Clean and regularly maintained
+                        cricket playing surface.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SERVICE 6 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+
+                        <i class="bi bi-lightbulb-fill"></i>
+
+                    </div>
+
+                    <h4>
+
+                        Night Lights
+
+                    </h4>
+
+                    <p>
+
+                        Powerful flood lights for
+                        exciting evening and night
+                        cricket matches.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SERVICE 7 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+
+                        <i class="bi bi-people-fill"></i>
+
+                    </div>
+
+                    <h4>
+
+                        Team Friendly
+
+                    </h4>
+
+                    <p>
+
+                        Perfect venue for teams,
+                        friends, families and
+                        tournaments.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SERVICE 8 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+
+                        <i class="bi bi-basket-fill"></i>
+
+                    </div>
+
+                    <h4>
+
+                        Cricket Equipment
+
+                    </h4>
+
+                    <p>
+
+                        Cricket equipment is available
+                        for players whenever required.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EXTRA FACILITIES ================= -->
+
+<section class="feature-section section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+
+                Extra Facilities
+
+            </div>
+
+            <h2 class="section-title">
+
+                More Reasons
+
+                <span>To Choose Us</span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- BOX 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="feature-box">
+
+                    <i class="bi bi-clock-history"></i>
+
+                    <h4>
+
+                        Flexible Timings
+
+                    </h4>
+
+                    <p>
+
+                        Choose your preferred time
+                        from morning to late night
+                        slots according to your
+                        convenience.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BOX 2 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="feature-box">
+
+                    <i class="bi bi-calendar-check"></i>
+
+                    <h4>
+
+                        Easy Online Booking
+
+                    </h4>
+
+                    <p>
+
+                        Select your slot and complete
+                        your booking quickly using
+                        our simple booking system.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BOX 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="feature-box">
+
+                    <i class="bi bi-credit-card"></i>
+
+                    <h4>
+
+                        Easy Payment
+
+                    </h4>
+
+                    <p>
+
+                        Simple and convenient payment
+                        process for your cricket
+                        ground booking.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BOX 4 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="feature-box">
+
+                    <i class="bi bi-person-check-fill"></i>
+
+                    <h4>
+
+                        Professional Management
+
+                    </h4>
+
+                    <p>
+
+                        Our ground is managed and
+                        maintained professionally to
+                        provide a smooth experience.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BOX 5 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="feature-box">
+
+                    <i class="bi bi-trophy-fill"></i>
+
+                    <h4>
+
+                        Tournament Support
+
+                    </h4>
+
+                    <p>
+
+                        Our ground is suitable for
+                        cricket tournaments,
+                        competitions and team events.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BOX 6 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="feature-box">
+
+                    <i class="bi bi-headset"></i>
+
+                    <h4>
+
+                        Customer Support
+
+                    </h4>
+
+                    <p>
+
+                        Our team is available to help
+                        you with booking and other
+                        ground-related queries.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BOOKING BENEFITS ================= -->
+
+<section class="booking-section section-padding">
+
+    <div class="container">
+
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+
+                Booking Experience
+
+            </div>
+
+            <h2 class="section-title">
+
+                Simple.
+
+                <span>Fast. Easy.</span>
+
+            </h2>
+
+            <p class="section-text">
+
+                Booking your cricket slot has
+                never been easier.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- STEP 1 -->
+
+            <div class="col-md-4">
+
+                <div class="booking-card">
+
+                    <i class="bi bi-search"></i>
+
+                    <h4>
+
+                        01. Choose Slot
+
+                    </h4>
+
+                    <p>
+
+                        Select your preferred date,
+                        time and duration according
+                        to your requirements.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 2 -->
+
+            <div class="col-md-4">
+
+                <div class="booking-card">
+
+                    <i class="bi bi-person-fill-check"></i>
+
+                    <h4>
+
+                        02. Enter Details
+
+                    </h4>
+
+                    <p>
+
+                        Enter your required booking
+                        information and confirm
+                        your selected slot.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 3 -->
+
+            <div class="col-md-4">
+
+                <div class="booking-card">
+
+                    <i class="bi bi-check-circle-fill"></i>
+
+                    <h4>
+
+                        03. Confirm Booking
+
+                    </h4>
+
+                    <p>
+
+                        Complete the booking process
+                        and get your cricket ground
+                        booking confirmed.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="text-center mt-5">
+
+            <a
+                href="{% url 'book_now' %}"
+                class="btn main-btn">
+
+                <i class="bi bi-calendar-check"></i>
+
+                Book Your Slot
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+
+            Ready To Play?
+
+        </h2>
+
+        <p class="lead mt-3">
+
+            Bring your team and enjoy a
+            premium cricket experience.
+
+        </p>
+
+        <a
+            href="{% url 'book_now' %}"
+            class="btn main-btn mt-3">
+
+            <i class="bi bi-calendar-check"></i>
+
+            Book Your Slot
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="pt-5">
+
+    <div class="container">
+
+        <div class="row g-5 pb-5">
+
+
+            <!-- BRAND -->
+
+            <div class="col-lg-4">
+
+                <h5>
+
+                    <i class="bi bi-trophy-fill text-success"></i>
+
+                    BoxCricket
+
+                </h5>
+
+                <p class="mt-3">
+
+                    Premium box cricket slot booking
+                    platform made for cricket lovers.
+
+                </p>
+
+
+                <div class="mt-4">
+
+                    <a href="#" class="footer-social">
+
+                        <i class="bi bi-facebook"></i>
+
+                    </a>
+
+                    <a href="#" class="footer-social">
+
+                        <i class="bi bi-instagram"></i>
+
+                    </a>
+
+                    <a href="#" class="footer-social">
+
+                        <i class="bi bi-twitter"></i>
+
+                    </a>
+
+                    <a href="#" class="footer-social">
+
+                        <i class="bi bi-whatsapp"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="col-6 col-lg-2">
+
+                <h5>
+
+                    Quick Links
+
+                </h5>
+
+                <ul class="list-unstyled mt-3">
+
+                    <li class="mb-2">
+
+                        <a href="{% url 'index' %}">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li class="mb-2">
+
+                        <a href="{% url 'about' %}">
+
+                            About
+
+                        </a>
+
+                    </li>
+
+                    <li class="mb-2">
+
+                        <a href="{% url 'service' %}">
+
+                            Services
+
+                        </a>
+
+                    </li>
+
+                    <li class="mb-2">
+
+                        <a href="{% url 'book_now' %}">
+
+                            Slot Time
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- ACCOUNT -->
+
+            <div class="col-6 col-lg-2">
+
+                <h5>
+
+                    Account
+
+                </h5>
+
+                <ul class="list-unstyled mt-3">
+
+                    <li class="mb-2">
+
+                        <a href="{%url 'user-login'%}">
+
+                            Login
+
+                        </a>
+
+                    </li>
+
+                    <li class="mb-2">
+
+                        <a href="{% url 'user-register'%}">
+
+                            Register
+
+                        </a>
+
+                    </li>
+
+                    <li class="mb-2">
+
+                        <a href="{% url 'my-booking' %}">
+
+                            My Booking
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="col-lg-4">
+
+                <h5>
+
+                    Contact Us
+
+                </h5>
+
+                <p class="mt-3">
+
+                    <i class="bi bi-geo-alt-fill text-success me-2"></i>
+
+                    Your City, Gujarat
+
+                </p>
+
+                <p>
+
+                    <i class="bi bi-telephone-fill text-success me-2"></i>
+
+                    +91 98765 43210
+
+                </p>
+
+                <p>
+
+                    <i class="bi bi-envelope-fill text-success me-2"></i>
+
+                    info@boxcricket.com
+
+                </p>
+
+                <p>
+
+                    <i class="bi bi-clock-fill text-success me-2"></i>
+
+                    Open: 05:00 AM - 02:00 AM
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom text-center py-4">
+
+            <p class="mb-0">
+
+                © 2026 BoxCricket.
+
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+
+</html>

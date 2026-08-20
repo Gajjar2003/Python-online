@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BoxCricket | Premium Cricket Ground</title>
+    <title>BoxCricket | Book Your Slot</title>
 
     <!-- Bootstrap 5 -->
     <link
@@ -70,6 +69,10 @@
             color: #22c55e !important;
         }
 
+        .nav-link.active {
+            color: #22c55e !important;
+        }
+
         .login-btn {
             border: 1px solid #22c55e;
             border-radius: 25px;
@@ -85,17 +88,22 @@
             color: white !important;
         }
 
-        /* ================= HERO ================= */
 
-        .hero {
-            min-height: 700px;
+        /* ================= PAGE HERO ================= */
+
+        .page-hero {
+            min-height: 360px;
+
             display: flex;
             align-items: center;
+            justify-content: center;
+
+            text-align: center;
 
             background:
                 linear-gradient(
-                    rgba(3, 15, 27, 0.68),
-                    rgba(3, 15, 27, 0.80)
+                    rgba(3, 15, 27, 0.78),
+                    rgba(3, 15, 27, 0.88)
                 ),
                 url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=2000&q=90");
 
@@ -105,88 +113,72 @@
             color: white;
         }
 
-        .hero-content {
+        .page-hero-content {
             max-width: 850px;
         }
 
         .hero-badge {
             display: inline-block;
+
             padding: 10px 20px;
+
             border: 1px solid #22c55e;
             border-radius: 30px;
+
             background: rgba(34, 197, 94, 0.12);
+
             color: #86efac;
+
             font-size: 14px;
             font-weight: 800;
+
             letter-spacing: 1px;
         }
 
-        .hero h1 {
-            font-size: 70px;
+        .page-hero h1 {
+            font-size: 55px;
             font-weight: 900;
-            line-height: 1.05;
-            margin-top: 25px;
+
+            margin-top: 20px;
         }
 
-        .hero h1 span {
+        .page-hero h1 span {
             color: #22c55e;
         }
 
-        .hero p {
+        .page-hero p {
             color: #dbe4ec;
-            font-size: 19px;
-            line-height: 1.8;
-            max-width: 720px;
-            margin-top: 25px;
+
+            font-size: 18px;
+            line-height: 1.7;
+
+            margin-top: 15px;
         }
 
-        .main-btn {
-            background: #22c55e;
-            color: white;
-            border: none;
-            padding: 13px 28px;
-            border-radius: 30px;
-            font-weight: 800;
-            transition: 0.3s;
-        }
-
-        .main-btn:hover {
-            background: #16a34a;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .outline-btn {
-            border: 2px solid white;
-            color: white;
-            padding: 11px 28px;
-            border-radius: 30px;
-            font-weight: 700;
-        }
-
-        .outline-btn:hover {
-            background: white;
-            color: #061b2e;
-        }
 
         /* ================= COMMON ================= */
 
-        .section-padding {
-            padding: 90px 0;
+        .booking-section {
+            padding: 80px 0;
+            background: #061b2e;
         }
 
         .section-label {
-            color: #16a34a;
+            color: #22c55e;
+
             font-size: 14px;
             font-weight: 900;
+
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .section-title {
-            color: #061b2e;
+            color: white;
+
             font-size: 44px;
             font-weight: 900;
+
             margin-top: 8px;
         }
 
@@ -195,103 +187,60 @@
         }
 
         .section-text {
-            color: #64748b;
+            color: #94a3b8;
             line-height: 1.8;
         }
 
-        /* ================= ABOUT ================= */
 
-        .about-section {
-            background: white;
-        }
-
-        .about-img-box {
-            position: relative;
-            width: 100%;
-        }
-
-        .about-img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            display: block;
-            border-radius: 30px;
-        }
-
-        .about-badge {
-            position: absolute;
-            bottom: 25px;
-            left: 25px;
-            background: white;
-            padding: 18px 25px;
-            border-radius: 18px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-        }
-
-        .about-badge strong {
-            color: #16a34a;
-            font-size: 30px;
-        }
-
-        .check-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 25px;
-        }
-
-        .check-list li {
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-
-        .check-list i {
-            color: #22c55e;
-            margin-right: 10px;
-        }
-
-        /* ================= SLOT TIME ================= */
-
-        .booking-section {
-            background: #061b2e;
-        }
-
-        .booking-section .section-title {
-            color: white;
-        }
-
-        .booking-section .section-text {
-            color: #94a3b8;
-        }
+        /* ================= SLOT WRAPPER ================= */
 
         .slot-wrapper {
             background: white;
+
             border-radius: 22px;
+
             overflow: hidden;
+
             margin-top: 30px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.22);
         }
 
         .slot-heading {
+
             padding: 22px 25px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             background: #f8fafc;
         }
 
         .slot-heading h4 {
             margin: 0;
+
             color: #061b2e;
+
             font-weight: 900;
         }
 
         .duration-badge {
+
             background: #dcfce7;
+
             color: #15803d;
+
             padding: 8px 15px;
+
             border-radius: 20px;
+
             font-weight: 800;
         }
+
+
+        /* ================= TABLE ================= */
 
         .slot-table {
             margin: 0;
@@ -304,262 +253,149 @@
 
         .slot-table th {
             padding: 15px;
+
             font-size: 14px;
         }
 
         .slot-table td {
             padding: 15px;
+
             vertical-align: middle;
         }
 
         .time-text {
+
             font-weight: 800;
+
             color: #061b2e;
         }
 
         .price-text {
+
             color: #16a34a;
+
             font-size: 18px;
+
             font-weight: 900;
         }
 
         .available {
+
             background: #dcfce7;
+
             color: #15803d;
+
             padding: 6px 12px;
+
             border-radius: 20px;
+
             font-size: 12px;
+
             font-weight: 800;
         }
 
         .slot-btn {
+
             background: #22c55e;
+
             color: white;
+
             border: none;
+
             border-radius: 20px;
+
             padding: 7px 18px;
+
             font-weight: 800;
-        }
 
-        .slot-btn:hover {
-            background: #16a34a;
-            color: white;
-        }
-
-        /* ================= SERVICES ================= */
-
-        .services-section {
-            background: #f4f7f9;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 24px;
-            padding: 32px 25px;
-            height: 100%;
-            border: 1px solid #e5e7eb;
-            position: relative;
-            overflow: hidden;
-            transition: 0.35s;
-        }
-
-        .service-card::after {
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: #dcfce7;
-            right: -35px;
-            top: -35px;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.12);
-            border-color: #22c55e;
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #dcfce7;
-            color: #16a34a;
-            border-radius: 20px;
-            font-size: 32px;
-            margin-bottom: 22px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-card h4 {
-            color: #061b2e;
-            font-weight: 900;
-        }
-
-        .service-card p {
-            color: #64748b;
-            line-height: 1.7;
-        }
-
-        /* ================= PRICING ================= */
-
-        .price-section {
-            background: white;
-        }
-
-        .price-card {
-            background: #f8fafc;
-            border: 2px solid #e5e7eb;
-            border-radius: 25px;
-            padding: 40px 25px;
-            text-align: center;
-            height: 100%;
             transition: 0.3s;
         }
 
-        .price-card:hover {
-            transform: translateY(-10px);
-            border-color: #22c55e;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.10);
-        }
+        .slot-btn:hover {
 
-        .price-card.popular {
-            border-color: #22c55e;
-            box-shadow: 0 15px 40px rgba(34,197,94,0.15);
-        }
+            background: #16a34a;
 
-        .price-icon {
-            font-size: 45px;
-            color: #22c55e;
-        }
-
-        .price-card h3 {
-            margin-top: 20px;
-            font-weight: 900;
-        }
-
-        .price {
-            font-size: 42px;
-            color: #16a34a;
-            font-weight: 900;
-            margin: 15px 0;
-        }
-
-        .price-card p {
-            color: #64748b;
-            line-height: 1.7;
-        }
-
-        .popular-badge {
-            display: inline-block;
-            background: #22c55e;
             color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 900;
+
+            transform: translateY(-2px);
         }
 
-        /* ================= MY BOOKING ================= */
-
-        .my-booking {
-            background: #f4f7f9;
-        }
-
-        .booking-box {
-            background: white;
-            border-radius: 28px;
-            padding: 60px 30px;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
-        }
-
-        /* ================= CTA ================= */
-
-        .cta {
-            padding: 100px 20px;
-
-            background:
-                linear-gradient(
-                    rgba(6,27,46,0.90),
-                    rgba(6,27,46,0.90)
-                ),
-                url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=2000&q=90");
-
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            color: white;
-        }
-
-        .cta h2 {
-            font-size: 50px;
-            font-weight: 900;
-        }
-
-        .cta p {
-            color: #cbd5e1;
-        }
 
         /* ================= FOOTER ================= */
 
         footer {
+
             background: #03101c;
+
             color: #94a3b8;
         }
 
         footer h5 {
+
             color: white;
+
             font-weight: 900;
         }
 
         footer a {
+
             color: #94a3b8;
+
             text-decoration: none;
+
             transition: 0.3s;
         }
 
         footer a:hover {
+
             color: #22c55e;
         }
 
         .footer-social {
+
             width: 42px;
             height: 42px;
+
             display: inline-flex;
+
             align-items: center;
             justify-content: center;
+
             border-radius: 50%;
+
             background: #102536;
+
             margin-right: 7px;
+
             transition: 0.3s;
         }
 
         .footer-social:hover {
+
             background: #22c55e;
+
             color: white;
         }
 
         .footer-bottom {
+
             border-top: 1px solid #1e3445;
         }
+
 
         /* ================= MOBILE ================= */
 
         @media(max-width: 768px) {
 
-            .hero {
-                min-height: 600px;
+            .page-hero {
+                min-height: 320px;
             }
 
-            .hero h1 {
-                font-size: 45px;
+            .page-hero h1 {
+                font-size: 40px;
             }
 
-            .hero p {
+            .page-hero p {
                 font-size: 16px;
             }
 
@@ -567,18 +403,19 @@
                 font-size: 34px;
             }
 
-            .about-img {
-                height: 350px;
-            }
-
             .slot-heading {
+
                 flex-direction: column;
+
                 gap: 15px;
+
                 align-items: flex-start;
             }
 
-            .cta h2 {
-                font-size: 36px;
+            .slot-table th,
+            .slot-table td {
+
+                white-space: nowrap;
             }
 
         }
@@ -586,6 +423,7 @@
     </style>
 
 </head>
+
 
 <body>
 
@@ -596,13 +434,18 @@
 
     <div class="container">
 
-        <a class="navbar-brand" href="">
+        <!-- LOGO -->
+
+        <a class="navbar-brand" href="{% url 'index'%}">
 
             <i class="bi bi-trophy-fill"></i>
 
             Box<span>Cricket</span>
 
         </a>
+
+
+        <!-- MOBILE BUTTON -->
 
         <button
             class="navbar-toggler bg-light"
@@ -614,54 +457,108 @@
 
         </button>
 
+
+        <!-- NAVIGATION -->
+
         <div
             class="collapse navbar-collapse"
             id="menu">
 
             <ul class="navbar-nav ms-auto">
 
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index'%}">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'index'%}">
+
                         Home
+
                     </a>
+
                 </li>
 
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about'%}">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'about'%}">
+
                         About
+
                     </a>
+
                 </li>
 
-               
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'service'%}">
+
+                    <a
+                        class="nav-link"
+                        href="{%url 'service'%}">
+
                         Services
+
                     </a>
+
                 </li>
 
+
+                <!-- ACTIVE BOOK NOW -->
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'book_now'%}">
+
+                    <a
+                        class="nav-link active"
+                        href="{%url 'book_now'%}">
+
                         Book-Now
+
                     </a>
+
                 </li>
 
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'my-booking'%}">
+
+                    <a
+                        class="nav-link"
+                        href="{%url 'my-booking'%}">
+
                         My Booking
+
                     </a>
+
                 </li>
 
+
                 <li class="nav-item">
-                    <a class="nav-link login-btn" href="{% url 'user-login'%}">
+
+                    <a
+                        class="nav-link login-btn"
+                        href="{%url 'user-login'%}">
+
                         Login
+
                     </a>
+
                 </li>
 
+
                 <li class="nav-item">
-                    <a class="nav-link register-btn" href="{% url 'user-register'%}">
+
+                    <a
+                        class="nav-link register-btn"
+                        href="{%url 'user-register'%}">
+
                         Register
+
                     </a>
+
                 </li>
+
 
             </ul>
 
@@ -672,201 +569,96 @@
 </nav>
 
 
-<!-- ================= HERO ================= -->
 
-<section class="hero" id="home">
+<!-- ================= PAGE HERO ================= -->
+
+<section class="page-hero">
 
     <div class="container">
 
-        <div class="hero-content">
+        <div class="page-hero-content">
+
 
             <span class="hero-badge">
 
-                <i class="bi bi-stars"></i>
+                <i class="bi bi-calendar-check"></i>
 
-                PREMIUM BOX CRICKET
+                BOOK YOUR SLOT
 
             </span>
 
+
             <h1>
-
-                Play Hard.
-
-                <span>Play Better.</span>
-
-            </h1>
-
-            <p>
-
-                Book your premium cricket turf and enjoy
-                an unforgettable match with your friends,
-                family and team.
-
-            </p>
-
-            <div class="mt-4">
-
-                <a
-                    href="{%url 'book_now'%}"
-                    class="btn main-btn me-2">
-
-                    <i class="bi bi-calendar-check"></i>
-
-                    Book Your Slot
-
-                </a>
-
-                <a
-                    href="#about"
-                    class="btn outline-btn">
-
-                    Explore Ground
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section
-    class="about-section section-padding"
-    id="about">
-
-    <div class="container">
-
-        <div class="row align-items-center g-5">
-
-            <div class="col-lg-6">
-
-                <div class="about-img-box">
-
-                    <!-- FIXED ABOUT IMAGE -->
-
-                    <img
-                        src={% static 'image/box.jpg'%}
-                        class="about-img"
-                        alt="Cricket Ground"
-                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1200&q=85';">
-
-                    <div class="about-badge">
-
-                        <strong>5+</strong>
-
-                        <br>
-
-                        Years Experience
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-6">
-
-                <div class="section-label">
-                    About BoxCricket
-                </div>
-
-                <h2 class="section-title">
-
-                    Your Game.
-
-                    <span>Our Ground.</span>
-
-                </h2>
-
-                <p class="section-text mt-3">
-
-                    BoxCricket provides a premium,
-                    clean and professionally maintained
-                    cricket turf for players of every level.
-
-                </p>
-
-                <ul class="check-list">
-
-                    <li>
-                        <i class="bi bi-check-circle-fill"></i>
-                        Premium cricket turf
-                    </li>
-
-                    <li>
-                        <i class="bi bi-check-circle-fill"></i>
-                        Professional flood lights
-                    </li>
-
-                    <li>
-                        <i class="bi bi-check-circle-fill"></i>
-                        Flexible 1, 2 and 3 hour slots
-                    </li>
-
-                    <li>
-                        <i class="bi bi-check-circle-fill"></i>
-                        Easy online booking
-                    </li>
-
-                </ul>
-
-                <a
-                    href="#booking"
-                    class="btn main-btn">
-
-                    Book Your Ground
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SLOT TIME ================= -->
-
-<section
-    class="booking-section section-padding"
-    id="booking">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <div class="section-label">
-                Booking Schedule
-            </div>
-
-            <h2 class="section-title">
 
                 Choose Your
 
                 <span>Slot Time</span>
 
+            </h1>
+
+
+            <p>
+
+                Select your preferred duration and time slot
+
+                and enjoy your cricket match with your team.
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BOOKING SECTION ================= -->
+
+<section class="booking-section">
+
+    <div class="container">
+
+
+        <!-- SECTION TITLE -->
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+
+                Booking Schedule
+
+            </div>
+
+
+            <h2 class="section-title">
+
+                Select Your
+
+                <span>Playing Time</span>
+
             </h2>
+
 
             <p class="section-text">
 
-                Select your preferred time and
-                book your cricket ground.
+                Choose from 1 hour, 2 hours or 3 hours
+
+                cricket slots.
 
             </p>
 
         </div>
 
 
-        <!-- ================= 1 HOUR ================= -->
+
+        <!-- ================================================= -->
+        <!-- ================= 1 HOUR ======================== -->
+        <!-- ================================================= -->
 
         <div class="slot-wrapper">
+
 
             <div class="slot-heading">
 
@@ -878,30 +670,44 @@
 
                 </h4>
 
+
                 <span class="duration-badge">
+
                     ₹700 / Hour
+
                 </span>
 
             </div>
+
 
             <div class="table-responsive">
 
                 <table class="table slot-table text-center">
 
+
                     <thead>
 
                         <tr>
+
                             <th>No.</th>
+
                             <th>Time Slot</th>
+
                             <th>Duration</th>
+
                             <th>Price</th>
+
                             <th>Status</th>
+
                             <th>Action</th>
+
                         </tr>
 
                     </thead>
 
+
                     <tbody>
+
 
                         <tr>
                             <td>01</td>
@@ -909,8 +715,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>02</td>
@@ -918,8 +729,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>03</td>
@@ -927,8 +743,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>04</td>
@@ -936,8 +757,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>05</td>
@@ -945,8 +771,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>06</td>
@@ -954,8 +785,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>07</td>
@@ -963,8 +799,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>08</td>
@@ -972,8 +813,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>09</td>
@@ -981,8 +827,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>10</td>
@@ -990,8 +841,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>11</td>
@@ -999,8 +855,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>12</td>
@@ -1008,8 +869,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>13</td>
@@ -1017,8 +883,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>14</td>
@@ -1026,8 +897,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>15</td>
@@ -1035,8 +911,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>16</td>
@@ -1044,8 +925,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>17</td>
@@ -1053,8 +939,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>18</td>
@@ -1062,8 +953,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>19</td>
@@ -1071,8 +967,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>20</td>
@@ -1080,8 +981,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                         <tr>
                             <td>21</td>
@@ -1089,8 +995,13 @@
                             <td>1 Hour</td>
                             <td class="price-text">₹700</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td>
+                                <a href="#" class="btn slot-btn">
+                                    Book Now
+                                </a>
+                            </td>
                         </tr>
+
 
                     </tbody>
 
@@ -1101,41 +1012,62 @@
         </div>
 
 
-        <!-- ================= 2 HOURS ================= -->
+
+        <!-- ================================================= -->
+        <!-- ================= 2 HOURS ======================= -->
+        <!-- ================================================= -->
 
         <div class="slot-wrapper">
+
 
             <div class="slot-heading">
 
                 <h4>
+
                     <i class="bi bi-clock-history text-success"></i>
+
                     2 Hours Slots
+
                 </h4>
 
+
                 <span class="duration-badge">
+
                     ₹1,200 / 2 Hours
+
                 </span>
 
             </div>
+
 
             <div class="table-responsive">
 
                 <table class="table slot-table text-center">
 
+
                     <thead>
 
                         <tr>
+
                             <th>No.</th>
+
                             <th>Time Slot</th>
+
                             <th>Duration</th>
+
                             <th>Price</th>
+
                             <th>Status</th>
+
                             <th>Action</th>
+
                         </tr>
 
                     </thead>
 
+
                     <tbody>
+
 
                         <tr>
                             <td>01</td>
@@ -1143,8 +1075,9 @@
                             <td>2 Hours</td>
                             <td class="price-text">₹1,200</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>02</td>
@@ -1152,8 +1085,9 @@
                             <td>2 Hours</td>
                             <td class="price-text">₹1,200</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>03</td>
@@ -1161,8 +1095,9 @@
                             <td>2 Hours</td>
                             <td class="price-text">₹1,200</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>04</td>
@@ -1170,8 +1105,9 @@
                             <td>2 Hours</td>
                             <td class="price-text">₹1,200</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>05</td>
@@ -1179,8 +1115,9 @@
                             <td>2 Hours</td>
                             <td class="price-text">₹1,200</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>06</td>
@@ -1188,8 +1125,9 @@
                             <td>2 Hours</td>
                             <td class="price-text">₹1,200</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>07</td>
@@ -1197,8 +1135,9 @@
                             <td>2 Hours</td>
                             <td class="price-text">₹1,200</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>08</td>
@@ -1206,8 +1145,9 @@
                             <td>2 Hours</td>
                             <td class="price-text">₹1,200</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>09</td>
@@ -1215,8 +1155,9 @@
                             <td>2 Hours</td>
                             <td class="price-text">₹1,200</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>10</td>
@@ -1224,8 +1165,9 @@
                             <td>2 Hours</td>
                             <td class="price-text">₹1,200</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>11</td>
@@ -1233,8 +1175,9 @@
                             <td>2 Hours</td>
                             <td class="price-text">₹1,200</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                     </tbody>
 
@@ -1245,41 +1188,62 @@
         </div>
 
 
-        <!-- ================= 3 HOURS ================= -->
+
+        <!-- ================================================= -->
+        <!-- ================= 3 HOURS ======================= -->
+        <!-- ================================================= -->
 
         <div class="slot-wrapper">
+
 
             <div class="slot-heading">
 
                 <h4>
+
                     <i class="bi bi-stopwatch text-success"></i>
+
                     3 Hours Slots
+
                 </h4>
 
+
                 <span class="duration-badge">
+
                     ₹1,800 / 3 Hours
+
                 </span>
 
             </div>
+
 
             <div class="table-responsive">
 
                 <table class="table slot-table text-center">
 
+
                     <thead>
 
                         <tr>
+
                             <th>No.</th>
+
                             <th>Time Slot</th>
+
                             <th>Duration</th>
+
                             <th>Price</th>
+
                             <th>Status</th>
+
                             <th>Action</th>
+
                         </tr>
 
                     </thead>
 
+
                     <tbody>
+
 
                         <tr>
                             <td>01</td>
@@ -1287,8 +1251,9 @@
                             <td>3 Hours</td>
                             <td class="price-text">₹1,800</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>02</td>
@@ -1296,8 +1261,9 @@
                             <td>3 Hours</td>
                             <td class="price-text">₹1,800</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>03</td>
@@ -1305,8 +1271,9 @@
                             <td>3 Hours</td>
                             <td class="price-text">₹1,800</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>04</td>
@@ -1314,8 +1281,9 @@
                             <td>3 Hours</td>
                             <td class="price-text">₹1,800</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>05</td>
@@ -1323,8 +1291,9 @@
                             <td>3 Hours</td>
                             <td class="price-text">₹1,800</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>06</td>
@@ -1332,8 +1301,9 @@
                             <td>3 Hours</td>
                             <td class="price-text">₹1,800</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                         <tr>
                             <td>07</td>
@@ -1341,8 +1311,9 @@
                             <td>3 Hours</td>
                             <td class="price-text">₹1,800</td>
                             <td><span class="available">Available</span></td>
-                            <td><a href="#" class="btn slot-btn">Book</a></td>
+                            <td><a href="#" class="btn slot-btn">Book Now</a></td>
                         </tr>
+
 
                     </tbody>
 
@@ -1352,434 +1323,11 @@
 
         </div>
 
-    </div>
-
-</section>
-
-
-<!-- ================= SERVICES ================= -->
-
-<section
-    class="services-section section-padding"
-    id="services">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <div class="section-label">
-                Our Facilities
-            </div>
-
-            <h2 class="section-title">
-
-                Everything You
-
-                <span>Need</span>
-
-            </h2>
-
-            <p class="section-text">
-
-                Premium facilities for a comfortable
-                and enjoyable cricket experience.
-
-            </p>
-
-        </div>
-
-        <div class="row g-4">
-
-            <!-- 1 -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-p-square-fill"></i>
-                    </div>
-
-                    <h4>Parking</h4>
-
-                    <p>
-                        Safe and spacious parking
-                        facility for bikes and cars.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- 2 -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-droplet-fill"></i>
-                    </div>
-
-                    <h4>Drinking Water</h4>
-
-                    <p>
-                        Clean and chilled drinking
-                        water available for players.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- 3 -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-cup-hot-fill"></i>
-                    </div>
-
-                    <h4>Food & Snacks</h4>
-
-                    <p>
-                        Refreshments and snacks
-                        available at the venue.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- 4 -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-shield-check"></i>
-                    </div>
-
-                    <h4>Safe Ground</h4>
-
-                    <p>
-                        Secure environment with
-                        professionally maintained turf.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- 5 -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-stars"></i>
-                    </div>
-
-                    <h4>Clean Turf</h4>
-
-                    <p>
-                        Clean and regularly maintained
-                        cricket playing surface.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- 6 -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-lightbulb-fill"></i>
-                    </div>
-
-                    <h4>Night Lights</h4>
-
-                    <p>
-                        Powerful flood lights for
-                        exciting night matches.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- 7 -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-people-fill"></i>
-                    </div>
-
-                    <h4>Team Friendly</h4>
-
-                    <p>
-                        Perfect venue for teams,
-                        friends and tournaments.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- 8 -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-basket-fill"></i>
-                    </div>
-
-                    <h4>Cricket Equipment</h4>
-
-                    <p>
-                        Cricket equipment available
-                        for players.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
 
     </div>
 
 </section>
 
-
-<!-- ================= PRICING ================= -->
-
-<section
-    class="price-section section-padding"
-    id="pricing">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <div class="section-label">
-                Pricing
-            </div>
-
-            <h2 class="section-title">
-
-                Simple &
-
-                <span>Affordable</span>
-
-            </h2>
-
-            <p class="section-text">
-
-                Choose the duration that suits
-                your team.
-
-            </p>
-
-        </div>
-
-        <div class="row g-4 justify-content-center">
-
-            <!-- 1 Hour -->
-
-            <div class="col-md-4">
-
-                <div class="price-card">
-
-                    <i class="bi bi-clock price-icon"></i>
-
-                    <h3>1 Hour</h3>
-
-                    <div class="price">
-                        ₹700
-                    </div>
-
-                    <p>
-                        Perfect for a quick cricket
-                        match with friends.
-                    </p>
-
-                    <a
-                        href="#booking"
-                        class="btn main-btn">
-
-                        Select Slot
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- 2 Hours -->
-
-            <div class="col-md-4">
-
-                <div class="price-card popular">
-
-                    <span class="popular-badge">
-                        MOST POPULAR
-                    </span>
-
-                    <br><br>
-
-                    <i class="bi bi-clock-history price-icon"></i>
-
-                    <h3>2 Hours</h3>
-
-                    <div class="price">
-                        ₹1,200
-                    </div>
-
-                    <p>
-                        Best option for a complete
-                        cricket match.
-                    </p>
-
-                    <a
-                        href="#booking"
-                        class="btn main-btn">
-
-                        Select Slot
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- 3 Hours -->
-
-            <div class="col-md-4">
-
-                <div class="price-card">
-
-                    <i class="bi bi-stopwatch price-icon"></i>
-
-                    <h3>3 Hours</h3>
-
-                    <div class="price">
-                        ₹1,800
-                    </div>
-
-                    <p>
-                        Perfect for tournaments
-                        and large teams.
-                    </p>
-
-                    <a
-                        href="#booking"
-                        class="btn main-btn">
-
-                        Select Slot
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CTA ================= -->
-
-<section class="cta">
-
-    <div class="container">
-
-        <h2>
-            Ready To Play?
-        </h2>
-
-        <p class="lead mt-3">
-
-            Bring your team and book your
-            favourite cricket slot today.
-
-        </p>
-
-        <a
-            href="#booking"
-            class="btn main-btn mt-3">
-
-            <i class="bi bi-calendar-check"></i>
-
-            Book Your Slot
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= MY BOOKING ================= -->
-
-<section
-    class="my-booking section-padding"
-    id="mybooking">
-
-    <div class="container">
-
-        <div class="booking-box text-center">
-
-            <div class="section-label">
-                My Booking
-            </div>
-
-            <h2 class="section-title">
-
-                Manage Your
-
-                <span>Booking</span>
-
-            </h2>
-
-            <p class="section-text mt-3">
-
-                Login to check your booked slots,
-                booking details and payment information.
-
-            </p>
-
-            <a
-                href="#"
-                class="btn main-btn mt-3">
-
-                <i class="bi bi-person-circle"></i>
-
-                Login To My Booking
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 <!-- ================= FOOTER ================= -->
@@ -1788,9 +1336,11 @@
 
     <div class="container">
 
+
         <div class="row g-5 pb-5">
 
-            <!-- Brand -->
+
+            <!-- BRAND -->
 
             <div class="col-lg-4">
 
@@ -1802,100 +1352,174 @@
 
                 </h5>
 
+
                 <p class="mt-3">
 
                     Premium box cricket slot booking
+
                     platform made for cricket lovers.
 
                 </p>
 
+
                 <div class="mt-4">
 
                     <a href="#" class="footer-social">
+
                         <i class="bi bi-facebook"></i>
+
                     </a>
 
+
                     <a href="#" class="footer-social">
+
                         <i class="bi bi-instagram"></i>
+
                     </a>
 
+
                     <a href="#" class="footer-social">
+
                         <i class="bi bi-twitter"></i>
+
                     </a>
 
+
                     <a href="#" class="footer-social">
+
                         <i class="bi bi-whatsapp"></i>
+
                     </a>
 
                 </div>
 
             </div>
 
-            <!-- Quick Links -->
+
+
+            <!-- QUICK LINKS -->
 
             <div class="col-6 col-lg-2">
 
                 <h5>
+
                     Quick Links
+
                 </h5>
+
 
                 <ul class="list-unstyled mt-3">
 
                     <li class="mb-2">
-                        <a href="{% url 'index'%}">Home</a>
+
+                        <a href="{%url 'index'%}">
+
+                            Home
+
+                        </a>
+
                     </li>
 
-                    <li class="mb-2">
-                        <a href="{% url 'about'%}">About</a>
-                    </li>
 
                     <li class="mb-2">
-                        <a href="{% url 'book_now'%}">Slot Time</a>
+
+                        <a href="{% url 'about'%}">
+
+                            About
+
+                        </a>
+
                     </li>
 
+
                     <li class="mb-2">
-                        <a href="{% url 'service'%}">Services</a>
+
+                        <a href="{%url 'book_now'%}">
+
+                            Slot Time
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="mb-2">
+
+                        <a href="{% url 'service'%}">
+
+                            Services
+
+                        </a>
+
                     </li>
 
                 </ul>
 
             </div>
 
-            <!-- Account -->
+
+
+            <!-- ACCOUNT -->
 
             <div class="col-6 col-lg-2">
 
                 <h5>
+
                     Account
+
                 </h5>
+
 
                 <ul class="list-unstyled mt-3">
 
                     <li class="mb-2">
-                        <a href="{% url 'user-login'%}">Login</a>
-                    </li>
 
-                    <li class="mb-2">
-                        <a href="{%url 'user-register'%}">Register</a>
-                    </li>
+                        <a href="{%url 'user-login'%}">
 
-                    <li class="mb-2">
-                        <a href="{% url 'my-booking'%}">
-                            My Booking
+                            Login
+
                         </a>
+
+                    </li>
+
+
+                    <li class="mb-2">
+
+                        <a href="{%url 'user-register'%}">
+
+                            Register
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="mb-2">
+
+                        <a href="{%url 'my-booking'%}">
+
+                            My Booking
+
+                        </a>
+
                     </li>
 
                 </ul>
 
             </div>
 
-            <!-- Contact -->
+
+
+            <!-- CONTACT -->
 
             <div class="col-lg-4">
 
                 <h5>
+
                     Contact Us
+
                 </h5>
+
 
                 <p class="mt-3">
 
@@ -1905,6 +1529,7 @@
 
                 </p>
 
+
                 <p>
 
                     <i class="bi bi-telephone-fill text-success me-2"></i>
@@ -1913,6 +1538,7 @@
 
                 </p>
 
+
                 <p>
 
                     <i class="bi bi-envelope-fill text-success me-2"></i>
@@ -1920,6 +1546,7 @@
                     info@boxcricket.com
 
                 </p>
+
 
                 <p>
 
@@ -1931,22 +1558,30 @@
 
             </div>
 
+
         </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
 
         <div class="footer-bottom text-center py-4">
 
             <p class="mb-0">
 
                 © 2026 BoxCricket.
+
                 All Rights Reserved.
 
             </p>
 
         </div>
 
+
     </div>
 
 </footer>
+
 
 
 <!-- Bootstrap JS -->
@@ -1954,6 +1589,7 @@
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
+
 
 </body>
 
