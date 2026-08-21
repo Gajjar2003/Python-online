@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>BoxCricket | Booking Form</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7f9;
+            color: #14213d;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background: #061b2e;
+            padding: 15px 0;
+        }
+
+
+        .navbar-brand {
+            color: white !important;
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+
+        .navbar-brand i {
+            color: #22c55e;
+        }
+
+
+        .navbar-brand span {
+            color: #22c55e;
+        }
+
+
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            margin-left: 12px;
+            padding: 8px 15px !important;
+            transition: 0.3s;
+        }
+
+
+        .nav-link:hover {
+            color: #22c55e !important;
+        }
+
+
+        .nav-link.active {
+            color: #22c55e !important;
+        }
+
+
+        .login-btn {
+            border: 1px solid #22c55e;
+            border-radius: 25px;
+        }
+
+
+        .register-btn {
+            background: #22c55e;
+            border-radius: 25px;
+        }
+
+
+        .register-btn:hover {
+            background: #16a34a;
+            color: white !important;
+        }
+
+
+        /* ================= BOOKING SECTION ================= */
+
+        .booking-section {
+
+            min-height: calc(100vh - 80px);
+
+            padding: 70px 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    rgba(3, 15, 27, 0.85),
+                    rgba(3, 15, 27, 0.95)
+                ),
+                url("/static/image/box.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        /* ================= CARD ================= */
+
+        .booking-card {
+
+            background: white;
+
+            max-width: 750px;
+
+            width: 100%;
+
+            margin: auto;
+
+            padding: 45px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.35);
+        }
+
+
+        .booking-icon {
+
+            width: 75px;
+
+            height: 75px;
+
+            margin: auto;
+
+            margin-bottom: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 22px;
+
+            background: #dcfce7;
+
+            color: #16a34a;
+
+            font-size: 35px;
+        }
+
+
+        .booking-title {
+
+            text-align: center;
+
+            color: #061b2e;
+
+            font-size: 38px;
+
+            font-weight: 900;
+        }
+
+
+        .booking-title span {
+
+            color: #22c55e;
+        }
+
+
+        .booking-subtitle {
+
+            text-align: center;
+
+            color: #64748b;
+
+            margin-top: 10px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* ================= FORM ================= */
+
+        .form-label {
+
+            font-weight: 700;
+
+            color: #061b2e;
+
+            margin-bottom: 8px;
+        }
+
+
+        .form-control,
+        .form-select {
+
+            height: 50px;
+
+            border-radius: 12px;
+
+            border: 1px solid #dbe2e8;
+        }
+
+
+        .form-control:focus,
+        .form-select:focus {
+
+            border-color: #22c55e;
+
+            box-shadow:
+                0 0 0 0.2rem
+                rgba(34, 197, 94, 0.15);
+        }
+
+
+        .input-group-text {
+
+            background: #dcfce7;
+
+            color: #16a34a;
+
+            border-radius: 12px 0 0 12px;
+
+            border: 1px solid #dbe2e8;
+        }
+
+
+        .input-group .form-control {
+
+            border-radius: 0 12px 12px 0;
+        }
+
+
+        /* ================= PAYMENT ================= */
+
+        .payment-box {
+
+            background: #f8fafc;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 15px;
+
+            padding: 20px;
+        }
+
+
+        .payment-title {
+
+            font-weight: 800;
+
+            color: #061b2e;
+
+            margin-bottom: 15px;
+        }
+
+
+        .payment-option {
+
+            display: block;
+
+            border: 1px solid #dbe2e8;
+
+            border-radius: 12px;
+
+            padding: 12px 15px;
+
+            margin-bottom: 10px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .payment-option:hover {
+
+            border-color: #22c55e;
+
+            background: #f0fdf4;
+        }
+
+
+        .payment-option input {
+
+            margin-right: 8px;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .booking-submit {
+
+            width: 100%;
+
+            border: none;
+
+            background: #22c55e;
+
+            color: white;
+
+            padding: 15px;
+
+            border-radius: 30px;
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            margin-top: 25px;
+
+            transition: 0.3s;
+        }
+
+
+        .booking-submit:hover {
+
+            background: #16a34a;
+
+            transform: translateY(-2px);
+        }
+
+
+        .back-btn {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 18px;
+
+            color: #16a34a;
+
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+
+        .back-btn:hover {
+
+            color: #15803d;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 768px) {
+
+            .booking-card {
+
+                padding: 30px 20px;
+            }
+
+
+            .booking-title {
+
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+
+    <div class="container">
+
+
+        <!-- LOGO -->
+
+        <a class="navbar-brand"
+           href="{% url 'index' %}">
+
+            <i class="bi bi-trophy-fill"></i>
+
+            Box<span>Cricket</span>
+
+        </a>
+
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+            class="navbar-toggler bg-light"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- NAVIGATION -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+
+                <!-- HOME -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'index' %}">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <!-- ABOUT -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'about' %}">
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <!-- SERVICES -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'service' %}">
+
+                        Services
+
+                    </a>
+
+                </li>
+
+
+                <!-- BOOK NOW -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link active"
+                        href="{% url 'book_now' %}">
+
+                        Book-Now
+
+                    </a>
+
+                </li>
+
+
+                <!-- MY BOOKING -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{% url 'my-booking' %}">
+
+                        My Booking
+
+                    </a>
+
+                </li>
+
+
+                <!-- USER LOGIN -->
+
+                {% if user.is_authenticated %}
+
+
+                    <!-- USERNAME -->
+
+                    <li class="nav-item">
+
+                        <span class="nav-link">
+
+                            <i class="bi bi-person-circle me-1"></i>
+
+                            {{ user.username }}
+
+                        </span>
+
+                    </li>
+
+
+                    <!-- LOGOUT -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link login-btn"
+                            href="{% url 'user-logout' %}">
+
+                            <i class="bi bi-box-arrow-right me-1"></i>
+
+                            Logout
+
+                        </a>
+
+                    </li>
+
+
+                {% else %}
+
+
+                    <!-- LOGIN -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link login-btn"
+                            href="{% url 'user-login' %}">
+
+                            Login
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- REGISTER -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link register-btn"
+                            href="{% url 'user-register' %}">
+
+                            Register
+
+                        </a>
+
+                    </li>
+
+
+                {% endif %}
+
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================= BOOKING SECTION ================= -->
+
+<section class="booking-section">
+
+    <div class="container">
+
+
+        <div class="booking-card">
+
+
+            <!-- ICON -->
+
+            <div class="booking-icon">
+
+                <i class="bi bi-calendar-check-fill"></i>
+
+            </div>
+
+
+            <!-- TITLE -->
+
+            <h1 class="booking-title">
+
+                Complete Your
+                <span>Booking</span>
+
+            </h1>
+
+
+            <p class="booking-subtitle">
+
+                Enter your details and confirm your cricket slot.
+
+            </p>
+
+
+
+            <!-- ================= FORM ================= -->
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+
+                <!-- USERNAME -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Username
+
+                    </label>
+
+                    <div class="input-group">
+
+                        <span class="input-group-text">
+
+                            <i class="bi bi-person"></i>
+
+                        </span>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            value="{{ user.username }}"
+                            readonly>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Email Address
+
+                    </label>
+
+                    <div class="input-group">
+
+                        <span class="input-group-text">
+
+                            <i class="bi bi-envelope"></i>
+
+                        </span>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            value="{{ user.email }}"
+                            readonly>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MOBILE NUMBER -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Mobile Number
+
+                    </label>
+
+                    <div class="input-group">
+
+                        <span class="input-group-text">
+
+                            <i class="bi bi-telephone"></i>
+
+                        </span>
+
+                        <input
+                            type="tel"
+                            name="number"
+                            class="form-control"
+                            placeholder="Enter mobile number"
+                            maxlength="15"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= DURATION ================= -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        <i class="bi bi-clock me-1 text-success"></i>
+
+                        Duration
+
+                    </label>
+
+
+                    <select
+                        name="duration"
+                        id="duration"
+                        class="form-select"
+                        required>
+
+                        <option value="">
+
+                            Select Duration
+
+                        </option>
+
+
+                        <option value="1 Hour">
+
+                            1 Hour - ₹700
+
+                        </option>
+
+
+                        <option value="2 Hours">
+
+                            2 Hours - ₹1,200
+
+                        </option>
+
+
+                        <option value="3 Hours">
+
+                            3 Hours - ₹1,800
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- ================= SLOT TIME ================= -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        <i class="bi bi-calendar2-event me-1 text-success"></i>
+
+                        Slot Time
+
+                    </label>
+
+
+                    <select
+                        name="slot_time"
+                        id="slot_time"
+                        class="form-select"
+                        required>
+
+                        <option value="">
+
+                            Select Duration First
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- ================= PAYMENT ================= -->
+
+                <div class="payment-box">
+
+
+                    <div class="payment-title">
+
+                        <i
+                            class="bi bi-credit-card me-2 text-success">
+                        </i>
+
+                        Payment Option
+
+                    </div>
+
+
+
+                    <!-- CASH -->
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment_option"
+                            value="Cash"
+                            required>
+
+                        <i class="bi bi-cash-coin me-2"></i>
+
+                        Cash
+
+                    </label>
+
+
+
+                    <!-- UPI -->
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment_option"
+                            value="UPI">
+
+                        <i class="bi bi-phone me-2"></i>
+
+                        UPI
+
+                    </label>
+
+
+
+                    <!-- CARD -->
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment_option"
+                            value="Card">
+
+                        <i class="bi bi-credit-card me-2"></i>
+
+                        Card
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- ================= SUBMIT ================= -->
+
+                <button
+                    type="submit"
+                    class="booking-submit">
+
+                    <i class="bi bi-check-circle me-2"></i>
+
+                    Confirm Booking
+
+                </button>
+
+
+
+                <!-- BACK BUTTON -->
+
+                <a
+                    href="{% url 'book_now' %}"
+                    class="back-btn">
+
+                    <i class="bi bi-arrow-left me-1"></i>
+
+                    Back to Slot Time
+
+                </a>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    const durationSelect =
+        document.getElementById("duration");
+
+    const slotSelect =
+        document.getElementById("slot_time");
+
+
+    /* ================= ALL SLOTS ================= */
+
+    const slots = {
+
+        /* ========== 1 HOUR ========== */
+
+        "1 Hour": [
+
+            "05:00 AM - 06:00 AM",
+            "06:00 AM - 07:00 AM",
+            "07:00 AM - 08:00 AM",
+            "08:00 AM - 09:00 AM",
+            "09:00 AM - 10:00 AM",
+            "10:00 AM - 11:00 AM",
+            "11:00 AM - 12:00 PM",
+            "12:00 PM - 01:00 PM",
+            "01:00 PM - 02:00 PM",
+            "02:00 PM - 03:00 PM",
+            "03:00 PM - 04:00 PM",
+            "04:00 PM - 05:00 PM",
+            "05:00 PM - 06:00 PM",
+            "06:00 PM - 07:00 PM",
+            "07:00 PM - 08:00 PM",
+            "08:00 PM - 09:00 PM",
+            "09:00 PM - 10:00 PM",
+            "10:00 PM - 11:00 PM",
+            "11:00 PM - 12:00 AM",
+            "12:00 AM - 01:00 AM",
+            "01:00 AM - 02:00 AM"
+
+        ],
+
+
+        /* ========== 2 HOURS ========== */
+
+        "2 Hours": [
+
+            "05:00 AM - 07:00 AM",
+            "07:00 AM - 09:00 AM",
+            "09:00 AM - 11:00 AM",
+            "11:00 AM - 01:00 PM",
+            "01:00 PM - 03:00 PM",
+            "03:00 PM - 05:00 PM",
+            "05:00 PM - 07:00 PM",
+            "07:00 PM - 09:00 PM",
+            "09:00 PM - 11:00 PM",
+            "11:00 PM - 01:00 AM",
+            "12:00 AM - 02:00 AM"
+
+        ],
+
+
+        /* ========== 3 HOURS ========== */
+
+        "3 Hours": [
+
+            "05:00 AM - 08:00 AM",
+            "08:00 AM - 11:00 AM",
+            "11:00 AM - 02:00 PM",
+            "02:00 PM - 05:00 PM",
+            "05:00 PM - 08:00 PM",
+            "08:00 PM - 11:00 PM",
+            "11:00 PM - 02:00 AM"
+
+        ]
+
+    };
+
+
+
+    /* ================= CHANGE DURATION ================= */
+
+    durationSelect.addEventListener("change", function () {
+
+
+        const selectedDuration = this.value;
+
+
+        /* Clear old slots */
+
+        slotSelect.innerHTML =
+            '<option value="">Select Slot Time</option>';
+
+
+        /* Add new slots */
+
+        if (
+            selectedDuration &&
+            slots[selectedDuration]
+        ) {
+
+
+            slots[selectedDuration].forEach(function (slot) {
+
+
+                const option =
+                    document.createElement("option");
+
+
+                option.value = slot;
+
+
+                option.textContent = slot;
+
+
+                slotSelect.appendChild(option);
+
+
+            });
+
+        }
+
+    });
+
+</script>
+
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+</body>
+
+</html>

@@ -468,6 +468,8 @@
         <form method="POST">
 
           {% csrf_token %}
+          <span class="text-danger">{{err}}</span>
+
 
 
           <!-- USERNAME -->
@@ -490,7 +492,7 @@
               </span>
 
 
-              <input type="text" name="username" class="form-control" placeholder="Enter username " required>
+              <input type="text" name="username" class="form-control" placeholder="Enter username " name="username">
 
             </div>
 
@@ -517,7 +519,7 @@
               </span>
 
 
-              <input type="password" name="password" class="form-control" placeholder="Enter password" required>
+              <input type="password" name="password" class="form-control" placeholder="Enter password" name="password">
 
             </div>
 

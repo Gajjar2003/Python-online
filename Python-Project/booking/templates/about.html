@@ -10,17 +10,12 @@
     <title>BoxCricket | About Us</title>
 
     <!-- Bootstrap 5 -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -94,12 +89,10 @@
             align-items: center;
 
             background:
-                linear-gradient(
-                    rgba(3, 15, 27, 0.78),
-                    rgba(3, 15, 27, 0.88)
-                ),
-                url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=2000&q=90");
-
+                linear-gradient(rgba(3, 15, 27, 0.78),
+                    rgba(3, 15, 27, 0.88)),
+                url("/static/image/box.jpg");
+            
             background-size: cover;
             background-position: center;
 
@@ -209,7 +202,7 @@
 
             border-radius: 18px;
 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
         }
 
         .about-badge strong {
@@ -280,7 +273,7 @@
             transform: translateY(-10px);
 
             box-shadow:
-                0 20px 45px rgba(0,0,0,0.12);
+                0 20px 45px rgba(0, 0, 0, 0.12);
 
             border-color: #22c55e;
         }
@@ -415,10 +408,8 @@
             padding: 100px 20px;
 
             background:
-                linear-gradient(
-                    rgba(6,27,46,0.90),
-                    rgba(6,27,46,0.90)
-                ),
+                linear-gradient(rgba(6, 27, 46, 0.90),
+                    rgba(6, 27, 46, 0.90)),
                 url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=2000&q=90");
 
             background-size: cover;
@@ -515,7 +506,6 @@
             }
 
         }
-
     </style>
 
 </head>
@@ -523,865 +513,34 @@
 <body>
 
 
-<!-- ================= NAVBAR ================= -->
+    <!-- ================= NAVBAR ================= -->
 
-<nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
 
-    <div class="container">
+        <div class="container">
 
-        <a class="navbar-brand" href="{% url 'index' %}">
-
-            <i class="bi bi-trophy-fill"></i>
-
-            Box<span>Cricket</span>
-
-        </a>
-
-        <button
-            class="navbar-toggler bg-light"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menu">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-
-        <div
-            class="collapse navbar-collapse"
-            id="menu">
-
-            <ul class="navbar-nav ms-auto">
-
-                <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                        href="{% url 'index' %}">
-
-                        Home
-
-                    </a>
-
-                </li>
-
-
-                <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                        href="{% url 'about' %}">
-
-                        About
-
-                    </a>
-
-                </li>
-
-
-                <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                        href="{% url 'service'%}">
-
-                        Services
-
-                    </a>
-
-                </li>
-
-
-                <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                        href="{% url 'book_now' %}">
-
-                        Book-Now
-
-                    </a>
-
-                </li>
-
-
-                <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                        href="{% url 'my-booking' %}">
-
-                        My Booking
-
-                    </a>
-
-                </li>
-
-
-                <li class="nav-item">
-
-                    <a
-                        class="nav-link login-btn"
-                        href="{% url 'user-login'%}">
-
-                        Login
-
-                    </a>
-
-                </li>
-
-
-                <li class="nav-item">
-
-                    <a
-                        class="nav-link register-btn"
-                        href="{% url 'user-register'%}">
-
-                        Register
-
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</nav>
-
-
-
-<!-- ================= PAGE HERO ================= -->
-
-<section class="page-hero">
-
-    <div class="container">
-
-        <div class="page-hero-content">
-
-            <span class="hero-badge">
+            <a class="navbar-brand" href="{% url 'index' %}">
 
                 <i class="bi bi-trophy-fill"></i>
 
-                ABOUT BOXCRICKET
+                Box<span>Cricket</span>
 
-            </span>
+            </a>
 
-            <h1>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
 
-                About <span>Our Ground</span>
+                <span class="navbar-toggler-icon"></span>
 
-            </h1>
+            </button>
 
-            <p>
 
-                A premium cricket destination where
-                passion, teamwork and unforgettable
-                matches come together.
+            <div class="collapse navbar-collapse" id="menu">
 
-            </p>
+                <ul class="navbar-nav ms-auto">
 
-        </div>
+                    <li class="nav-item">
 
-    </div>
-
-</section>
-
-
-
-<!-- ================= ABOUT INTRO ================= -->
-
-<section class="about-section section-padding">
-
-    <div class="container">
-
-        <div class="row align-items-center g-5">
-
-
-            <!-- IMAGE -->
-
-            <div class="col-lg-6">
-
-                <div class="about-img-box">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1200&q=85"
-                        class="about-img"
-                        alt="Cricket Ground">
-
-                    <div class="about-badge">
-
-                        <strong>5+</strong>
-
-                        <br>
-
-                        Years Experience
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- CONTENT -->
-
-            <div class="col-lg-6">
-
-                <div class="section-label">
-
-                    Who We Are
-
-                </div>
-
-                <h2 class="section-title">
-
-                    Your Game.
-
-                    <span>Our Ground.</span>
-
-                </h2>
-
-                <p class="section-text mt-3">
-
-                    BoxCricket is a premium cricket turf
-                    booking platform designed for cricket
-                    lovers. Our goal is to provide a clean,
-                    safe and professionally maintained
-                    ground where players can enjoy
-                    their game without any hassle.
-
-                </p>
-
-                <p class="section-text">
-
-                    Whether you are playing with friends,
-                    family, colleagues or participating
-                    in a tournament, our cricket ground
-                    provides the perfect environment
-                    for an exciting match.
-
-                </p>
-
-
-                <ul class="check-list">
-
-                    <li>
-
-                        <i class="bi bi-check-circle-fill"></i>
-
-                        Premium cricket turf
-
-                    </li>
-
-                    <li>
-
-                        <i class="bi bi-check-circle-fill"></i>
-
-                        Professional flood lights
-
-                    </li>
-
-                    <li>
-
-                        <i class="bi bi-check-circle-fill"></i>
-
-                        Clean and safe environment
-
-                    </li>
-
-                    <li>
-
-                        <i class="bi bi-check-circle-fill"></i>
-
-                        Easy online slot booking
-
-                    </li>
-
-                    <li>
-
-                        <i class="bi bi-check-circle-fill"></i>
-
-                        Flexible 1, 2 and 3 hour slots
-
-                    </li>
-
-                </ul>
-
-
-                <a
-                    href="{% url 'book_now' %}"
-                    class="btn main-btn">
-
-                    <i class="bi bi-calendar-check"></i>
-
-                    Book Your Ground
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= WHY CHOOSE US ================= -->
-
-<section class="features-section section-padding">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <div class="section-label">
-
-                Why Choose Us
-
-            </div>
-
-            <h2 class="section-title">
-
-                Why Players
-
-                <span>Choose BoxCricket</span>
-
-            </h2>
-
-            <p class="section-text">
-
-                We focus on providing a better
-                cricket experience for every player.
-
-            </p>
-
-        </div>
-
-
-        <div class="row g-4">
-
-
-            <!-- CARD 1 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-
-                        <i class="bi bi-shield-check"></i>
-
-                    </div>
-
-                    <h4>Safe & Secure</h4>
-
-                    <p>
-
-                        Our ground is maintained with
-                        safety and cleanliness in mind
-                        so players can enjoy their match
-                        comfortably.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- CARD 2 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-
-                        <i class="bi bi-lightbulb-fill"></i>
-
-                    </div>
-
-                    <h4>Night Matches</h4>
-
-                    <p>
-
-                        Powerful flood lights allow
-                        you to enjoy exciting cricket
-                        matches during evening and
-                        night hours.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- CARD 3 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-
-                        <i class="bi bi-calendar-check"></i>
-
-                    </div>
-
-                    <h4>Easy Booking</h4>
-
-                    <p>
-
-                        Select your preferred slot and
-                        book your cricket ground quickly
-                        through our simple online system.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- CARD 4 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-
-                        <i class="bi bi-stars"></i>
-
-                    </div>
-
-                    <h4>Premium Turf</h4>
-
-                    <p>
-
-                        Professionally maintained turf
-                        provides a comfortable playing
-                        surface for every match.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- CARD 5 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-
-                        <i class="bi bi-people-fill"></i>
-
-                    </div>
-
-                    <h4>Perfect For Teams</h4>
-
-                    <p>
-
-                        Our venue is perfect for friends,
-                        families, corporate teams and
-                        cricket tournaments.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- CARD 6 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-
-                        <i class="bi bi-trophy-fill"></i>
-
-                    </div>
-
-                    <h4>Great Experience</h4>
-
-                    <p>
-
-                        We aim to make every match
-                        enjoyable and memorable for
-                        cricket lovers.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= MISSION ================= -->
-
-<section class="mission-section section-padding">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <div class="section-label">
-
-                Our Mission
-
-            </div>
-
-            <h2 class="section-title">
-
-                Built For
-
-                <span>Cricket Lovers</span>
-
-            </h2>
-
-            <p class="section-text">
-
-                Our mission is to make quality cricket
-                facilities easily accessible to everyone.
-
-            </p>
-
-        </div>
-
-
-        <div class="row g-4">
-
-
-            <div class="col-md-4">
-
-                <div class="mission-box">
-
-                    <i class="bi bi-bullseye mission-icon"></i>
-
-                    <h4>Our Goal</h4>
-
-                    <p>
-
-                        To provide a high-quality cricket
-                        ground where players can enjoy
-                        competitive and friendly matches.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <div class="mission-box">
-
-                    <i class="bi bi-heart-fill mission-icon"></i>
-
-                    <h4>Our Passion</h4>
-
-                    <p>
-
-                        Cricket is more than a sport.
-                        It brings people together,
-                        creates friendships and builds
-                        unforgettable memories.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <div class="mission-box">
-
-                    <i class="bi bi-graph-up-arrow mission-icon"></i>
-
-                    <h4>Our Vision</h4>
-
-                    <p>
-
-                        To become a trusted cricket
-                        booking platform offering
-                        excellent facilities and
-                        simple online booking.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= STATS ================= -->
-
-<section class="stats-section section-padding">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <div class="section-label">
-
-                BoxCricket In Numbers
-
-            </div>
-
-            <h2 class="section-title">
-
-                Our
-
-                <span>Achievements</span>
-
-            </h2>
-
-        </div>
-
-
-        <div class="row g-4">
-
-
-            <div class="col-6 col-lg-3">
-
-                <div class="stat-card">
-
-                    <i class="bi bi-calendar-check"></i>
-
-                    <div class="stat-number">
-
-                        1000+
-
-                    </div>
-
-                    <p>
-
-                        Bookings
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-6 col-lg-3">
-
-                <div class="stat-card">
-
-                    <i class="bi bi-people-fill"></i>
-
-                    <div class="stat-number">
-
-                        500+
-
-                    </div>
-
-                    <p>
-
-                        Happy Players
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-6 col-lg-3">
-
-                <div class="stat-card">
-
-                    <i class="bi bi-trophy-fill"></i>
-
-                    <div class="stat-number">
-
-                        100+
-
-                    </div>
-
-                    <p>
-
-                        Matches
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-6 col-lg-3">
-
-                <div class="stat-card">
-
-                    <i class="bi bi-star-fill"></i>
-
-                    <div class="stat-number">
-
-                        5.0
-
-                    </div>
-
-                    <p>
-
-                        Player Rating
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= CTA ================= -->
-
-<section class="cta">
-
-    <div class="container">
-
-        <h2>
-
-            Ready To Play?
-
-        </h2>
-
-        <p class="lead mt-3">
-
-            Bring your team and book your
-            favourite cricket slot today.
-
-        </p>
-
-        <a
-            href="{% url 'book_now' %}"
-            class="btn main-btn mt-3">
-
-            <i class="bi bi-calendar-check"></i>
-
-            Book Your Slot
-
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="pt-5">
-
-    <div class="container">
-
-        <div class="row g-5 pb-5">
-
-
-            <!-- BRAND -->
-
-            <div class="col-lg-4">
-
-                <h5>
-
-                    <i class="bi bi-trophy-fill text-success"></i>
-
-                    BoxCricket
-
-                </h5>
-
-                <p class="mt-3">
-
-                    Premium box cricket slot booking
-                    platform made for cricket lovers.
-
-                </p>
-
-
-                <div class="mt-4">
-
-                    <a href="#" class="footer-social">
-
-                        <i class="bi bi-facebook"></i>
-
-                    </a>
-
-                    <a href="#" class="footer-social">
-
-                        <i class="bi bi-instagram"></i>
-
-                    </a>
-
-                    <a href="#" class="footer-social">
-
-                        <i class="bi bi-twitter"></i>
-
-                    </a>
-
-                    <a href="#" class="footer-social">
-
-                        <i class="bi bi-whatsapp"></i>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- QUICK LINKS -->
-
-            <div class="col-6 col-lg-2">
-
-                <h5>
-
-                    Quick Links
-
-                </h5>
-
-                <ul class="list-unstyled mt-3">
-
-                    <li class="mb-2">
-
-                        <a href="{% url 'index' %}">
+                        <a class="nav-link" href="{% url 'index' %}">
 
                             Home
 
@@ -1389,9 +548,10 @@
 
                     </li>
 
-                    <li class="mb-2">
 
-                        <a href="{% url 'about' %}">
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="{% url 'about' %}">
 
                             About
 
@@ -1399,9 +559,10 @@
 
                     </li>
 
-                    <li class="mb-2">
 
-                        <a href="{% url 'service'%}">
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="{% url 'service'%}">
 
                             Services
 
@@ -1409,56 +570,21 @@
 
                     </li>
 
-                    <li class="mb-2">
 
-                        <a href="{% url 'book_now' %}">
+                    <li class="nav-item">
 
-                            Slot Time
+                        <a class="nav-link" href="{% url 'book_now' %}">
 
-                        </a>
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- ACCOUNT -->
-
-            <div class="col-6 col-lg-2">
-
-                <h5>
-
-                    Account
-
-                </h5>
-
-                <ul class="list-unstyled mt-3">
-
-                    <li class="mb-2">
-
-                      <a href="{%url 'user-login'%}">
-
-                            Login
+                            Book-Now
 
                         </a>
 
                     </li>
 
-                    <li class="mb-2">
 
-                        <a href="{%url 'user-register'%}">
+                    <li class="nav-item">
 
-                            Register
-
-                        </a>
-
-                    </li>
-
-                    <li class="mb-2">
-
-                        <a href="{% url 'my-booking' %}">
+                        <a class="nav-link" href="{% url 'my-booking' %}">
 
                             My Booking
 
@@ -1466,50 +592,76 @@
 
                     </li>
 
+
+                    {% if user.is_authenticated %}
+
+<li class="nav-item">
+    <span class="nav-link">
+        <i class="bi bi-person-circle me-1"></i>
+        {{ user.username }}
+    </span>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link login-btn" href="{% url 'user-logout' %}">
+        <i class="bi bi-box-arrow-right me-1"></i>
+        Logout
+    </a>
+</li>
+
+{% else %}
+
+<li class="nav-item">
+    <a class="nav-link login-btn" href="{% url 'user-login' %}">
+        Login
+    </a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link register-btn" href="{% url 'user-register' %}">
+        Register
+    </a>
+</li>
+
+{% endif %}
+
                 </ul>
 
             </div>
 
+        </div>
 
-            <!-- CONTACT -->
+    </nav>
 
-            <div class="col-lg-4">
 
-                <h5>
 
-                    Contact Us
+    <!-- ================= PAGE HERO ================= -->
 
-                </h5>
+    <section class="page-hero">
 
-                <p class="mt-3">
+        <div class="container">
 
-                    <i class="bi bi-geo-alt-fill text-success me-2"></i>
+            <div class="page-hero-content">
 
-                    Your City, Gujarat
+                <span class="hero-badge">
 
-                </p>
+                    <i class="bi bi-trophy-fill"></i>
 
-                <p>
+                    ABOUT BOXCRICKET
 
-                    <i class="bi bi-telephone-fill text-success me-2"></i>
+                </span>
 
-                    +91 98765 43210
+                <h1>
 
-                </p>
+                    About <span>Our Ground</span>
 
-                <p>
-
-                    <i class="bi bi-envelope-fill text-success me-2"></i>
-
-                    info@boxcricket.com
-
-                </p>
+                </h1>
 
                 <p>
 
-                    <i class="bi bi-clock-fill text-success me-2"></i>
-
-                    Open: 05:00 AM - 02:00 AM
+                    A premium cricket destination where
+                    passion, teamwork and unforgettable
+                    matches come together.
 
                 </p>
 
@@ -1517,32 +669,853 @@
 
         </div>
 
+    </section>
 
-        <!-- FOOTER BOTTOM -->
 
-        <div class="footer-bottom text-center py-4">
 
-            <p class="mb-0">
+    <!-- ================= ABOUT INTRO ================= -->
 
-                © 2026 BoxCricket.
+    <section class="about-section section-padding">
 
-                All Rights Reserved.
+        <div class="container">
 
-            </p>
+            <div class="row align-items-center g-5">
+
+
+                <!-- IMAGE -->
+
+                <div class="col-lg-6">
+
+                    <div class="about-img-box">
+
+                        <img src={% static 'image/box1.jpg' %} class="about-img" alt="Cricket Ground">
+
+                        <div class="about-badge">
+
+                            <strong>5+</strong>
+
+                            <br>
+
+                            Years Experience
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTENT -->
+
+                <div class="col-lg-6">
+
+                    <div class="section-label">
+
+                        Who We Are
+
+                    </div>
+
+                    <h2 class="section-title">
+
+                        Your Game.
+
+                        <span>Our Ground.</span>
+
+                    </h2>
+
+                    <p class="section-text mt-3">
+
+                        BoxCricket is a premium cricket turf
+                        booking platform designed for cricket
+                        lovers. Our goal is to provide a clean,
+                        safe and professionally maintained
+                        ground where players can enjoy
+                        their game without any hassle.
+
+                    </p>
+
+                    <p class="section-text">
+
+                        Whether you are playing with friends,
+                        family, colleagues or participating
+                        in a tournament, our cricket ground
+                        provides the perfect environment
+                        for an exciting match.
+
+                    </p>
+
+
+                    <ul class="check-list">
+
+                        <li>
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Premium cricket turf
+
+                        </li>
+
+                        <li>
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Professional flood lights
+
+                        </li>
+
+                        <li>
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Clean and safe environment
+
+                        </li>
+
+                        <li>
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Easy online slot booking
+
+                        </li>
+
+                        <li>
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Flexible 1, 2 and 3 hour slots
+
+                        </li>
+
+                    </ul>
+
+
+                    <a href="{% url 'book_now' %}" class="btn main-btn">
+
+                        <i class="bi bi-calendar-check"></i>
+
+                        Book Your Ground
+
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
-
-</footer>
+    </section>
 
 
 
-<!-- Bootstrap JS -->
+    <!-- ================= WHY CHOOSE US ================= -->
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
+    <section class="features-section section-padding">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <div class="section-label">
+
+                    Why Choose Us
+
+                </div>
+
+                <h2 class="section-title">
+
+                    Why Players
+
+                    <span>Choose BoxCricket</span>
+
+                </h2>
+
+                <p class="section-text">
+
+                    We focus on providing a better
+                    cricket experience for every player.
+
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- CARD 1 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-shield-check"></i>
+
+                        </div>
+
+                        <h4>Safe & Secure</h4>
+
+                        <p>
+
+                            Our ground is maintained with
+                            safety and cleanliness in mind
+                            so players can enjoy their match
+                            comfortably.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-lightbulb-fill"></i>
+
+                        </div>
+
+                        <h4>Night Matches</h4>
+
+                        <p>
+
+                            Powerful flood lights allow
+                            you to enjoy exciting cricket
+                            matches during evening and
+                            night hours.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-calendar-check"></i>
+
+                        </div>
+
+                        <h4>Easy Booking</h4>
+
+                        <p>
+
+                            Select your preferred slot and
+                            book your cricket ground quickly
+                            through our simple online system.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 4 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-stars"></i>
+
+                        </div>
+
+                        <h4>Premium Turf</h4>
+
+                        <p>
+
+                            Professionally maintained turf
+                            provides a comfortable playing
+                            surface for every match.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 5 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-people-fill"></i>
+
+                        </div>
+
+                        <h4>Perfect For Teams</h4>
+
+                        <p>
+
+                            Our venue is perfect for friends,
+                            families, corporate teams and
+                            cricket tournaments.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 6 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-trophy-fill"></i>
+
+                        </div>
+
+                        <h4>Great Experience</h4>
+
+                        <p>
+
+                            We aim to make every match
+                            enjoyable and memorable for
+                            cricket lovers.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MISSION ================= -->
+
+    <section class="mission-section section-padding">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <div class="section-label">
+
+                    Our Mission
+
+                </div>
+
+                <h2 class="section-title">
+
+                    Built For
+
+                    <span>Cricket Lovers</span>
+
+                </h2>
+
+                <p class="section-text">
+
+                    Our mission is to make quality cricket
+                    facilities easily accessible to everyone.
+
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <div class="col-md-4">
+
+                    <div class="mission-box">
+
+                        <i class="bi bi-bullseye mission-icon"></i>
+
+                        <h4>Our Goal</h4>
+
+                        <p>
+
+                            To provide a high-quality cricket
+                            ground where players can enjoy
+                            competitive and friendly matches.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="mission-box">
+
+                        <i class="bi bi-heart-fill mission-icon"></i>
+
+                        <h4>Our Passion</h4>
+
+                        <p>
+
+                            Cricket is more than a sport.
+                            It brings people together,
+                            creates friendships and builds
+                            unforgettable memories.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="mission-box">
+
+                        <i class="bi bi-graph-up-arrow mission-icon"></i>
+
+                        <h4>Our Vision</h4>
+
+                        <p>
+
+                            To become a trusted cricket
+                            booking platform offering
+                            excellent facilities and
+                            simple online booking.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats-section section-padding">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <div class="section-label">
+
+                    BoxCricket In Numbers
+
+                </div>
+
+                <h2 class="section-title">
+
+                    Our
+
+                    <span>Achievements</span>
+
+                </h2>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <div class="col-6 col-lg-3">
+
+                    <div class="stat-card">
+
+                        <i class="bi bi-calendar-check"></i>
+
+                        <div class="stat-number">
+
+                            1000+
+
+                        </div>
+
+                        <p>
+
+                            Bookings
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-lg-3">
+
+                    <div class="stat-card">
+
+                        <i class="bi bi-people-fill"></i>
+
+                        <div class="stat-number">
+
+                            500+
+
+                        </div>
+
+                        <p>
+
+                            Happy Players
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-lg-3">
+
+                    <div class="stat-card">
+
+                        <i class="bi bi-trophy-fill"></i>
+
+                        <div class="stat-number">
+
+                            100+
+
+                        </div>
+
+                        <p>
+
+                            Matches
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-lg-3">
+
+                    <div class="stat-card">
+
+                        <i class="bi bi-star-fill"></i>
+
+                        <div class="stat-number">
+
+                            5.0
+
+                        </div>
+
+                        <p>
+
+                            Player Rating
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+
+                Ready To Play?
+
+            </h2>
+
+            <p class="lead mt-3">
+
+                Bring your team and book your
+                favourite cricket slot today.
+
+            </p>
+
+            <a href="{% url 'book_now' %}" class="btn main-btn mt-3">
+
+                <i class="bi bi-calendar-check"></i>
+
+                Book Your Slot
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="pt-5">
+
+        <div class="container">
+
+            <div class="row g-5 pb-5">
+
+
+                <!-- BRAND -->
+
+                <div class="col-lg-4">
+
+                    <h5>
+
+                        <i class="bi bi-trophy-fill text-success"></i>
+
+                        BoxCricket
+
+                    </h5>
+
+                    <p class="mt-3">
+
+                        Premium box cricket slot booking
+                        platform made for cricket lovers.
+
+                    </p>
+
+
+                    <div class="mt-4">
+
+                        <a href="#" class="footer-social">
+
+                            <i class="bi bi-facebook"></i>
+
+                        </a>
+
+                        <a href="#" class="footer-social">
+
+                            <i class="bi bi-instagram"></i>
+
+                        </a>
+
+                        <a href="#" class="footer-social">
+
+                            <i class="bi bi-twitter"></i>
+
+                        </a>
+
+                        <a href="#" class="footer-social">
+
+                            <i class="bi bi-whatsapp"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+
+                <div class="col-6 col-lg-2">
+
+                    <h5>
+
+                        Quick Links
+
+                    </h5>
+
+                    <ul class="list-unstyled mt-3">
+
+                        <li class="mb-2">
+
+                            <a href="{% url 'index' %}">
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+                        <li class="mb-2">
+
+                            <a href="{% url 'about' %}">
+
+                                About
+
+                            </a>
+
+                        </li>
+
+                        <li class="mb-2">
+
+                            <a href="{% url 'service'%}">
+
+                                Services
+
+                            </a>
+
+                        </li>
+
+                        <li class="mb-2">
+
+                            <a href="{% url 'book_now' %}">
+
+                                Slot Time
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ACCOUNT -->
+
+                <div class="col-6 col-lg-2">
+
+                    <h5>
+
+                        Account
+
+                    </h5>
+
+                    <ul class="list-unstyled mt-3">
+
+                        <li class="mb-2">
+
+                            <a href="{%url 'user-login'%}">
+
+                                Login
+
+                            </a>
+
+                        </li>
+
+                        <li class="mb-2">
+
+                            <a href="{%url 'user-register'%}">
+
+                                Register
+
+                            </a>
+
+                        </li>
+
+                        <li class="mb-2">
+
+                            <a href="{% url 'my-booking' %}">
+
+                                My Booking
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- CONTACT -->
+
+                <div class="col-lg-4">
+
+                    <h5>
+
+                        Contact Us
+
+                    </h5>
+
+                    <p class="mt-3">
+
+                        <i class="bi bi-geo-alt-fill text-success me-2"></i>
+
+                        Your City, Gujarat
+
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-telephone-fill text-success me-2"></i>
+
+                        +91 98765 43210
+
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-envelope-fill text-success me-2"></i>
+
+                        info@boxcricket.com
+
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-clock-fill text-success me-2"></i>
+
+                        Open: 05:00 AM - 02:00 AM
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom text-center py-4">
+
+                <p class="mb-0">
+
+                    © 2026 BoxCricket.
+
+                    All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 

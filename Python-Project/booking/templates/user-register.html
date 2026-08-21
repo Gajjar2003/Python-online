@@ -9,17 +9,12 @@
     <title>BoxCricket | Register</title>
 
     <!-- Bootstrap 5 -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -89,10 +84,8 @@
             align-items: center;
 
             background:
-                linear-gradient(
-                    rgba(3, 15, 27, 0.80),
-                    rgba(3, 15, 27, 0.90)
-                ),
+                linear-gradient(rgba(3, 15, 27, 0.80),
+                    rgba(3, 15, 27, 0.90)),
                 url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=2000&q=90");
 
             background-size: cover;
@@ -279,7 +272,6 @@
             }
 
         }
-
     </style>
 
 </head>
@@ -287,473 +279,449 @@
 <body>
 
 
-<!-- ================= NAVBAR ================= -->
+    <!-- ================= NAVBAR ================= -->
 
-<nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
 
-    <div class="container">
+        <div class="container">
 
-        <a class="navbar-brand" href="{% url 'index' %}">
-            <i class="bi bi-trophy-fill"></i>
-            Box<span>Cricket</span>
-        </a>
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <i class="bi bi-trophy-fill"></i>
+                Box<span>Cricket</span>
+            </a>
 
-        <button
-            class="navbar-toggler bg-light"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menu">
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
 
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
 
-        </button>
+            </button>
 
-        <div
-            class="collapse navbar-collapse"
-            id="menu">
+            <div class="collapse navbar-collapse" id="menu">
 
-            <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto">
 
-                <li class="nav-item">
-                    <a
-                        class="nav-link"
-                        href="{% url 'index' %}">
-                        Home
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link"
-                        href="{% url 'about' %}">
-                        About
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link"
-                        href="{% url 'service' %}">
-                        Services
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link"
-                        href="{% url 'book_now' %}">
-                        Book-Now
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link"
-                        href="{% url 'my-booking' %}">
-                        My Booking
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link login-btn"
-                        href="{%url 'user-login'%}">
-                        Login
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link register-btn"
-                        href="{% url 'user-register' %}">
-                        Register
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</nav>
-
-
-<!-- ================= REGISTER ================= -->
-
-<section class="register-section">
-
-    <div class="container">
-
-        <div class="register-card">
-
-            <!-- Icon -->
-
-            <div class="register-icon">
-                <i class="bi bi-person-plus-fill"></i>
-            </div>
-
-
-            <!-- Heading -->
-
-            <h1 class="register-title">
-                Create Your
-                <span>Account</span>
-            </h1>
-
-            <p class="register-subtitle">
-                Register now and start booking your
-                premium cricket slots.
-            </p>
-
-
-            <!-- Django Form -->
-
-            <form method="POST">
-
-                {% csrf_token %}
-
-
-                <!-- First Name + Last Name -->
-
-                <div class="row g-3">
-
-                    <div class="col-md-6">
-
-                        <label class="form-label">
-                            First Name
-                        </label>
-
-                        <div class="input-group">
-
-                            <span class="input-group-text">
-                                <i class="bi bi-person"></i>
-                            </span>
-
-                            <input
-                                type="text"
-                                name="fname"
-                                class="form-control"
-                                placeholder="Enter first name"
-                                required>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-6">
-
-                        <label class="form-label">
-                            Last Name
-                        </label>
-
-                        <div class="input-group">
-
-                            <span class="input-group-text">
-                                <i class="bi bi-person"></i>
-                            </span>
-
-                            <input
-                                type="text"
-                                name="lname"
-                                class="form-control"
-                                placeholder="Enter last name"
-                                required>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Email -->
-
-                <div class="mt-3">
-
-                    <label class="form-label">
-                        Email Address
-                    </label>
-
-                    <div class="input-group">
-
-                        <span class="input-group-text">
-                            <i class="bi bi-envelope"></i>
-                        </span>
-
-                        <input
-                            type="email"
-                            name="email"
-                            class="form-control"
-                            placeholder="Enter your email"
-                            required>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Username -->
-
-                <div class="mt-3">
-
-                    <label class="form-label">
-                        Username
-                    </label>
-
-                    <div class="input-group">
-
-                        <span class="input-group-text">
-                            <i class="bi bi-person-badge"></i>
-                        </span>
-
-                        <input
-                            type="text"
-                            name="username"
-                            class="form-control"
-                            placeholder="Enter username"
-                            required>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Password -->
-
-                <div class="mt-3">
-
-                    <label class="form-label">
-                        Password
-                    </label>
-
-                    <div class="input-group">
-
-                        <span class="input-group-text">
-                            <i class="bi bi-lock"></i>
-                        </span>
-
-                        <input
-                            type="password"
-                            name="password"
-                            class="form-control"
-                            placeholder="Enter password"
-                            required>
-
-                    </div>
-
-                </div>
-
-
-             
-
-      
-
-
-                <!-- Terms -->
-
-                <div class="form-check mt-4">
-
-                    
-
-                </div>
-
-
-                <!-- Submit -->
-
-                <button
-                    type="submit"
-                    class="register-submit mt-4">
-
-                    <i class="bi bi-person-plus-fill me-2"></i>
-
-                    Create Account
-
-                </button>
-
-
-                <!-- Login -->
-
-                <p class="login-text">
-
-                    Already have an account?
-
-                    <a href="{%url 'user-login'%}">
-                        Login Now
-                    </a>
-
-                </p>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="pt-5">
-
-    <div class="container">
-
-        <div class="row g-5 pb-5">
-
-
-            <!-- Brand -->
-
-            <div class="col-lg-4">
-
-                <h5>
-
-                    <i class="bi bi-trophy-fill text-success"></i>
-
-                    BoxCricket
-
-                </h5>
-
-                <p class="mt-3">
-
-                    Premium box cricket slot booking
-                    platform made for cricket lovers.
-
-                </p>
-
-                <div class="mt-4">
-
-                    <a href="#" class="footer-social">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-
-                    <a href="#" class="footer-social">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-
-                    <a href="#" class="footer-social">
-                        <i class="bi bi-twitter"></i>
-                    </a>
-
-                    <a href="#" class="footer-social">
-                        <i class="bi bi-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Quick Links -->
-
-            <div class="col-6 col-lg-2">
-
-                <h5>
-                    Quick Links
-                </h5>
-
-                <ul class="list-unstyled mt-3">
-
-                    <li class="mb-2">
-                        <a href="{% url 'index' %}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">
                             Home
                         </a>
                     </li>
 
-                    <li class="mb-2">
-                        <a href="{% url 'about' %}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">
                             About
                         </a>
                     </li>
 
-                    <li class="mb-2">
-                        <a href="{% url 'book_now' %}">
-                            Slot Time
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="{% url 'service' %}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'service' %}">
                             Services
                         </a>
                     </li>
 
-                </ul>
-
-            </div>
-
-
-            <!-- Account -->
-
-            <div class="col-6 col-lg-2">
-
-                <h5>
-                    Account
-                </h5>
-
-                <ul class="list-unstyled mt-3">
-
-                    <li class="mb-2">
-                        <a href="#">
-                            Login
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'book_now' %}">
+                            Book-Now
                         </a>
                     </li>
 
-                    <li class="mb-2">
-                        <a href="{% url 'user-register' %}">
-                            Register
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="{% url 'my-booking' %}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'my-booking' %}">
                             My Booking
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link login-btn" href="{%url 'user-login'%}">
+                            Login
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link register-btn" href="{% url 'user-register' %}">
+                            Register
+                        </a>
+                    </li>
+
                 </ul>
 
             </div>
 
+        </div>
 
-            <!-- Contact -->
+    </nav>
 
-            <div class="col-lg-4">
 
-                <h5>
-                    Contact Us
-                </h5>
+    <!-- ================= REGISTER ================= -->
 
-                <p class="mt-3">
+    <section class="register-section">
 
-                    <i class="bi bi-geo-alt-fill text-success me-2"></i>
+        <div class="container">
 
-                    Your City, Gujarat
+            <div class="register-card">
 
+                <!-- Icon -->
+
+                <div class="register-icon">
+                    <i class="bi bi-person-plus-fill"></i>
+                </div>
+
+
+                <!-- Heading -->
+
+                <h1 class="register-title">
+                    Create Your
+                    <span>Account</span>
+                </h1>
+
+                <p class="register-subtitle">
+                    Register now and start booking your
+                    premium cricket slots.
                 </p>
 
-                <p>
 
-                    <i class="bi bi-telephone-fill text-success me-2"></i>
+                <!-- Django Form -->
 
-                    +91 98765 43210
+                <form method="POST" >
 
-                </p>
+                    {% csrf_token %}
+                        <span class="text-success">{{meg}}</span>
+                        <span class="text-danger">{{err}}</span>
 
-                <p>
 
-                    <i class="bi bi-envelope-fill text-success me-2"></i>
+                    <!-- First Name + Last Name -->
 
-                    info@boxcricket.com
+                    <div class="row g-3">
 
-                </p>
+                        <div class="col-md-6">
 
-                <p>
+                            <label class="form-label">
+                                First Name
+                            </label>
 
-                    <i class="bi bi-clock-fill text-success me-2"></i>
+                            <div class="input-group">
 
-                    Open: 05:00 AM - 02:00 AM
+                                <span class="input-group-text">
+                                    <i class="bi bi-person"></i>
+                                </span>
+
+                                <input type="text" name="fname" class="form-control" placeholder="Enter first name"
+                                    name="fname">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Last Name
+                            </label>
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+                                    <i class="bi bi-person"></i>
+                                </span>
+
+                                <input type="text" name="lname" class="form-control" placeholder="Enter last name"
+                                    name="lname">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="mt-3">
+
+                        <label class="form-label">
+                            Email Address
+                        </label>
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope"></i>
+                            </span>
+
+                            <input type="email" name="email" class="form-control" placeholder="Enter your email"
+                                name="email">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Username -->
+
+                    <div class="mt-3">
+
+                        <label class="form-label">
+                            Username
+                        </label>
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+                                <i class="bi bi-person-badge"></i>
+                            </span>
+
+                            <input type="text" name="username" class="form-control" placeholder="Enter username"
+                                name="username">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="mt-3">
+
+                        <label class="form-label">
+                            Password
+                        </label>
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+                                <i class="bi bi-lock"></i>
+                            </span>
+
+                            <input type="password" name="password" class="form-control" placeholder="Enter password"
+                                name="password">
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+                    <!-- Terms -->
+
+                    <div class="form-check mt-4">
+
+
+
+                    </div>
+
+
+                    <!-- Submit -->
+
+                    <button type="submit" class="register-submit mt-4">
+
+                        <i class="bi bi-person-plus-fill me-2"></i>
+
+                        Create Account
+
+                    </button>
+
+
+                    <!-- Login -->
+
+                    <p class="login-text">
+
+                        Already have an account?
+
+                        <a href="{%url 'user-login'%}">
+                            Login Now
+                        </a>
+
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="pt-5">
+
+        <div class="container">
+
+            <div class="row g-5 pb-5">
+
+
+                <!-- Brand -->
+
+                <div class="col-lg-4">
+
+                    <h5>
+
+                        <i class="bi bi-trophy-fill text-success"></i>
+
+                        BoxCricket
+
+                    </h5>
+
+                    <p class="mt-3">
+
+                        Premium box cricket slot booking
+                        platform made for cricket lovers.
+
+                    </p>
+
+                    <div class="mt-4">
+
+                        <a href="#" class="footer-social">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="#" class="footer-social">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="#" class="footer-social">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+
+                        <a href="#" class="footer-social">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Quick Links -->
+
+                <div class="col-6 col-lg-2">
+
+                    <h5>
+                        Quick Links
+                    </h5>
+
+                    <ul class="list-unstyled mt-3">
+
+                        <li class="mb-2">
+                            <a href="{% url 'index' %}">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="{% url 'about' %}">
+                                About
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="{% url 'book_now' %}">
+                                Slot Time
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="{% url 'service' %}">
+                                Services
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Account -->
+
+                <div class="col-6 col-lg-2">
+
+                    <h5>
+                        Account
+                    </h5>
+
+                    <ul class="list-unstyled mt-3">
+
+                        <li class="mb-2">
+                            <a href="#">
+                                Login
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="{% url 'user-register' %}">
+                                Register
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="{% url 'my-booking' %}">
+                                My Booking
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Contact -->
+
+                <div class="col-lg-4">
+
+                    <h5>
+                        Contact Us
+                    </h5>
+
+                    <p class="mt-3">
+
+                        <i class="bi bi-geo-alt-fill text-success me-2"></i>
+
+                        Your City, Gujarat
+
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-telephone-fill text-success me-2"></i>
+
+                        +91 98765 43210
+
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-envelope-fill text-success me-2"></i>
+
+                        info@boxcricket.com
+
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-clock-fill text-success me-2"></i>
+
+                        Open: 05:00 AM - 02:00 AM
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer Bottom -->
+
+            <div class="footer-bottom text-center py-4">
+
+                <p class="mb-0">
+
+                    © 2026 BoxCricket.
+                    All Rights Reserved.
 
                 </p>
 
@@ -761,30 +729,13 @@
 
         </div>
 
-
-        <!-- Footer Bottom -->
-
-        <div class="footer-bottom text-center py-4">
-
-            <p class="mb-0">
-
-                © 2026 BoxCricket.
-                All Rights Reserved.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</footer>
+    </footer>
 
 
-<!-- Bootstrap JS -->
+    <!-- Bootstrap JS -->
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 

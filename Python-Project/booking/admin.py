@@ -1,34 +1,33 @@
 from django.contrib import admin
-from booking.models import *
+from .models import Booking
 
 
+@admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
 
-    list_display = (
+    list_display = [
         "id",
         "user",
-        "name",
         "email",
         "number",
         "slot_time",
         "duration",
+        "payment_option",
         "booking_date",
-        "price",
-        "status",
-        "created_at",
-    )
+    ]
 
-    list_filter = (
-        "duration",
-        "status",
+    list_filter = [
+        "payment_option",
         "booking_date",
-    )
+    ]
 
-    search_fields = (
-        "name",
+    search_fields = [
+        "user__username",
         "email",
         "number",
-    )
+        "slot_time",
+    ]
 
-
-admin.site.register(Booking,BookingAdmin)
+    ordering = [
+        "-booking_date"
+    ]
