@@ -12,12 +12,12 @@ class BookingAdmin(admin.ModelAdmin):
         "number",
         "slot_time",
         "duration",
-        "payment_option",
+      
         "booking_date",
     ]
 
     list_filter = [
-        "payment_option",
+      
         "booking_date",
     ]
 

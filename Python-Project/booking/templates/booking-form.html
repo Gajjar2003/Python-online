@@ -10,18 +10,24 @@
 
     <title>BoxCricket | Booking Form</title>
 
-    <!-- Bootstrap 5 -->
+
+    <!-- ================= BOOTSTRAP 5 ================= -->
+
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
+
+    <!-- ================= BOOTSTRAP ICONS ================= -->
+
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 
     <style>
+
+        /* ================= GLOBAL ================= */
 
         * {
             margin: 0;
@@ -31,72 +37,112 @@
 
 
         body {
+
             font-family: Arial, sans-serif;
+
             background: #f5f7f9;
+
             color: #14213d;
         }
+
 
 
         /* ================= NAVBAR ================= */
 
         .navbar {
+
             background: #061b2e;
+
             padding: 15px 0;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.15);
         }
 
 
         .navbar-brand {
+
             color: white !important;
+
             font-size: 28px;
+
             font-weight: 900;
         }
 
 
         .navbar-brand i {
+
             color: #22c55e;
+
+            margin-right: 5px;
         }
 
 
         .navbar-brand span {
+
             color: #22c55e;
         }
 
 
         .nav-link {
+
             color: white !important;
+
             font-weight: 600;
-            margin-left: 12px;
+
+            margin-left: 10px;
+
             padding: 8px 15px !important;
+
             transition: 0.3s;
+
+            border-radius: 25px;
         }
 
 
         .nav-link:hover {
+
             color: #22c55e !important;
         }
 
 
         .nav-link.active {
+
             color: #22c55e !important;
         }
 
 
         .login-btn {
+
             border: 1px solid #22c55e;
+
             border-radius: 25px;
         }
 
 
-        .register-btn {
+        .login-btn:hover {
+
             background: #22c55e;
+
+            color: white !important;
+        }
+
+
+        .register-btn {
+
+            background: #22c55e;
+
             border-radius: 25px;
         }
 
 
         .register-btn:hover {
+
             background: #16a34a;
+
             color: white !important;
         }
+
 
 
         /* ================= BOOKING SECTION ================= */
@@ -112,19 +158,24 @@
             align-items: center;
 
             background:
+
                 linear-gradient(
-                    rgba(3, 15, 27, 0.85),
+                    rgba(3, 15, 27, 0.86),
                     rgba(3, 15, 27, 0.95)
                 ),
+
                 url("/static/image/box.jpg");
 
             background-size: cover;
 
             background-position: center;
+
+            background-attachment: fixed;
         }
 
 
-        /* ================= CARD ================= */
+
+        /* ================= BOOKING CARD ================= */
 
         .booking-card {
 
@@ -141,9 +192,14 @@
             border-radius: 30px;
 
             box-shadow:
-                0 25px 70px rgba(0, 0, 0, 0.35);
+
+                0 25px 70px
+                rgba(0, 0, 0, 0.35);
         }
 
+
+
+        /* ================= BOOKING ICON ================= */
 
         .booking-icon {
 
@@ -151,9 +207,7 @@
 
             height: 75px;
 
-            margin: auto;
-
-            margin-bottom: 20px;
+            margin: 0 auto 20px;
 
             display: flex;
 
@@ -170,6 +224,9 @@
             font-size: 35px;
         }
 
+
+
+        /* ================= TITLE ================= */
 
         .booking-title {
 
@@ -201,6 +258,50 @@
         }
 
 
+
+        /* ================= MESSAGE ================= */
+
+        .slot-error {
+
+            background: #fee2e2;
+
+            color: #b91c1c;
+
+            border: 1px solid #fecaca;
+
+            border-radius: 12px;
+
+            padding: 15px;
+
+            text-align: center;
+
+            font-weight: 700;
+
+            margin-bottom: 25px;
+        }
+
+
+        .slot-success {
+
+            background: #dcfce7;
+
+            color: #15803d;
+
+            border: 1px solid #bbf7d0;
+
+            border-radius: 12px;
+
+            padding: 15px;
+
+            text-align: center;
+
+            font-weight: 700;
+
+            margin-bottom: 25px;
+        }
+
+
+
         /* ================= FORM ================= */
 
         .form-label {
@@ -221,6 +322,8 @@
             border-radius: 12px;
 
             border: 1px solid #dbe2e8;
+
+            font-size: 15px;
         }
 
 
@@ -230,12 +333,17 @@
             border-color: #22c55e;
 
             box-shadow:
+
                 0 0 0 0.2rem
                 rgba(34, 197, 94, 0.15);
         }
 
 
         .input-group-text {
+
+            min-width: 50px;
+
+            justify-content: center;
 
             background: #dcfce7;
 
@@ -244,6 +352,8 @@
             border-radius: 12px 0 0 12px;
 
             border: 1px solid #dbe2e8;
+
+            font-size: 18px;
         }
 
 
@@ -253,63 +363,25 @@
         }
 
 
-        /* ================= PAYMENT ================= */
 
-        .payment-box {
+        /* ================= SELECT ================= */
 
-            background: #f8fafc;
-
-            border: 1px solid #e2e8f0;
-
-            border-radius: 15px;
-
-            padding: 20px;
-        }
-
-
-        .payment-title {
-
-            font-weight: 800;
-
-            color: #061b2e;
-
-            margin-bottom: 15px;
-        }
-
-
-        .payment-option {
-
-            display: block;
-
-            border: 1px solid #dbe2e8;
-
-            border-radius: 12px;
-
-            padding: 12px 15px;
-
-            margin-bottom: 10px;
+        .form-select {
 
             cursor: pointer;
 
-            transition: 0.3s;
+            padding-left: 15px;
         }
 
 
-        .payment-option:hover {
+        .form-select option {
 
-            border-color: #22c55e;
-
-            background: #f0fdf4;
+            padding: 10px;
         }
 
 
-        .payment-option input {
 
-            margin-right: 8px;
-        }
-
-
-        /* ================= BUTTON ================= */
+        /* ================= CONFIRM BUTTON ================= */
 
         .booking-submit {
 
@@ -329,7 +401,7 @@
 
             font-weight: 800;
 
-            margin-top: 25px;
+            margin-top: 15px;
 
             transition: 0.3s;
         }
@@ -340,8 +412,14 @@
             background: #16a34a;
 
             transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(34, 197, 94, 0.25);
         }
 
+
+
+        /* ================= BACK BUTTON ================= */
 
         .back-btn {
 
@@ -362,16 +440,29 @@
         .back-btn:hover {
 
             color: #15803d;
+
+            text-decoration: underline;
         }
+
 
 
         /* ================= MOBILE ================= */
 
         @media(max-width: 768px) {
 
+            .booking-section {
+
+                padding: 40px 15px;
+
+                background-attachment: scroll;
+            }
+
+
             .booking-card {
 
                 padding: 30px 20px;
+
+                border-radius: 22px;
             }
 
 
@@ -380,7 +471,28 @@
                 font-size: 30px;
             }
 
+
+            .booking-subtitle {
+
+                font-size: 14px;
+            }
+
+
+            .navbar-brand {
+
+                font-size: 24px;
+            }
+
+
+            .nav-link {
+
+                margin-left: 0;
+
+                margin-top: 5px;
+            }
+
         }
+
 
     </style>
 
@@ -390,7 +502,9 @@
 <body>
 
 
-<!-- ================= NAVBAR ================= -->
+<!-- ================================================= -->
+<!--                       NAVBAR                      -->
+<!-- ================================================= -->
 
 <nav class="navbar navbar-expand-lg sticky-top">
 
@@ -399,8 +513,10 @@
 
         <!-- LOGO -->
 
-        <a class="navbar-brand"
-           href="{% url 'index' %}">
+        <a
+            class="navbar-brand"
+            href="{% url 'index' %}"
+        >
 
             <i class="bi bi-trophy-fill"></i>
 
@@ -409,24 +525,31 @@
         </a>
 
 
-        <!-- MOBILE MENU BUTTON -->
+
+        <!-- MOBILE MENU -->
 
         <button
             class="navbar-toggler bg-light"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#menu">
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
 
             <span class="navbar-toggler-icon"></span>
 
         </button>
 
 
-        <!-- NAVIGATION -->
+
+        <!-- MENU -->
 
         <div
             class="collapse navbar-collapse"
-            id="menu">
+            id="menu"
+        >
 
             <ul class="navbar-nav ms-auto">
 
@@ -437,7 +560,8 @@
 
                     <a
                         class="nav-link"
-                        href="{% url 'index' %}">
+                        href="{% url 'index' %}"
+                    >
 
                         Home
 
@@ -446,13 +570,15 @@
                 </li>
 
 
+
                 <!-- ABOUT -->
 
                 <li class="nav-item">
 
                     <a
                         class="nav-link"
-                        href="{% url 'about' %}">
+                        href="{% url 'about' %}"
+                    >
 
                         About
 
@@ -461,13 +587,15 @@
                 </li>
 
 
+
                 <!-- SERVICES -->
 
                 <li class="nav-item">
 
                     <a
                         class="nav-link"
-                        href="{% url 'service' %}">
+                        href="{% url 'service' %}"
+                    >
 
                         Services
 
@@ -476,13 +604,15 @@
                 </li>
 
 
+
                 <!-- BOOK NOW -->
 
                 <li class="nav-item">
 
                     <a
                         class="nav-link active"
-                        href="{% url 'book_now' %}">
+                        href="{% url 'book_now' %}"
+                    >
 
                         Book-Now
 
@@ -491,13 +621,15 @@
                 </li>
 
 
+
                 <!-- MY BOOKING -->
 
                 <li class="nav-item">
 
                     <a
                         class="nav-link"
-                        href="{% url 'my-booking' %}">
+                        href="{% url 'my-booking' %}"
+                    >
 
                         My Booking
 
@@ -506,7 +638,8 @@
                 </li>
 
 
-                <!-- USER LOGIN -->
+
+                <!-- AUTHENTICATION -->
 
                 {% if user.is_authenticated %}
 
@@ -526,13 +659,15 @@
                     </li>
 
 
+
                     <!-- LOGOUT -->
 
                     <li class="nav-item">
 
                         <a
                             class="nav-link login-btn"
-                            href="{% url 'user-logout' %}">
+                            href="{% url 'user-logout' %}"
+                        >
 
                             <i class="bi bi-box-arrow-right me-1"></i>
 
@@ -552,7 +687,8 @@
 
                         <a
                             class="nav-link login-btn"
-                            href="{% url 'user-login' %}">
+                            href="{% url 'user-login' %}"
+                        >
 
                             Login
 
@@ -561,13 +697,15 @@
                     </li>
 
 
+
                     <!-- REGISTER -->
 
                     <li class="nav-item">
 
                         <a
                             class="nav-link register-btn"
-                            href="{% url 'user-register' %}">
+                            href="{% url 'user-register' %}"
+                        >
 
                             Register
 
@@ -589,7 +727,9 @@
 
 
 
-<!-- ================= BOOKING SECTION ================= -->
+<!-- ================================================= -->
+<!--                  BOOKING SECTION                  -->
+<!-- ================================================= -->
 
 <section class="booking-section">
 
@@ -599,13 +739,14 @@
         <div class="booking-card">
 
 
-            <!-- ICON -->
+            <!-- BOOKING ICON -->
 
             <div class="booking-icon">
 
                 <i class="bi bi-calendar-check-fill"></i>
 
             </div>
+
 
 
             <!-- TITLE -->
@@ -626,7 +767,45 @@
 
 
 
-            <!-- ================= FORM ================= -->
+            <!-- ================================================= -->
+            <!--                    ERROR MESSAGE                  -->
+            <!-- ================================================= -->
+
+            {% if err %}
+
+                <div class="slot-error">
+
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+
+                    {{ err }}
+
+                </div>
+
+            {% endif %}
+
+
+
+            <!-- ================================================= -->
+            <!--                   SUCCESS MESSAGE                 -->
+            <!-- ================================================= -->
+
+            {% if meg %}
+
+                <div class="slot-success">
+
+                    <i class="bi bi-check-circle-fill me-2"></i>
+
+                    {{ meg }}
+
+                </div>
+
+            {% endif %}
+
+
+
+            <!-- ================================================= -->
+            <!--                       FORM                        -->
+            <!-- ================================================= -->
 
             <form method="POST">
 
@@ -634,7 +813,7 @@
 
 
 
-                <!-- USERNAME -->
+                <!-- ================= USERNAME ================= -->
 
                 <div class="mb-3">
 
@@ -644,6 +823,7 @@
 
                     </label>
 
+
                     <div class="input-group">
 
                         <span class="input-group-text">
@@ -652,11 +832,13 @@
 
                         </span>
 
+
                         <input
                             type="text"
                             class="form-control"
                             value="{{ user.username }}"
-                            readonly>
+                            readonly
+                        >
 
                     </div>
 
@@ -664,7 +846,7 @@
 
 
 
-                <!-- EMAIL -->
+                <!-- ================= EMAIL ================= -->
 
                 <div class="mb-3">
 
@@ -674,6 +856,7 @@
 
                     </label>
 
+
                     <div class="input-group">
 
                         <span class="input-group-text">
@@ -682,11 +865,13 @@
 
                         </span>
 
+
                         <input
                             type="email"
                             class="form-control"
                             value="{{ user.email }}"
-                            readonly>
+                            readonly
+                        >
 
                     </div>
 
@@ -694,7 +879,7 @@
 
 
 
-                <!-- MOBILE NUMBER -->
+                <!-- ================= MOBILE ================= -->
 
                 <div class="mb-3">
 
@@ -704,6 +889,7 @@
 
                     </label>
 
+
                     <div class="input-group">
 
                         <span class="input-group-text">
@@ -712,13 +898,16 @@
 
                         </span>
 
+
                         <input
                             type="tel"
                             name="number"
                             class="form-control"
                             placeholder="Enter mobile number"
                             maxlength="15"
-                            required>
+                            value="{{ number|default:'' }}"
+                            required
+                        >
 
                     </div>
 
@@ -743,7 +932,8 @@
                         name="duration"
                         id="duration"
                         class="form-select"
-                        required>
+                        required
+                    >
 
                         <option value="">
 
@@ -752,21 +942,36 @@
                         </option>
 
 
-                        <option value="1 Hour">
+                        <option
+                            value="1 Hour"
+                            {% if selected_duration == "1 Hour" %}
+                                selected
+                            {% endif %}
+                        >
 
                             1 Hour - ₹700
 
                         </option>
 
 
-                        <option value="2 Hours">
+                        <option
+                            value="2 Hours"
+                            {% if selected_duration == "2 Hours" %}
+                                selected
+                            {% endif %}
+                        >
 
                             2 Hours - ₹1,200
 
                         </option>
 
 
-                        <option value="3 Hours">
+                        <option
+                            value="3 Hours"
+                            {% if selected_duration == "3 Hours" %}
+                                selected
+                            {% endif %}
+                        >
 
                             3 Hours - ₹1,800
 
@@ -795,7 +1000,8 @@
                         name="slot_time"
                         id="slot_time"
                         class="form-select"
-                        required>
+                        required
+                    >
 
                         <option value="">
 
@@ -809,84 +1015,14 @@
 
 
 
-                <!-- ================= PAYMENT ================= -->
-
-                <div class="payment-box">
-
-
-                    <div class="payment-title">
-
-                        <i
-                            class="bi bi-credit-card me-2 text-success">
-                        </i>
-
-                        Payment Option
-
-                    </div>
-
-
-
-                    <!-- CASH -->
-
-                    <label class="payment-option">
-
-                        <input
-                            type="radio"
-                            name="payment_option"
-                            value="Cash"
-                            required>
-
-                        <i class="bi bi-cash-coin me-2"></i>
-
-                        Cash
-
-                    </label>
-
-
-
-                    <!-- UPI -->
-
-                    <label class="payment-option">
-
-                        <input
-                            type="radio"
-                            name="payment_option"
-                            value="UPI">
-
-                        <i class="bi bi-phone me-2"></i>
-
-                        UPI
-
-                    </label>
-
-
-
-                    <!-- CARD -->
-
-                    <label class="payment-option">
-
-                        <input
-                            type="radio"
-                            name="payment_option"
-                            value="Card">
-
-                        <i class="bi bi-credit-card me-2"></i>
-
-                        Card
-
-                    </label>
-
-                </div>
-
-
-
-                <!-- ================= SUBMIT ================= -->
+                <!-- ================= CONFIRM ================= -->
 
                 <button
                     type="submit"
-                    class="booking-submit">
+                    class="booking-submit"
+                >
 
-                    <i class="bi bi-check-circle me-2"></i>
+                    <i class="bi bi-arrow-right-circle me-2"></i>
 
                     Confirm Booking
 
@@ -894,11 +1030,12 @@
 
 
 
-                <!-- BACK BUTTON -->
+                <!-- ================= BACK ================= -->
 
                 <a
                     href="{% url 'book_now' %}"
-                    class="back-btn">
+                    class="back-btn"
+                >
 
                     <i class="bi bi-arrow-left me-1"></i>
 
@@ -917,22 +1054,29 @@
 
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- ================================================= -->
+<!--                    JAVASCRIPT                     -->
+<!-- ================================================= -->
 
 <script>
 
     const durationSelect =
         document.getElementById("duration");
 
+
     const slotSelect =
         document.getElementById("slot_time");
 
 
-    /* ================= ALL SLOTS ================= */
+
+    /* ================================================= */
+    /*                     ALL SLOTS                     */
+    /* ================================================= */
 
     const slots = {
 
-        /* ========== 1 HOUR ========== */
+
+        /* ================= 1 HOUR ================= */
 
         "1 Hour": [
 
@@ -961,7 +1105,8 @@
         ],
 
 
-        /* ========== 2 HOURS ========== */
+
+        /* ================= 2 HOURS ================= */
 
         "2 Hours": [
 
@@ -980,7 +1125,8 @@
         ],
 
 
-        /* ========== 3 HOURS ========== */
+
+        /* ================= 3 HOURS ================= */
 
         "3 Hours": [
 
@@ -998,21 +1144,24 @@
 
 
 
-    /* ================= CHANGE DURATION ================= */
+    /* ================================================= */
+    /*                     LOAD SLOTS                    */
+    /* ================================================= */
 
-    durationSelect.addEventListener("change", function () {
+    function loadSlots() {
 
 
-        const selectedDuration = this.value;
+        const selectedDuration =
+            durationSelect.value;
 
 
-        /* Clear old slots */
+        const oldSlot =
+            "{{ selected_slot|default:'' }}";
+
 
         slotSelect.innerHTML =
             '<option value="">Select Slot Time</option>';
 
-
-        /* Add new slots */
 
         if (
             selectedDuration &&
@@ -1020,33 +1169,107 @@
         ) {
 
 
-            slots[selectedDuration].forEach(function (slot) {
+            slots[selectedDuration].forEach(
+                function(slot) {
 
 
-                const option =
-                    document.createElement("option");
+                    const option =
+                        document.createElement("option");
 
 
-                option.value = slot;
+                    option.value = slot;
 
 
-                option.textContent = slot;
+                    option.textContent = slot;
 
 
-                slotSelect.appendChild(option);
+                    /* Retain previous slot */
+
+                    if (slot === oldSlot) {
+
+                        option.selected = true;
+
+                    }
 
 
-            });
+                    slotSelect.appendChild(option);
+
+                }
+            );
 
         }
 
-    });
+    }
+
+
+
+    /* ================================================= */
+    /*                  DURATION CHANGE                  */
+    /* ================================================= */
+
+    durationSelect.addEventListener(
+        "change",
+        function() {
+
+
+            const selectedDuration =
+                this.value;
+
+
+            slotSelect.innerHTML =
+                '<option value="">Select Slot Time</option>';
+
+
+            if (
+                selectedDuration &&
+                slots[selectedDuration]
+            ) {
+
+
+                slots[selectedDuration].forEach(
+                    function(slot) {
+
+
+                        const option =
+                            document.createElement("option");
+
+
+                        option.value = slot;
+
+
+                        option.textContent = slot;
+
+
+                        slotSelect.appendChild(option);
+
+                    }
+                );
+
+            }
+
+        }
+    );
+
+
+
+    /* ================================================= */
+    /*                    PAGE LOAD                      */
+    /* ================================================= */
+
+    window.addEventListener(
+        "DOMContentLoaded",
+        function() {
+
+            loadSlots();
+
+        }
+    );
 
 </script>
 
 
 
-<!-- Bootstrap JS -->
+<!-- ================= BOOTSTRAP JS ================= -->
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
