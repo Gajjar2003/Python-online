@@ -5,31 +5,41 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>BoxCricket | Payment</title>
 
-  <!-- ================= BOOTSTRAP 5 ================= -->
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ================= BOOTSTRAP ================= -->
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
 
   <!-- ================= BOOTSTRAP ICONS ================= -->
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+
     body {
       font-family: Arial, sans-serif;
       background: #f5f7f9;
       color: #14213d;
     }
+
 
     /* ================= NAVBAR ================= */
 
@@ -38,19 +48,23 @@
       padding: 15px 0;
     }
 
+
     .navbar-brand {
       color: white !important;
       font-size: 28px;
       font-weight: 900;
     }
 
+
     .navbar-brand i {
       color: #22c55e;
     }
 
+
     .navbar-brand span {
       color: #22c55e;
     }
+
 
     .nav-link {
       color: white !important;
@@ -58,14 +72,17 @@
       padding: 8px 15px !important;
     }
 
+
     .nav-link:hover {
       color: #22c55e !important;
     }
+
 
     .login-btn {
       border: 1px solid #22c55e;
       border-radius: 25px;
     }
+
 
     /* ================= PAYMENT SECTION ================= */
 
@@ -80,14 +97,17 @@
       align-items: center;
 
       background:
-        linear-gradient(rgba(3, 15, 27, 0.88),
-          rgba(3, 15, 27, 0.95)),
+        linear-gradient(
+          rgba(3, 15, 27, 0.88),
+          rgba(3, 15, 27, 0.95)
+        ),
         url("/static/image/box.jpg");
 
       background-size: cover;
 
       background-position: center;
     }
+
 
     /* ================= CARD ================= */
 
@@ -109,11 +129,13 @@
         0 25px 70px rgba(0, 0, 0, 0.35);
     }
 
+
     /* ================= ICON ================= */
 
     .payment-icon {
 
       width: 70px;
+
       height: 70px;
 
       background: #dcfce7;
@@ -135,6 +157,7 @@
       margin-bottom: 20px;
     }
 
+
     /* ================= TITLE ================= */
 
     .payment-title {
@@ -148,9 +171,11 @@
       color: #061b2e;
     }
 
+
     .payment-title span {
       color: #22c55e;
     }
+
 
     .payment-subtitle {
 
@@ -160,6 +185,7 @@
 
       margin-bottom: 30px;
     }
+
 
     /* ================= BOOKING INFORMATION ================= */
 
@@ -176,6 +202,7 @@
       margin-bottom: 25px;
     }
 
+
     .info-row {
 
       display: flex;
@@ -187,9 +214,11 @@
       border-bottom: 1px solid #e2e8f0;
     }
 
+
     .info-row:last-child {
       border-bottom: none;
     }
+
 
     .info-label {
 
@@ -197,6 +226,7 @@
 
       color: #475569;
     }
+
 
     .info-value {
 
@@ -207,12 +237,14 @@
       text-align: right;
     }
 
+
     .amount {
 
       color: #16a34a;
 
       font-size: 22px;
     }
+
 
     /* ================= METHOD TITLE ================= */
 
@@ -226,6 +258,7 @@
 
       margin-bottom: 15px;
     }
+
 
     /* ================= PAYMENT OPTION ================= */
 
@@ -246,6 +279,7 @@
       display: block;
     }
 
+
     .payment-option:hover {
 
       border-color: #22c55e;
@@ -253,9 +287,11 @@
       background: #f0fdf4;
     }
 
+
     .payment-option input {
       margin-right: 10px;
     }
+
 
     .payment-option i {
 
@@ -265,6 +301,7 @@
 
       margin-right: 8px;
     }
+
 
     /* ================= ONLINE BOX ================= */
 
@@ -283,6 +320,7 @@
       text-align: center;
     }
 
+
     .online-box h4 {
 
       font-weight: 900;
@@ -292,7 +330,8 @@
       margin-bottom: 15px;
     }
 
-    /* ================= QR IMAGE ================= */
+
+    /* ================= QR ================= */
 
     .qr-image {
 
@@ -312,6 +351,7 @@
 
       margin-bottom: 20px;
     }
+
 
     /* ================= UPI ID ================= */
 
@@ -334,6 +374,7 @@
       word-break: break-word;
     }
 
+
     /* ================= ONLINE AMOUNT ================= */
 
     .online-amount {
@@ -347,7 +388,8 @@
       margin-bottom: 20px;
     }
 
-    /* ================= PAYMENT BUTTON ================= */
+
+    /* ================= BUTTON ================= */
 
     .payment-btn {
 
@@ -372,6 +414,7 @@
       transition: 0.3s;
     }
 
+
     .payment-btn:hover {
 
       background: #16a34a;
@@ -379,7 +422,42 @@
       transform: translateY(-2px);
     }
 
-    /* ================= BACK BUTTON ================= */
+
+    /* ================= PAYMENT DONE ================= */
+
+    .payment-done-btn {
+
+      width: 100%;
+
+      border: none;
+
+      background: #0d6efd;
+
+      color: white;
+
+      padding: 15px;
+
+      border-radius: 30px;
+
+      font-size: 17px;
+
+      font-weight: 800;
+
+      margin-top: 15px;
+
+      transition: 0.3s;
+    }
+
+
+    .payment-done-btn:hover {
+
+      background: #0b5ed7;
+
+      transform: translateY(-2px);
+    }
+
+
+    /* ================= BACK ================= */
 
     .back-btn {
 
@@ -396,9 +474,11 @@
       font-weight: 700;
     }
 
+
     .back-btn:hover {
       color: #15803d;
     }
+
 
     /* ================= MOBILE ================= */
 
@@ -408,27 +488,36 @@
         padding: 25px 18px;
       }
 
+
       .payment-title {
         font-size: 30px;
       }
 
+
       .qr-image {
+
         width: 220px;
+
         height: 220px;
+
       }
+
 
       .info-row {
 
         flex-direction: column;
 
         gap: 4px;
+
       }
+
 
       .info-value {
         text-align: left;
       }
 
     }
+
   </style>
 
 </head>
@@ -439,15 +528,15 @@
 
   <!-- =====================================================
                          NAVBAR
-===================================================== -->
+  ===================================================== -->
 
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar">
 
     <div class="container">
 
-      <!-- LOGO -->
-
-      <a class="navbar-brand" href="{% url 'index' %}">
+      <a
+        class="navbar-brand"
+        href="{% url 'index' %}">
 
         <i class="bi bi-trophy-fill"></i>
 
@@ -456,11 +545,11 @@
       </a>
 
 
-      <!-- LOGOUT -->
-
       <div class="ms-auto">
 
-        <a href="{% url 'user-logout' %}" class="nav-link login-btn">
+        <a
+          href="{% url 'user-logout' %}"
+          class="nav-link login-btn">
 
           <i class="bi bi-box-arrow-right me-1"></i>
 
@@ -478,7 +567,7 @@
 
   <!-- =====================================================
                     PAYMENT SECTION
-===================================================== -->
+  ===================================================== -->
 
   <section class="payment-section">
 
@@ -515,12 +604,10 @@
 
         <!-- =====================================================
                        BOOKING INFORMATION
-            ===================================================== -->
+        ===================================================== -->
 
         <div class="booking-info">
 
-
-          <!-- USERNAME -->
 
           <div class="info-row">
 
@@ -535,8 +622,6 @@
           </div>
 
 
-          <!-- MOBILE -->
-
           <div class="info-row">
 
             <span class="info-label">
@@ -549,8 +634,6 @@
 
           </div>
 
-
-          <!-- DURATION -->
 
           <div class="info-row">
 
@@ -565,8 +648,6 @@
           </div>
 
 
-          <!-- SLOT -->
-
           <div class="info-row">
 
             <span class="info-label">
@@ -579,8 +660,6 @@
 
           </div>
 
-
-          <!-- TOTAL AMOUNT -->
 
           <div class="info-row">
 
@@ -599,8 +678,8 @@
 
 
         <!-- =====================================================
-                         PAYMENT FORM
-            ===================================================== -->
+                         PAYMENT METHOD
+        ===================================================== -->
 
         <form method="POST">
 
@@ -614,12 +693,16 @@
           </div>
 
 
-
           <!-- ================= CASH ================= -->
 
           <label class="payment-option">
 
-            <input type="radio" name="payment_method" value="Cash" required onchange="showPaymentBox('cash')">
+            <input
+              type="radio"
+              name="payment_method"
+              value="Cash"
+              required
+              onchange="showPaymentBox('cash')">
 
             <i class="bi bi-cash-coin"></i>
 
@@ -641,7 +724,11 @@
 
           <label class="payment-option">
 
-            <input type="radio" name="payment_method" value="Online" onchange="showPaymentBox('online')">
+            <input
+              type="radio"
+              name="payment_method"
+              value="Online"
+              onchange="showPaymentBox('online')">
 
             <i class="bi bi-phone"></i>
 
@@ -660,10 +747,12 @@
 
 
           <!-- =====================================================
-                            ONLINE PAYMENT BOX
-                ===================================================== -->
+                         ONLINE PAYMENT
+          ===================================================== -->
 
-          <div id="onlineBox" class="online-box d-none">
+          <div
+            id="onlineBox"
+            class="online-box d-none">
 
 
             <h4>
@@ -682,13 +771,13 @@
             </p>
 
 
+            <!-- ================= QR ================= -->
 
-            <!-- =================================================
-                              DYNAMIC QR
-                    ================================================= -->
-
-            <img id="qrImage" src="" alt="UPI Payment QR Code" class="qr-image">
-
+            <img
+              id="qrImage"
+              src=""
+              alt="UPI Payment QR Code"
+              class="qr-image">
 
 
             <!-- ================= UPI ID ================= -->
@@ -703,15 +792,15 @@
             <div class="upi-id">
 
               jenilgajjar90@okhdfcbank
-            </div>
 
+            </div>
 
 
             <!-- ================= AMOUNT ================= -->
 
             <div class="text-muted">
 
-              Pay Exact Booking Amount
+              Booking Amount
 
             </div>
 
@@ -723,42 +812,28 @@
             </div>
 
 
+            <!-- ================= PAYMENT DONE ================= -->
 
-            <!-- ================= SUCCESS MESSAGE ================= -->
-
-            <div class="alert alert-success">
+            <button
+              type="button"
+              id="paymentDoneButton"
+              class="payment-done-btn">
 
               <i class="bi bi-check-circle-fill me-2"></i>
 
-              Scan QR code and pay
+              Payment Done
 
-              <strong>
-                ₹{{ amount }}
-              </strong>
-
-              automatically.
-
-            </div>
-
-
-            <p class="text-muted mb-0">
-
-              <i class="bi bi-info-circle me-1"></i>
-
-              QR scan karne par payment app me
-              ₹{{ amount }} amount automatically show hoga.
-
-            </p>
+            </button>
 
           </div>
 
 
+          <!-- ================= CASH BUTTON ================= -->
 
-          <!-- =====================================================
-                         CASH SUBMIT BUTTON
-                ===================================================== -->
-
-          <button type="submit" class="payment-btn" id="paymentButton">
+          <button
+            type="submit"
+            class="payment-btn"
+            id="paymentButton">
 
             <i class="bi bi-cash-coin me-2"></i>
 
@@ -771,34 +846,55 @@
 
 
         <!-- =====================================================
-                         ONLINE DONE FORM
-            ===================================================== -->
+                    CONFIRM ONLINE BOOKING
+        ===================================================== -->
 
-        <form method="POST" action="{% url 'online-payment-done' %}" id="onlineDoneForm" class="d-none">
+        <form
+          method="POST"
+          action="{% url 'online-payment-done' %}"
+          id="onlineDoneForm"
+          class="d-none">
 
           {% csrf_token %}
 
 
-          <input type="hidden" name="payment_method" value="Online">
+          <input
+            type="hidden"
+            name="payment_method"
+            value="Online">
 
 
-          <input type="hidden" name="amount" value="{{ amount }}">
+          <input
+            type="hidden"
+            name="amount"
+            value="{{ amount }}">
 
 
-          <input type="hidden" name="number" value="{{ number }}">
+          <input
+            type="hidden"
+            name="number"
+            value="{{ number }}">
 
 
-          <input type="hidden" name="duration" value="{{ duration }}">
+          <input
+            type="hidden"
+            name="duration"
+            value="{{ duration }}">
 
 
-          <input type="hidden" name="slot_time" value="{{ slot_time }}">
+          <input
+            type="hidden"
+            name="slot_time"
+            value="{{ slot_time }}">
 
 
-          <button type="submit" class="payment-btn">
+          <button
+            type="submit"
+            class="payment-btn">
 
             <i class="bi bi-check-circle-fill me-2"></i>
 
-            Payment Done - Confirm Booking
+            Confirm Booking
 
           </button>
 
@@ -808,7 +904,9 @@
 
         <!-- ================= BACK ================= -->
 
-        <a href="{% url 'booking-form' %}" class="back-btn">
+        <a
+          href="{% url 'booking-form' %}"
+          class="back-btn">
 
           <i class="bi bi-arrow-left me-1"></i>
 
@@ -827,266 +925,141 @@
 
   <!-- =====================================================
                          JAVASCRIPT
-===================================================== -->
+  ===================================================== -->
 
   <script>
 
-    /*
-    =====================================================
-                    IMPORTANT UPI DETAILS
-    =====================================================
 
-    Yaha REAL ACTIVE UPI ID rakho.
+    /* ================= ELEMENTS ================= */
 
-    Example:
-
-    jenilgajjar90@okicici
-
-    */
-
-    const upiId = "jenilgajjar90@okicici";
+    const paymentButton =
+      document.getElementById("paymentButton");
 
 
-    /*
-    =====================================================
-                    BOOKING AMOUNT
-    =====================================================
+    const onlineBox =
+      document.getElementById("onlineBox");
 
-    Django se amount automatically aayega.
 
-    Example:
+    const onlineDoneForm =
+      document.getElementById("onlineDoneForm");
 
-    {{ amount }} = 1200
 
-    QR ke andar:
+    const paymentDoneButton =
+      document.getElementById("paymentDoneButton");
 
-    am=1200
 
-    jayega.
-    */
+    const qrImage =
+      document.getElementById("qrImage");
+
+
+    /* ================= AMOUNT ================= */
 
     const bookingAmount =
       "{{ amount }}";
 
 
-    /*
-    =====================================================
-                       ELEMENTS
-    =====================================================
-    */
+    /* ================= UPI ID ================= */
 
-    const paymentButton =
-      document.getElementById(
-        "paymentButton"
-      );
+    const upiId =
+      "jenilgajjar90@okhdfcbank";
 
 
-    const onlineBox =
-      document.getElementById(
-        "onlineBox"
-      );
+    /* ================= GENERATE QR ================= */
 
+    function generateQRCode() {
 
-    const onlineDoneForm =
-      document.getElementById(
-        "onlineDoneForm"
-      );
-
-
-    const qrImage =
-      document.getElementById(
-        "qrImage"
-      );
-
-
-
-    /*
-    =====================================================
-                 CREATE DYNAMIC UPI QR
-    =====================================================
-    */
-
-    function createUPIQR() {
-
-      /*
-      UPI PAYMENT DATA
-
-      pa = UPI ID
-      pn = Payee Name
-      am = Booking Amount
-      cu = Indian Rupees
-      */
-
-      const upiURL =
-
+      const upiUrl =
         "upi://pay" +
-
         "?pa=" +
-        encodeURIComponent(
-          upiId
-        ) +
-
+        encodeURIComponent(upiId) +
         "&pn=" +
-        encodeURIComponent(
-          "BoxCricket"
-        ) +
-
+        encodeURIComponent("BoxCricket") +
         "&am=" +
-        encodeURIComponent(
-          bookingAmount
-        ) +
-
+        encodeURIComponent(bookingAmount) +
         "&cu=INR";
 
 
-      /*
-      =================================================
-                GENERATE QR IMAGE
-      =================================================
-
-      QR ke andar dynamic amount jayega.
-
-      Example:
-
-      Booking Amount = ₹1200
-
-      QR data:
-
-      upi://pay
-      ?pa=jenilgajjar90@okicici
-      &pn=BoxCricket
-      &am=1200
-      &cu=INR
-
-      Isliye QR scan karne ke baad
-      UPI app me ₹1200 pre-filled hoga.
-      */
-
       qrImage.src =
-
-        "https://quickchart.io/qr" +
-
-        "?size=300" +
-
-        "&text=" +
-
-        encodeURIComponent(
-          upiURL
-        );
+        "https://api.qrserver.com/v1/create-qr-code/" +
+        "?size=300x300" +
+        "&data=" +
+        encodeURIComponent(upiUrl);
 
     }
 
 
-
-    /*
-    =====================================================
-                  SHOW PAYMENT METHOD
-    =====================================================
-    */
+    /* ================= PAYMENT METHOD ================= */
 
     function showPaymentBox(type) {
 
 
-      /* =================================================
-                          CASH
-      ================================================= */
+      /* ================= CASH ================= */
 
       if (type === "cash") {
 
+        onlineBox.classList.add("d-none");
 
-        /*
-        Online QR hide
-        */
+        onlineDoneForm.classList.add("d-none");
 
-        onlineBox.classList.add(
-          "d-none"
-        );
-
-
-        /*
-        Online form hide
-        */
-
-        onlineDoneForm.classList.add(
-          "d-none"
-        );
-
-
-        /*
-        Cash button show
-        */
-
-        paymentButton.classList.remove(
-          "d-none"
-        );
-
-
-        /*
-        Cash button text
-        */
+        paymentButton.classList.remove("d-none");
 
         paymentButton.innerHTML =
-
           '<i class="bi bi-cash-coin me-2"></i>' +
-
           'Confirm Cash Booking';
 
       }
 
 
-
-      /* =================================================
-                         ONLINE
-      ================================================= */
+      /* ================= ONLINE ================= */
 
       else if (type === "online") {
 
+        onlineBox.classList.remove("d-none");
+
+        generateQRCode();
+
+        paymentButton.classList.add("d-none");
 
         /*
-        Online QR show
+          Confirm Booking initially hidden
         */
 
-        onlineBox.classList.remove(
-          "d-none"
-        );
-
-
-        /*
-        Cash button hide
-        */
-
-        paymentButton.classList.add(
-          "d-none"
-        );
-
-
-        /*
-        Online confirmation form show
-        */
-
-        onlineDoneForm.classList.remove(
-          "d-none"
-        );
-
-
-        /*
-        Generate QR with
-        current booking amount
-        */
-
-        createUPIQR();
+        onlineDoneForm.classList.add("d-none");
 
       }
 
     }
 
-  </script>
 
+    /* ================= PAYMENT DONE ================= */
+
+    paymentDoneButton.addEventListener(
+      "click",
+      function () {
+
+        /*
+          Hide Payment Done button
+        */
+
+        paymentDoneButton.classList.add("d-none");
+
+
+        /*
+          Show Confirm Booking
+        */
+
+        onlineDoneForm.classList.remove("d-none");
+
+      }
+    );
+
+  </script>
 
 
   <!-- ================= BOOTSTRAP JS ================= -->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
   </script>
 
 

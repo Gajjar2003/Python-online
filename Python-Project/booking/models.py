@@ -5,13 +5,19 @@ from django.contrib.auth.models import User
 class Booking(models.Model):
 
     PAYMENT_STATUS_CHOICES = [
+
         ("Pending", "Pending"),
+
         ("Paid", "Paid"),
+
     ]
 
     PAYMENT_METHOD_CHOICES = [
+
         ("Cash", "Cash"),
+
         ("Online", "Online"),
+
     ]
 
     user = models.ForeignKey(
