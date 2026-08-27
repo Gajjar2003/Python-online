@@ -2,9 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from django.core.mail import send_mail
 from django.conf import settings
 
+from datetime import datetime
 from booking.models import Booking
 
 
@@ -13,6 +15,7 @@ from booking.models import Booking
 # =====================================================
 
 def index(request):
+
     return render(
         request,
         "index.html"
@@ -34,20 +37,66 @@ def book_now(request):
 
 # =====================================================
 # MY BOOKING
-# =====================================================
 
-@login_required(login_url="user-login")
+@staff_member_required(login_url="user-login")
+
 def my_booking(request):
 
-    bookings = Booking.objects.filter(
-        user=request.user
-    ).order_by("-id")
+    # =================================================
+    # SHOW ALL USERS' BOOKINGS
+    # =================================================
+
+    bookings = Booking.objects.select_related(
+        "user"
+    ).all().order_by("-id")
+
+    page_badge = "ALL BOOKINGS"
+
+    page_title = "All Bookings"
+
+    page_description = (
+        "View all users' BoxCricket bookings and slot details."
+    )
+
+    card_title = "All Users Booking Details"
+
+    is_admin = True
 
     return render(
         request,
         "my-booking.html",
         {
-            "bookings": bookings
+            "bookings": bookings,
+            "page_badge": page_badge,
+            "page_title": page_title,
+            "page_description": page_description,
+            "card_title": card_title,
+            "is_admin": is_admin,
+        }
+    )
+
+
+# =====================================================
+# ADMIN - ALL BOOKINGS
+# =====================================================
+
+@staff_member_required(login_url="user-login")
+def admin_bookings(request):
+
+    bookings = Booking.objects.select_related(
+        "user"
+    ).all().order_by("-id")
+
+    users = User.objects.all().order_by("-id")
+
+    return render(
+        request,
+        "admin-bookings.html",
+        {
+            "bookings": bookings,
+            "users": users,
+            "total_bookings": bookings.count(),
+            "total_users": users.count(),
         }
     )
 
@@ -90,6 +139,10 @@ def user_register(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
 
+        # =============================================
+        # CHECK USERNAME
+        # =============================================
+
         if User.objects.filter(
             username=username
         ).exists():
@@ -98,16 +151,25 @@ def user_register(request):
                 request,
                 "user-register.html",
                 {
-                    "err": "Username already exists!"
+                    "err":
+                    "Username already exists!"
                 }
             )
+
+        # =============================================
+        # CREATE USER
+        # =============================================
 
         User.objects.create_user(
 
             first_name=fname,
+
             last_name=lname,
+
             email=email,
+
             username=username,
+
             password=password
         )
 
@@ -115,7 +177,8 @@ def user_register(request):
             request,
             "user-register.html",
             {
-                "meg": "User Created Successfully!"
+                "meg":
+                "User Created Successfully!"
             }
         )
 
@@ -133,18 +196,21 @@ def user_login(request):
 
     if request.method == "POST":
 
-        username = request.POST.get(
-            "username"
-        )
+        username = request.POST.get("username")
+        password = request.POST.get("password")
 
-        password = request.POST.get(
-            "password"
-        )
+        # =============================================
+        # AUTHENTICATE
+        # =============================================
 
         user = authenticate(
             username=username,
             password=password
         )
+
+        # =============================================
+        # INVALID LOGIN
+        # =============================================
 
         if user is None:
 
@@ -156,6 +222,10 @@ def user_login(request):
                     "Invalid Username and Password!"
                 }
             )
+
+        # =============================================
+        # LOGIN
+        # =============================================
 
         login(
             request,
@@ -201,7 +271,29 @@ def send_booking_email(
         or user.username
     )
 
+    # ================================================
+    # FORMAT BOOKING DATE
+    # ================================================
+
+    if booking.booking_date:
+
+        formatted_date = booking.booking_date.strftime(
+            "%d-%m-%Y"
+        )
+
+    else:
+
+        formatted_date = "Not Available"
+
+    # ================================================
+    # EMAIL SUBJECT
+    # ================================================
+
     subject = "BoxCricket Booking Confirmation"
+
+    # ================================================
+    # EMAIL MESSAGE
+    # ================================================
 
     message = f"""
 Hello {user_name},
@@ -209,27 +301,39 @@ Hello {user_name},
 Your BoxCricket booking has been created successfully.
 
 ========================================
-BOOKING DETAILS
+        BOOKING DETAILS
 ========================================
 
-Name        : {user_name}
-Username    : {user.username}
-Email       : {booking.email}
-Mobile      : {booking.number}
-Slot Time   : {booking.slot_time}
-Duration    : {booking.duration}
-Amount      : ₹{booking.amount}
+Name           : {user_name}
+Username       : {user.username}
+Email          : {booking.email}
+Mobile         : {booking.number}
+
+Booking Date   : {formatted_date}
+Slot Time      : {booking.slot_time}
+Duration       : {booking.duration}
+Amount         : ₹{booking.amount}
 
 Payment Method : {booking.payment_method}
 Payment Status : {payment_status}
 
 ========================================
 
+Your booking date is:
+
+{formatted_date}
+
+Please keep this email for your booking record.
+
 Thank you for booking with BoxCricket.
 
 Regards,
 BoxCricket Team
 """
+
+    # ================================================
+    # SEND EMAIL
+    # ================================================
 
     send_mail(
 
@@ -254,8 +358,16 @@ def booking_form(request):
 
     if request.method == "POST":
 
+        # =============================================
+        # GET FORM DATA
+        # =============================================
+
         number = request.POST.get(
             "number"
+        )
+
+        booking_date = request.POST.get(
+            "booking_date"
         )
 
         duration = request.POST.get(
@@ -267,11 +379,52 @@ def booking_form(request):
         )
 
         # =============================================
-        # CHECK SLOT
+        # CHECK DATE
+        # =============================================
+
+        if not booking_date:
+
+            return render(
+                request,
+                "booking-form.html",
+                {
+                    "err":
+                    "Please select booking date."
+                }
+            )
+
+        # =============================================
+        # CONVERT STRING TO DATE
+        # =============================================
+
+        try:
+
+            booking_date_obj = datetime.strptime(
+                booking_date,
+                "%Y-%m-%d"
+            ).date()
+
+        except (ValueError, TypeError):
+
+            return render(
+                request,
+                "booking-form.html",
+                {
+                    "err":
+                    "Invalid booking date. Please select a valid date."
+                }
+            )
+
+        # =============================================
+        # CHECK DATE + SLOT
         # =============================================
 
         already_booked = Booking.objects.filter(
+
+            booking_date=booking_date_obj,
+
             slot_time=slot_time
+
         ).exists()
 
         if already_booked:
@@ -281,7 +434,10 @@ def booking_form(request):
                 "booking-form.html",
                 {
                     "err":
-                    "This slot is already booked! Please select another slot.",
+                    "This slot is already booked for this date! Please select another slot.",
+
+                    "selected_date":
+                    booking_date,
 
                     "selected_duration":
                     duration,
@@ -313,13 +469,25 @@ def booking_form(request):
         # STORE DATA IN SESSION
         # =============================================
 
-        request.session["booking_number"] = number
+        request.session[
+            "booking_number"
+        ] = number
 
-        request.session["booking_duration"] = duration
+        request.session[
+            "booking_date"
+        ] = booking_date
 
-        request.session["booking_slot"] = slot_time
+        request.session[
+            "booking_duration"
+        ] = duration
 
-        request.session["booking_amount"] = amount
+        request.session[
+            "booking_slot"
+        ] = slot_time
+
+        request.session[
+            "booking_amount"
+        ] = amount
 
         # =============================================
         # PAYMENT PAGE
@@ -346,6 +514,10 @@ def payment_method(request):
         "booking_number"
     )
 
+    booking_date = request.session.get(
+        "booking_date"
+    )
+
     duration = request.session.get(
         "booking_duration"
     )
@@ -362,14 +534,31 @@ def payment_method(request):
     # SESSION CHECK
     # =============================================
 
-    if not slot_time:
+    if not slot_time or not booking_date:
 
         return redirect(
             "booking-form"
         )
 
     # =============================================
-    # CASH PAYMENT
+    # CONVERT DATE
+    # =============================================
+
+    try:
+
+        booking_date_obj = datetime.strptime(
+            booking_date,
+            "%Y-%m-%d"
+        ).date()
+
+    except (ValueError, TypeError):
+
+        return redirect(
+            "booking-form"
+        )
+
+    # =============================================
+    # POST REQUEST
     # =============================================
 
     if request.method == "POST":
@@ -378,12 +567,22 @@ def payment_method(request):
             "payment_method"
         )
 
+        # =========================================
+        # CASH PAYMENT
+        # =========================================
+
         if payment_method_value == "Cash":
 
-            # Final slot check
+            # =========================================
+            # FINAL DATE + SLOT CHECK
+            # =========================================
 
             if Booking.objects.filter(
+
+                booking_date=booking_date_obj,
+
                 slot_time=slot_time
+
             ).exists():
 
                 return render(
@@ -391,7 +590,16 @@ def payment_method(request):
                     "booking-form.html",
                     {
                         "err":
-                        "This slot is already booked! Please select another slot."
+                        "This slot is already booked for this date! Please select another slot.",
+
+                        "selected_date":
+                        booking_date,
+
+                        "selected_duration":
+                        duration,
+
+                        "selected_slot":
+                        slot_time
                     }
                 )
 
@@ -407,6 +615,8 @@ def payment_method(request):
 
                 number=number,
 
+                booking_date=booking_date_obj,
+
                 duration=duration,
 
                 slot_time=slot_time,
@@ -419,7 +629,7 @@ def payment_method(request):
             )
 
             # =========================================
-            # SEND CASH EMAIL
+            # SEND EMAIL
             # =========================================
 
             send_booking_email(
@@ -433,6 +643,11 @@ def payment_method(request):
 
             request.session.pop(
                 "booking_number",
+                None
+            )
+
+            request.session.pop(
+                "booking_date",
                 None
             )
 
@@ -455,9 +670,9 @@ def payment_method(request):
                 "my-booking"
             )
 
-        # =============================================
-        # ONLINE
-        # =============================================
+        # =========================================
+        # ONLINE PAYMENT
+        # =========================================
 
         elif payment_method_value == "Online":
 
@@ -465,15 +680,23 @@ def payment_method(request):
                 request,
                 "payment-method.html",
                 {
-                    "number": number,
+                    "number":
+                    number,
 
-                    "duration": duration,
+                    "booking_date":
+                    booking_date,
 
-                    "slot_time": slot_time,
+                    "duration":
+                    duration,
 
-                    "amount": amount,
+                    "slot_time":
+                    slot_time,
 
-                    "show_online": True
+                    "amount":
+                    amount,
+
+                    "show_online":
+                    True
                 }
             )
 
@@ -485,13 +708,20 @@ def payment_method(request):
         request,
         "payment-method.html",
         {
-            "number": number,
+            "number":
+            number,
 
-            "duration": duration,
+            "booking_date":
+            booking_date,
 
-            "slot_time": slot_time,
+            "duration":
+            duration,
 
-            "amount": amount
+            "slot_time":
+            slot_time,
+
+            "amount":
+            amount
         }
     )
 
@@ -505,6 +735,10 @@ def online_payment_done(request):
 
     number = request.session.get(
         "booking_number"
+    )
+
+    booking_date = request.session.get(
+        "booking_date"
     )
 
     duration = request.session.get(
@@ -523,14 +757,14 @@ def online_payment_done(request):
     # SESSION CHECK
     # =============================================
 
-    if not slot_time:
+    if not slot_time or not booking_date:
 
         return redirect(
             "booking-form"
         )
 
     # =============================================
-    # ONLY POST ALLOWED
+    # ONLY POST
     # =============================================
 
     if request.method != "POST":
@@ -540,15 +774,46 @@ def online_payment_done(request):
         )
 
     # =============================================
-    # FINAL SLOT CHECK
+    # CONVERT DATE
+    # =============================================
+
+    try:
+
+        booking_date_obj = datetime.strptime(
+            booking_date,
+            "%Y-%m-%d"
+        ).date()
+
+    except (ValueError, TypeError):
+
+        return render(
+            request,
+            "booking-form.html",
+            {
+                "err":
+                "Invalid booking date. Please select the date again."
+            }
+        )
+
+    # =============================================
+    # FINAL DATE + SLOT CHECK
     # =============================================
 
     if Booking.objects.filter(
+
+        booking_date=booking_date_obj,
+
         slot_time=slot_time
+
     ).exists():
 
         request.session.pop(
             "booking_number",
+            None
+        )
+
+        request.session.pop(
+            "booking_date",
             None
         )
 
@@ -572,12 +837,12 @@ def online_payment_done(request):
             "booking-form.html",
             {
                 "err":
-                "This slot is already booked! Please select another slot."
+                "This slot is already booked for this date! Please select another slot."
             }
         )
 
     # =============================================
-    # CREATE ONLINE PAID BOOKING
+    # CREATE ONLINE BOOKING
     # =============================================
 
     booking = Booking.objects.create(
@@ -587,6 +852,8 @@ def online_payment_done(request):
         email=request.user.email,
 
         number=number,
+
+        booking_date=booking_date_obj,
 
         duration=duration,
 
@@ -600,7 +867,7 @@ def online_payment_done(request):
     )
 
     # =============================================
-    # SEND SUCCESS EMAIL
+    # SEND EMAIL
     # =============================================
 
     send_booking_email(
@@ -614,6 +881,11 @@ def online_payment_done(request):
 
     request.session.pop(
         "booking_number",
+        None
+    )
+
+    request.session.pop(
+        "booking_date",
         None
     )
 

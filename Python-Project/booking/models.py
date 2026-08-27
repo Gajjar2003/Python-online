@@ -4,22 +4,6 @@ from django.contrib.auth.models import User
 
 class Booking(models.Model):
 
-    PAYMENT_STATUS_CHOICES = [
-
-        ("Pending", "Pending"),
-
-        ("Paid", "Paid"),
-
-    ]
-
-    PAYMENT_METHOD_CHOICES = [
-
-        ("Cash", "Cash"),
-
-        ("Online", "Online"),
-
-    ]
-
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE
@@ -31,6 +15,8 @@ class Booking(models.Model):
         max_length=15
     )
 
+    booking_date = models.DateField()
+
     duration = models.CharField(
         max_length=50
     )
@@ -39,26 +25,19 @@ class Booking(models.Model):
         max_length=100
     )
 
-    amount = models.IntegerField(
-        default=0
-    )
+    amount = models.IntegerField()
 
     payment_method = models.CharField(
-        max_length=20,
-        choices=PAYMENT_METHOD_CHOICES,
-        default="Cash"
+        max_length=50
     )
 
     payment_status = models.CharField(
-        max_length=20,
-        choices=PAYMENT_STATUS_CHOICES,
-        default="Pending"
+        max_length=50
     )
 
-    booking_date = models.DateField(
+    created_at = models.DateTimeField(
         auto_now_add=True
     )
 
     def __str__(self):
-
-        return f"{self.user.username} - {self.slot_time}"
+        return f"{self.user.username} - {self.booking_date} - {self.slot_time}"

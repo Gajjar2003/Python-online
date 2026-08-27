@@ -4,9 +4,11 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BoxCricket | My Booking</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>BoxCricket | All Bookings</title>
 
     <!-- Bootstrap 5 -->
     <link
@@ -69,9 +71,18 @@
             color: #22c55e !important;
         }
 
+        .nav-link.active {
+            color: #22c55e !important;
+        }
+
         .login-btn {
             border: 1px solid #22c55e;
             border-radius: 25px;
+        }
+
+        .login-btn:hover {
+            background: #22c55e;
+            color: white !important;
         }
 
         .register-btn {
@@ -87,6 +98,7 @@
         /* ================= PAGE HEADER ================= */
 
         .page-header {
+
             background:
                 linear-gradient(
                     rgba(6, 27, 46, 0.92),
@@ -100,24 +112,37 @@
             padding: 90px 20px;
 
             text-align: center;
+
             color: white;
         }
 
-        .page-header .badge-box {
+        .badge-box {
+
             display: inline-block;
+
             padding: 10px 20px;
+
             border: 1px solid #22c55e;
+
             border-radius: 30px;
+
             color: #86efac;
+
             background: rgba(34, 197, 94, 0.12);
+
             font-size: 14px;
+
             font-weight: 800;
+
             letter-spacing: 1px;
         }
 
         .page-header h1 {
+
             font-size: 52px;
+
             font-weight: 900;
+
             margin-top: 20px;
         }
 
@@ -126,200 +151,345 @@
         }
 
         .page-header p {
+
             color: #cbd5e1;
+
             font-size: 18px;
+
             margin-top: 15px;
         }
 
         /* ================= BOOKING SECTION ================= */
 
         .booking-section {
+
             padding: 80px 0;
+
             background: #f5f7f9;
         }
 
         .booking-card {
+
             background: white;
+
             border-radius: 25px;
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.08);
+
             overflow: hidden;
         }
 
+        /* ================= CARD HEADER ================= */
+
         .booking-card-header {
+
             padding: 25px 30px;
+
             background: #061b2e;
+
             color: white;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
         }
 
         .booking-card-header h3 {
+
             margin: 0;
+
             font-weight: 900;
         }
 
         .booking-count {
+
             background: #22c55e;
+
             color: white;
+
             padding: 8px 15px;
+
             border-radius: 20px;
+
             font-size: 13px;
+
             font-weight: 800;
+        }
+
+        /* ================= TABLE WRAPPER ================= */
+
+        .table-wrapper {
+
+            width: 100%;
+
+            overflow-x: auto;
         }
 
         /* ================= TABLE ================= */
 
         .booking-table {
+
             margin: 0;
+
+            min-width: 1250px;
         }
 
         .booking-table thead {
+
             background: #0b253b;
+
             color: white;
         }
 
         .booking-table th {
+
             padding: 16px 12px;
+
             font-size: 13px;
+
             white-space: nowrap;
+
+            vertical-align: middle;
         }
 
         .booking-table td {
+
             padding: 17px 12px;
+
             vertical-align: middle;
+
             white-space: nowrap;
         }
 
         .booking-table tbody tr {
+
             transition: 0.25s;
         }
 
         .booking-table tbody tr:hover {
+
             background: #f0fdf4;
+        }
+
+        /* ================= NUMBER ================= */
+
+        .number-badge {
+
+            width: 32px;
+
+            height: 32px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #e2e8f0;
+
+            color: #061b2e;
+
+            border-radius: 50%;
+
+            font-weight: 800;
+
+            font-size: 13px;
         }
 
         /* ================= CUSTOMER ================= */
 
         .customer-name {
+
             font-weight: 800;
+
             color: #061b2e;
+
+            font-size: 15px;
         }
 
+        .customer-name i {
+
+            color: #22c55e;
+        }
+
+        /* ================= EMAIL ================= */
+
         .email-text {
+
             color: #64748b;
+
             font-size: 14px;
         }
 
+        /* ================= MOBILE ================= */
+
         .number-text {
+
             color: #334155;
+
             font-weight: 600;
+        }
+
+        /* ================= DATE ================= */
+
+        .date-text {
+
+            color: #475569;
+
+            font-weight: 700;
+
+            font-size: 14px;
+
+            background: #eff6ff;
+
+            padding: 8px 12px;
+
+            border-radius: 10px;
+
+            display: inline-block;
         }
 
         /* ================= SLOT ================= */
 
         .slot-text {
+
             color: #061b2e;
-            font-weight: 800;
+
+            font-weight: 900;
+
+            background: #ecfdf5;
+
+            padding: 8px 12px;
+
+            border-radius: 10px;
+
+            display: inline-block;
         }
 
         /* ================= DURATION ================= */
 
         .duration-badge {
+
             background: #e0f2fe;
+
             color: #0369a1;
+
             padding: 7px 12px;
+
             border-radius: 20px;
+
             font-size: 12px;
+
             font-weight: 800;
         }
 
         /* ================= PRICE ================= */
 
         .price-text {
+
             color: #16a34a;
+
             font-weight: 900;
+
             font-size: 17px;
         }
 
-        /* ================= PAYMENT ================= */
+        /* ================= PAYMENT ONLINE ================= */
 
         .payment-online {
+
             background: #dcfce7;
+
             color: #15803d;
+
             padding: 7px 12px;
+
             border-radius: 20px;
+
             font-size: 12px;
+
             font-weight: 800;
         }
+
+        /* ================= PAYMENT CASH ================= */
 
         .payment-cash {
+
             background: #fef3c7;
+
             color: #92400e;
+
             padding: 7px 12px;
+
             border-radius: 20px;
+
             font-size: 12px;
+
             font-weight: 800;
         }
 
-        /* ================= STATUS ================= */
+        /* ================= STATUS PAID ================= */
 
         .status-paid {
+
             background: #dcfce7;
+
             color: #15803d;
+
             padding: 7px 12px;
+
             border-radius: 20px;
+
             font-size: 12px;
+
             font-weight: 800;
         }
+
+        /* ================= STATUS PENDING ================= */
 
         .status-pending {
+
             background: #fef3c7;
+
             color: #92400e;
+
             padding: 7px 12px;
+
             border-radius: 20px;
+
             font-size: 12px;
+
             font-weight: 800;
-        }
-
-        /* ================= ACTION ================= */
-
-        .view-btn {
-            background: #22c55e;
-            color: white;
-            border: none;
-            padding: 7px 15px;
-            border-radius: 20px;
-            font-weight: 800;
-            font-size: 13px;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .view-btn:hover {
-            background: #16a34a;
-            color: white;
         }
 
         /* ================= NO BOOKING ================= */
 
         .no-booking {
+
             padding: 80px 20px;
+
             text-align: center;
         }
 
         .no-booking-icon {
+
             width: 90px;
+
             height: 90px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             margin: auto;
 
             background: #dcfce7;
+
             color: #16a34a;
 
             border-radius: 50%;
@@ -328,59 +498,91 @@
         }
 
         .no-booking h3 {
+
             margin-top: 25px;
+
             font-weight: 900;
+
             color: #061b2e;
         }
 
         .no-booking p {
+
             color: #64748b;
         }
 
+        /* ================= BOOK BUTTON ================= */
+
         .main-btn {
+
             background: #22c55e;
+
             color: white;
+
             border: none;
+
             padding: 12px 25px;
+
             border-radius: 30px;
+
             font-weight: 800;
+
             text-decoration: none;
+
             display: inline-block;
+
+            transition: 0.3s;
         }
 
         .main-btn:hover {
+
             background: #16a34a;
+
             color: white;
+
+            transform: translateY(-2px);
         }
 
         /* ================= FOOTER ================= */
 
         footer {
+
             background: #03101c;
+
             color: #94a3b8;
         }
 
         footer h5 {
+
             color: white;
+
             font-weight: 900;
         }
 
         footer a {
+
             color: #94a3b8;
+
             text-decoration: none;
+
             transition: 0.3s;
         }
 
         footer a:hover {
+
             color: #22c55e;
         }
 
         .footer-social {
+
             width: 42px;
+
             height: 42px;
 
             display: inline-flex;
+
             align-items: center;
+
             justify-content: center;
 
             border-radius: 50%;
@@ -393,11 +595,14 @@
         }
 
         .footer-social:hover {
+
             background: #22c55e;
+
             color: white;
         }
 
         .footer-bottom {
+
             border-top: 1px solid #1e3445;
         }
 
@@ -406,27 +611,38 @@
         @media(max-width: 768px) {
 
             .page-header {
+
                 padding: 65px 20px;
             }
 
             .page-header h1 {
+
                 font-size: 38px;
             }
 
             .page-header p {
+
                 font-size: 16px;
             }
 
             .booking-section {
+
                 padding: 50px 0;
             }
 
             .booking-card-header {
+
                 flex-direction: column;
+
                 align-items: flex-start;
+
                 gap: 12px;
             }
 
+            .navbar-brand {
+
+                font-size: 24px;
+            }
         }
 
     </style>
@@ -472,9 +688,6 @@
 
             <ul class="navbar-nav ms-auto">
 
-
-                <!-- HOME -->
-
                 <li class="nav-item">
 
                     <a
@@ -486,9 +699,6 @@
                     </a>
 
                 </li>
-
-
-                <!-- ABOUT -->
 
                 <li class="nav-item">
 
@@ -502,9 +712,6 @@
 
                 </li>
 
-
-                <!-- SERVICES -->
-
                 <li class="nav-item">
 
                     <a
@@ -516,9 +723,6 @@
                     </a>
 
                 </li>
-
-
-                <!-- BOOK NOW -->
 
                 <li class="nav-item">
 
@@ -532,13 +736,10 @@
 
                 </li>
 
-
-                <!-- MY BOOKING -->
-
                 <li class="nav-item">
 
                     <a
-                        class="nav-link"
+                        class="nav-link active"
                         href="{% url 'my-booking' %}">
 
                         My Booking
@@ -547,8 +748,6 @@
 
                 </li>
 
-
-                <!-- LOGIN / LOGOUT -->
 
                 {% if user.is_authenticated %}
 
@@ -593,7 +792,6 @@
 
                     </li>
 
-
                     <li class="nav-item">
 
                         <a
@@ -617,7 +815,6 @@
 </nav>
 
 
-
 <!-- =====================================================
                      PAGE HEADER
 ===================================================== -->
@@ -630,21 +827,19 @@
 
             <i class="bi bi-calendar-check"></i>
 
-            BOOKING DETAILS
+            All Bookings
 
         </span>
 
-
         <h1>
 
-            My <span>Booking</span>
+            All <span>Bookings</span>
 
         </h1>
 
-
         <p>
 
-            View and manage all your BoxCricket bookings.
+            View all users' BoxCricket bookings and slot details.
 
         </p>
 
@@ -653,9 +848,8 @@
 </section>
 
 
-
 <!-- =====================================================
-                      MY BOOKING
+                      BOOKING SECTION
 ===================================================== -->
 
 <section class="booking-section">
@@ -665,7 +859,7 @@
         <div class="booking-card">
 
 
-            <!-- HEADER -->
+            <!-- CARD HEADER -->
 
             <div class="booking-card-header">
 
@@ -673,28 +867,26 @@
 
                     <i class="bi bi-list-check text-success me-2"></i>
 
-                    My Booking Details
+                    All Users Booking Details
 
                 </h3>
 
-
                 <span class="booking-count">
 
-                    {{ bookings|length }} Booking(s)
+                    {{ bookings|length }}
+
+                    Booking(s)
 
                 </span>
 
             </div>
 
 
-
-            <!-- =================================================
-                         BOOKING EXISTS
-            ================================================== -->
+            <!-- BOOKING EXISTS -->
 
             {% if bookings %}
 
-            <div class="table-responsive">
+            <div class="table-wrapper">
 
                 <table class="table booking-table text-center">
 
@@ -704,11 +896,13 @@
 
                             <th>No.</th>
 
-                            <th>Name</th>
+                            <th>User</th>
 
                             <th>Email</th>
 
                             <th>Mobile Number</th>
+
+                            <th>Booking Date</th>
 
                             <th>Slot Time</th>
 
@@ -731,42 +925,35 @@
 
                         <tr>
 
-
-                            <!-- ================= NUMBER ================= -->
-
                             <td>
 
-                                <strong>
+                                <span class="number-badge">
 
                                     {{ forloop.counter }}
-
-                                </strong>
-
-                            </td>
-
-
-
-                            <!-- ================= NAME ================= -->
-
-                            <td>
-
-                                <span class="customer-name">
-
-                                    {{ booking.user.first_name }}
-
-                                    {{ booking.user.last_name }}
 
                                 </span>
 
                             </td>
 
 
+                            <td>
 
-                            <!-- ================= EMAIL ================= -->
+                                <span class="customer-name">
+
+                                    <i class="bi bi-person-fill me-1"></i>
+
+                                    {{ booking.user.username }}
+
+                                </span>
+
+                            </td>
+
 
                             <td>
 
                                 <span class="email-text">
+
+                                    <i class="bi bi-envelope me-1"></i>
 
                                     {{ booking.email }}
 
@@ -775,12 +962,11 @@
                             </td>
 
 
-
-                            <!-- ================= MOBILE ================= -->
-
                             <td>
 
                                 <span class="number-text">
+
+                                    <i class="bi bi-telephone me-1"></i>
 
                                     {{ booking.number }}
 
@@ -789,12 +975,24 @@
                             </td>
 
 
+                            <td>
 
-                            <!-- ================= SLOT ================= -->
+                                <span class="date-text">
+
+                                    <i class="bi bi-calendar3 me-1"></i>
+
+                                    {{ booking.booking_date|date:"d-m-Y" }}
+
+                                </span>
+
+                            </td>
+
 
                             <td>
 
                                 <span class="slot-text">
+
+                                    <i class="bi bi-clock-fill me-1"></i>
 
                                     {{ booking.slot_time }}
 
@@ -802,9 +1000,6 @@
 
                             </td>
 
-
-
-                            <!-- ================= DURATION ================= -->
 
                             <td>
 
@@ -817,9 +1012,6 @@
                             </td>
 
 
-
-                            <!-- ================= PRICE ================= -->
-
                             <td>
 
                                 <span class="price-text">
@@ -831,16 +1023,13 @@
                             </td>
 
 
-
-                            <!-- ================= PAYMENT METHOD ================= -->
-
                             <td>
 
                                 {% if booking.payment_method == "Online" %}
 
                                     <span class="payment-online">
 
-                                        <i class="bi bi-credit-card"></i>
+                                        <i class="bi bi-credit-card-fill me-1"></i>
 
                                         Online
 
@@ -850,7 +1039,7 @@
 
                                     <span class="payment-cash">
 
-                                        <i class="bi bi-cash-stack"></i>
+                                        <i class="bi bi-cash-stack me-1"></i>
 
                                         Cash
 
@@ -861,16 +1050,13 @@
                             </td>
 
 
-
-                            <!-- ================= PAYMENT STATUS ================= -->
-
                             <td>
 
                                 {% if booking.payment_status == "Paid" %}
 
                                     <span class="status-paid">
 
-                                        <i class="bi bi-check-circle-fill"></i>
+                                        <i class="bi bi-check-circle-fill me-1"></i>
 
                                         Paid
 
@@ -880,7 +1066,7 @@
 
                                     <span class="status-pending">
 
-                                        <i class="bi bi-clock-fill"></i>
+                                        <i class="bi bi-clock-fill me-1"></i>
 
                                         Pending
 
@@ -889,7 +1075,6 @@
                                 {% endif %}
 
                             </td>
-
 
                         </tr>
 
@@ -905,9 +1090,7 @@
             {% else %}
 
 
-            <!-- =================================================
-                         NO BOOKING
-            ================================================== -->
+            <!-- NO BOOKING -->
 
             <div class="no-booking">
 
@@ -917,26 +1100,23 @@
 
                 </div>
 
-
                 <h3>
 
                     No Booking Found
 
                 </h3>
 
-
                 <p>
 
-                    You have not booked any cricket slot yet.
+                    No user has booked any cricket slot yet.
 
                 </p>
-
 
                 <a
                     href="{% url 'book_now' %}"
                     class="main-btn mt-3">
 
-                    <i class="bi bi-calendar-check"></i>
+                    <i class="bi bi-calendar-check me-1"></i>
 
                     Book Your Slot
 
@@ -953,7 +1133,6 @@
 </section>
 
 
-
 <!-- =====================================================
                          FOOTER
 ===================================================== -->
@@ -963,9 +1142,6 @@
     <div class="container">
 
         <div class="row g-5 pb-5">
-
-
-            <!-- BRAND -->
 
             <div class="col-lg-4">
 
@@ -977,7 +1153,6 @@
 
                 </h5>
 
-
                 <p class="mt-3">
 
                     Premium box cricket slot booking
@@ -985,34 +1160,22 @@
 
                 </p>
 
-
                 <div class="mt-4">
 
                     <a href="#" class="footer-social">
-
                         <i class="bi bi-facebook"></i>
-
                     </a>
 
-
                     <a href="#" class="footer-social">
-
                         <i class="bi bi-instagram"></i>
-
                     </a>
 
-
                     <a href="#" class="footer-social">
-
                         <i class="bi bi-twitter"></i>
-
                     </a>
 
-
                     <a href="#" class="footer-social">
-
                         <i class="bi bi-whatsapp"></i>
-
                     </a>
 
                 </div>
@@ -1020,61 +1183,34 @@
             </div>
 
 
-
-            <!-- QUICK LINKS -->
-
             <div class="col-6 col-lg-2">
 
-                <h5>
-
-                    Quick Links
-
-                </h5>
-
+                <h5>Quick Links</h5>
 
                 <ul class="list-unstyled mt-3">
 
                     <li class="mb-2">
-
                         <a href="{% url 'index' %}">
-
                             Home
-
                         </a>
-
                     </li>
 
-
                     <li class="mb-2">
-
                         <a href="{% url 'about' %}">
-
                             About
-
                         </a>
-
                     </li>
 
-
                     <li class="mb-2">
-
                         <a href="{% url 'book_now' %}">
-
                             Slot Time
-
                         </a>
-
                     </li>
 
-
                     <li class="mb-2">
-
                         <a href="{% url 'service' %}">
-
                             Services
-
                         </a>
-
                     </li>
 
                 </ul>
@@ -1082,68 +1218,38 @@
             </div>
 
 
-
-            <!-- ACCOUNT -->
-
             <div class="col-6 col-lg-2">
 
-                <h5>
-
-                    Account
-
-                </h5>
-
+                <h5>Account</h5>
 
                 <ul class="list-unstyled mt-3">
 
                     <li class="mb-2">
-
                         <a href="{% url 'user-login' %}">
-
                             Login
-
                         </a>
-
                     </li>
 
-
                     <li class="mb-2">
-
                         <a href="{% url 'user-register' %}">
-
                             Register
-
                         </a>
-
                     </li>
 
-
                     <li class="mb-2">
-
                         <a href="{% url 'my-booking' %}">
-
-                            My Booking
-
+                            All Booking
                         </a>
-
                     </li>
 
                 </ul>
 
             </div>
 
-
-
-            <!-- CONTACT -->
 
             <div class="col-lg-4">
 
-                <h5>
-
-                    Contact Us
-
-                </h5>
-
+                <h5>Contact Us</h5>
 
                 <p class="mt-3">
 
@@ -1153,7 +1259,6 @@
 
                 </p>
 
-
                 <p>
 
                     <i class="bi bi-telephone-fill text-success me-2"></i>
@@ -1162,7 +1267,6 @@
 
                 </p>
 
-
                 <p>
 
                     <i class="bi bi-envelope-fill text-success me-2"></i>
@@ -1170,7 +1274,6 @@
                     info@boxcricket.com
 
                 </p>
-
 
                 <p>
 
@@ -1184,9 +1287,6 @@
 
         </div>
 
-
-
-        <!-- FOOTER BOTTOM -->
 
         <div class="footer-bottom text-center py-4">
 
@@ -1203,7 +1303,6 @@
     </div>
 
 </footer>
-
 
 
 <!-- Bootstrap JS -->

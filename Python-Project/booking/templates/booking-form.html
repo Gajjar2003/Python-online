@@ -35,154 +35,102 @@
             box-sizing: border-box;
         }
 
-
         body {
-
             font-family: Arial, sans-serif;
-
             background: #f5f7f9;
-
             color: #14213d;
         }
-
 
 
         /* ================= NAVBAR ================= */
 
         .navbar {
-
             background: #061b2e;
-
             padding: 15px 0;
-
-            box-shadow:
-                0 5px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         }
 
-
         .navbar-brand {
-
             color: white !important;
-
             font-size: 28px;
-
             font-weight: 900;
         }
 
-
         .navbar-brand i {
-
             color: #22c55e;
-
             margin-right: 5px;
         }
 
-
         .navbar-brand span {
-
             color: #22c55e;
         }
 
-
         .nav-link {
-
             color: white !important;
-
             font-weight: 600;
-
             margin-left: 10px;
-
             padding: 8px 15px !important;
-
             transition: 0.3s;
-
             border-radius: 25px;
         }
-
 
         .nav-link:hover {
-
             color: #22c55e !important;
         }
-
 
         .nav-link.active {
-
             color: #22c55e !important;
         }
 
-
         .login-btn {
-
             border: 1px solid #22c55e;
-
             border-radius: 25px;
         }
-
 
         .login-btn:hover {
-
             background: #22c55e;
-
             color: white !important;
         }
 
-
         .register-btn {
-
             background: #22c55e;
-
             border-radius: 25px;
         }
 
-
         .register-btn:hover {
-
             background: #16a34a;
-
             color: white !important;
         }
-
 
 
         /* ================= BOOKING SECTION ================= */
 
         .booking-section {
-
             min-height: calc(100vh - 80px);
-
             padding: 70px 15px;
 
             display: flex;
-
             align-items: center;
 
             background:
-
                 linear-gradient(
                     rgba(3, 15, 27, 0.86),
                     rgba(3, 15, 27, 0.95)
                 ),
-
                 url("/static/image/box.jpg");
 
             background-size: cover;
-
             background-position: center;
-
             background-attachment: fixed;
         }
-
 
 
         /* ================= BOOKING CARD ================= */
 
         .booking-card {
-
             background: white;
 
             max-width: 750px;
-
             width: 100%;
 
             margin: auto;
@@ -192,44 +140,35 @@
             border-radius: 30px;
 
             box-shadow:
-
                 0 25px 70px
                 rgba(0, 0, 0, 0.35);
         }
 
 
-
         /* ================= BOOKING ICON ================= */
 
         .booking-icon {
-
             width: 75px;
-
             height: 75px;
 
             margin: 0 auto 20px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             border-radius: 22px;
 
             background: #dcfce7;
-
             color: #16a34a;
 
             font-size: 35px;
         }
 
 
-
         /* ================= TITLE ================= */
 
         .booking-title {
-
             text-align: center;
 
             color: #061b2e;
@@ -239,32 +178,24 @@
             font-weight: 900;
         }
 
-
         .booking-title span {
-
             color: #22c55e;
         }
 
-
         .booking-subtitle {
-
             text-align: center;
 
             color: #64748b;
 
             margin-top: 10px;
-
             margin-bottom: 35px;
         }
-
 
 
         /* ================= MESSAGE ================= */
 
         .slot-error {
-
             background: #fee2e2;
-
             color: #b91c1c;
 
             border: 1px solid #fecaca;
@@ -280,11 +211,8 @@
             margin-bottom: 25px;
         }
 
-
         .slot-success {
-
             background: #dcfce7;
-
             color: #15803d;
 
             border: 1px solid #bbf7d0;
@@ -301,22 +229,17 @@
         }
 
 
-
         /* ================= FORM ================= */
 
         .form-label {
-
             font-weight: 700;
-
             color: #061b2e;
 
             margin-bottom: 8px;
         }
 
-
         .form-control,
         .form-select {
-
             height: 50px;
 
             border-radius: 12px;
@@ -326,21 +249,16 @@
             font-size: 15px;
         }
 
-
         .form-control:focus,
         .form-select:focus {
-
             border-color: #22c55e;
 
             box-shadow:
-
                 0 0 0 0.2rem
                 rgba(34, 197, 94, 0.15);
         }
 
-
         .input-group-text {
-
             min-width: 50px;
 
             justify-content: center;
@@ -356,35 +274,29 @@
             font-size: 18px;
         }
 
-
         .input-group .form-control {
-
             border-radius: 0 12px 12px 0;
         }
 
+
+        /* ================= DATE ================= */
+
+        input[type="date"] {
+            cursor: pointer;
+        }
 
 
         /* ================= SELECT ================= */
 
         .form-select {
-
             cursor: pointer;
-
             padding-left: 15px;
         }
-
-
-        .form-select option {
-
-            padding: 10px;
-        }
-
 
 
         /* ================= CONFIRM BUTTON ================= */
 
         .booking-submit {
-
             width: 100%;
 
             border: none;
@@ -406,23 +318,20 @@
             transition: 0.3s;
         }
 
-
         .booking-submit:hover {
-
             background: #16a34a;
 
             transform: translateY(-2px);
 
             box-shadow:
-                0 8px 20px rgba(34, 197, 94, 0.25);
+                0 8px 20px
+                rgba(34, 197, 94, 0.25);
         }
-
 
 
         /* ================= BACK BUTTON ================= */
 
         .back-btn {
-
             display: block;
 
             text-align: center;
@@ -436,14 +345,10 @@
             text-decoration: none;
         }
 
-
         .back-btn:hover {
-
             color: #15803d;
-
             text-decoration: underline;
         }
-
 
 
         /* ================= MOBILE ================= */
@@ -451,48 +356,33 @@
         @media(max-width: 768px) {
 
             .booking-section {
-
                 padding: 40px 15px;
-
                 background-attachment: scroll;
             }
 
-
             .booking-card {
-
                 padding: 30px 20px;
-
                 border-radius: 22px;
             }
 
-
             .booking-title {
-
                 font-size: 30px;
             }
 
-
             .booking-subtitle {
-
                 font-size: 14px;
             }
 
-
             .navbar-brand {
-
                 font-size: 24px;
             }
 
-
             .nav-link {
-
                 margin-left: 0;
-
                 margin-top: 5px;
             }
 
         }
-
 
     </style>
 
@@ -502,9 +392,9 @@
 <body>
 
 
-<!-- ================================================= -->
-<!--                       NAVBAR                      -->
-<!-- ================================================= -->
+<!-- =====================================================
+                         NAVBAR
+===================================================== -->
 
 <nav class="navbar navbar-expand-lg sticky-top">
 
@@ -525,7 +415,6 @@
         </a>
 
 
-
         <!-- MOBILE MENU -->
 
         <button
@@ -541,7 +430,6 @@
             <span class="navbar-toggler-icon"></span>
 
         </button>
-
 
 
         <!-- MENU -->
@@ -562,13 +450,10 @@
                         class="nav-link"
                         href="{% url 'index' %}"
                     >
-
                         Home
-
                     </a>
 
                 </li>
-
 
 
                 <!-- ABOUT -->
@@ -579,13 +464,10 @@
                         class="nav-link"
                         href="{% url 'about' %}"
                     >
-
                         About
-
                     </a>
 
                 </li>
-
 
 
                 <!-- SERVICES -->
@@ -596,13 +478,10 @@
                         class="nav-link"
                         href="{% url 'service' %}"
                     >
-
                         Services
-
                     </a>
 
                 </li>
-
 
 
                 <!-- BOOK NOW -->
@@ -613,13 +492,10 @@
                         class="nav-link active"
                         href="{% url 'book_now' %}"
                     >
-
                         Book-Now
-
                     </a>
 
                 </li>
-
 
 
                 <!-- MY BOOKING -->
@@ -630,13 +506,10 @@
                         class="nav-link"
                         href="{% url 'my-booking' %}"
                     >
-
                         My Booking
-
                     </a>
 
                 </li>
-
 
 
                 <!-- AUTHENTICATION -->
@@ -657,7 +530,6 @@
                         </span>
 
                     </li>
-
 
 
                     <!-- LOGOUT -->
@@ -689,13 +561,10 @@
                             class="nav-link login-btn"
                             href="{% url 'user-login' %}"
                         >
-
                             Login
-
                         </a>
 
                     </li>
-
 
 
                     <!-- REGISTER -->
@@ -706,16 +575,13 @@
                             class="nav-link register-btn"
                             href="{% url 'user-register' %}"
                         >
-
                             Register
-
                         </a>
 
                     </li>
 
 
                 {% endif %}
-
 
             </ul>
 
@@ -727,9 +593,9 @@
 
 
 
-<!-- ================================================= -->
-<!--                  BOOKING SECTION                  -->
-<!-- ================================================= -->
+<!-- =====================================================
+                    BOOKING SECTION
+===================================================== -->
 
 <section class="booking-section">
 
@@ -748,12 +614,12 @@
             </div>
 
 
-
             <!-- TITLE -->
 
             <h1 class="booking-title">
 
                 Complete Your
+
                 <span>Booking</span>
 
             </h1>
@@ -766,10 +632,9 @@
             </p>
 
 
-
-            <!-- ================================================= -->
-            <!--                    ERROR MESSAGE                  -->
-            <!-- ================================================= -->
+            <!-- =================================================
+                         ERROR MESSAGE
+            ================================================== -->
 
             {% if err %}
 
@@ -784,10 +649,9 @@
             {% endif %}
 
 
-
-            <!-- ================================================= -->
-            <!--                   SUCCESS MESSAGE                 -->
-            <!-- ================================================= -->
+            <!-- =================================================
+                         SUCCESS MESSAGE
+            ================================================== -->
 
             {% if meg %}
 
@@ -803,14 +667,13 @@
 
 
 
-            <!-- ================================================= -->
-            <!--                       FORM                        -->
-            <!-- ================================================= -->
+            <!-- =================================================
+                            FORM
+            ================================================== -->
 
             <form method="POST">
 
                 {% csrf_token %}
-
 
 
                 <!-- ================= USERNAME ================= -->
@@ -818,11 +681,8 @@
                 <div class="mb-3">
 
                     <label class="form-label">
-
                         Username
-
                     </label>
-
 
                     <div class="input-group">
 
@@ -831,7 +691,6 @@
                             <i class="bi bi-person"></i>
 
                         </span>
-
 
                         <input
                             type="text"
@@ -851,11 +710,8 @@
                 <div class="mb-3">
 
                     <label class="form-label">
-
                         Email Address
-
                     </label>
-
 
                     <div class="input-group">
 
@@ -864,7 +720,6 @@
                             <i class="bi bi-envelope"></i>
 
                         </span>
-
 
                         <input
                             type="email"
@@ -884,11 +739,8 @@
                 <div class="mb-3">
 
                     <label class="form-label">
-
                         Mobile Number
-
                     </label>
-
 
                     <div class="input-group">
 
@@ -898,7 +750,6 @@
 
                         </span>
 
-
                         <input
                             type="tel"
                             name="number"
@@ -906,6 +757,49 @@
                             placeholder="Enter mobile number"
                             maxlength="15"
                             value="{{ number|default:'' }}"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= DATE ================= -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        <i class="bi bi-calendar3 me-1 text-success"></i>
+
+                        Booking Date
+
+                    </label>
+
+
+                    <div class="input-group">
+
+                        <span class="input-group-text">
+
+                            <i class="bi bi-calendar-date"></i>
+
+                        </span>
+
+
+                        <!-- IMPORTANT:
+                             name MUST be booking_date
+                             because Django view uses
+                             request.POST.get("booking_date")
+                        -->
+
+                        <input
+                            type="date"
+                            name="booking_date"
+                            id="booking_date"
+                            class="form-control"
+                            value="{{ selected_date|default:'' }}"
                             required
                         >
 
@@ -936,14 +830,13 @@
                     >
 
                         <option value="">
-
                             Select Duration
-
                         </option>
 
 
                         <option
                             value="1 Hour"
+
                             {% if selected_duration == "1 Hour" %}
                                 selected
                             {% endif %}
@@ -956,6 +849,7 @@
 
                         <option
                             value="2 Hours"
+
                             {% if selected_duration == "2 Hours" %}
                                 selected
                             {% endif %}
@@ -968,6 +862,7 @@
 
                         <option
                             value="3 Hours"
+
                             {% if selected_duration == "3 Hours" %}
                                 selected
                             {% endif %}
@@ -1004,9 +899,7 @@
                     >
 
                         <option value="">
-
                             Select Duration First
-
                         </option>
 
                     </select>
@@ -1043,7 +936,6 @@
 
                 </a>
 
-
             </form>
 
         </div>
@@ -1054,24 +946,28 @@
 
 
 
-<!-- ================================================= -->
-<!--                    JAVASCRIPT                     -->
-<!-- ================================================= -->
+<!-- =====================================================
+                     JAVASCRIPT
+===================================================== -->
 
 <script>
+
+    /* ================= GET ELEMENTS ================= */
 
     const durationSelect =
         document.getElementById("duration");
 
-
     const slotSelect =
         document.getElementById("slot_time");
 
+    const dateInput =
+        document.getElementById("booking_date");
 
 
-    /* ================================================= */
-    /*                     ALL SLOTS                     */
-    /* ================================================= */
+
+    /* =================================================
+                       ALL SLOTS
+    ================================================= */
 
     const slots = {
 
@@ -1081,29 +977,48 @@
         "1 Hour": [
 
             "05:00 AM - 06:00 AM",
+
             "06:00 AM - 07:00 AM",
+
             "07:00 AM - 08:00 AM",
+
             "08:00 AM - 09:00 AM",
+
             "09:00 AM - 10:00 AM",
+
             "10:00 AM - 11:00 AM",
+
             "11:00 AM - 12:00 PM",
+
             "12:00 PM - 01:00 PM",
+
             "01:00 PM - 02:00 PM",
+
             "02:00 PM - 03:00 PM",
+
             "03:00 PM - 04:00 PM",
+
             "04:00 PM - 05:00 PM",
+
             "05:00 PM - 06:00 PM",
+
             "06:00 PM - 07:00 PM",
+
             "07:00 PM - 08:00 PM",
+
             "08:00 PM - 09:00 PM",
+
             "09:00 PM - 10:00 PM",
+
             "10:00 PM - 11:00 PM",
+
             "11:00 PM - 12:00 AM",
+
             "12:00 AM - 01:00 AM",
+
             "01:00 AM - 02:00 AM"
 
         ],
-
 
 
         /* ================= 2 HOURS ================= */
@@ -1111,19 +1026,28 @@
         "2 Hours": [
 
             "05:00 AM - 07:00 AM",
+
             "07:00 AM - 09:00 AM",
+
             "09:00 AM - 11:00 AM",
+
             "11:00 AM - 01:00 PM",
+
             "01:00 PM - 03:00 PM",
+
             "03:00 PM - 05:00 PM",
+
             "05:00 PM - 07:00 PM",
+
             "07:00 PM - 09:00 PM",
+
             "09:00 PM - 11:00 PM",
+
             "11:00 PM - 01:00 AM",
+
             "12:00 AM - 02:00 AM"
 
         ],
-
 
 
         /* ================= 3 HOURS ================= */
@@ -1131,11 +1055,17 @@
         "3 Hours": [
 
             "05:00 AM - 08:00 AM",
+
             "08:00 AM - 11:00 AM",
+
             "11:00 AM - 02:00 PM",
+
             "02:00 PM - 05:00 PM",
+
             "05:00 PM - 08:00 PM",
+
             "08:00 PM - 11:00 PM",
+
             "11:00 PM - 02:00 AM"
 
         ]
@@ -1144,16 +1074,14 @@
 
 
 
-    /* ================================================= */
-    /*                     LOAD SLOTS                    */
-    /* ================================================= */
+    /* =================================================
+                       LOAD SLOTS
+    ================================================= */
 
     function loadSlots() {
 
-
         const selectedDuration =
             durationSelect.value;
-
 
         const oldSlot =
             "{{ selected_slot|default:'' }}";
@@ -1168,17 +1096,14 @@
             slots[selectedDuration]
         ) {
 
-
             slots[selectedDuration].forEach(
                 function(slot) {
-
 
                     const option =
                         document.createElement("option");
 
 
                     option.value = slot;
-
 
                     option.textContent = slot;
 
@@ -1203,14 +1128,13 @@
 
 
 
-    /* ================================================= */
-    /*                  DURATION CHANGE                  */
-    /* ================================================= */
+    /* =================================================
+                    DURATION CHANGE
+    ================================================= */
 
     durationSelect.addEventListener(
         "change",
         function() {
-
 
             const selectedDuration =
                 this.value;
@@ -1225,17 +1149,14 @@
                 slots[selectedDuration]
             ) {
 
-
                 slots[selectedDuration].forEach(
                     function(slot) {
-
 
                         const option =
                             document.createElement("option");
 
 
                         option.value = slot;
-
 
                         option.textContent = slot;
 
@@ -1252,13 +1173,71 @@
 
 
 
-    /* ================================================= */
-    /*                    PAGE LOAD                      */
-    /* ================================================= */
+    /* =================================================
+                    DATE VALIDATION
+    ================================================= */
 
     window.addEventListener(
         "DOMContentLoaded",
         function() {
+
+
+            /* Today's date */
+
+            const today =
+                new Date();
+
+
+            const year =
+                today.getFullYear();
+
+
+            const month =
+                String(
+                    today.getMonth() + 1
+                ).padStart(2, "0");
+
+
+            const day =
+                String(
+                    today.getDate()
+                ).padStart(2, "0");
+
+
+            const todayString =
+                year +
+                "-" +
+                month +
+                "-" +
+                day;
+
+
+            /*
+                User cannot select
+                a date before today
+            */
+
+            dateInput.min =
+                todayString;
+
+
+            /*
+                If there is an old selected date,
+                keep it.
+            */
+
+            const oldDate =
+                "{{ selected_date|default:'' }}";
+
+            if (oldDate) {
+
+                dateInput.value =
+                    oldDate;
+
+            }
+
+
+            /* Load previously selected slots */
 
             loadSlots();
 
