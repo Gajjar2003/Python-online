@@ -38,7 +38,7 @@ def book_now(request):
 # =====================================================
 # MY BOOKING
 
-@staff_member_required(login_url="user-login")
+
 
 def my_booking(request):
 
