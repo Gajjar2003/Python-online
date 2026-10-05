@@ -1,0 +1,5 @@
+# Count occurrence of an element.
+
+t = (1,2,3,4,5,6,1,2,3,4,5,6,1,1)
+
+print(t.count(1))
