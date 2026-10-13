@@ -1,0 +1,71 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Dashboard | StudyMate AI{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <p style="color:#a78bfa;">YOUR PERSONAL LEARNING SPACE</p>
+    <h1 class="fw-bold">Hello, {{ user.username }}! 👋</h1>
+    <p class="muted">What would you like to learn today?</p>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <i class="bi bi-chat-dots fs-1" style="color:#a78bfa;"></i>
+            <h4 class="mt-3">AI Study Chat</h4>
+            <p class="muted">Ask questions and understand difficult topics.</p>
+            <button class="btn btn-ai w-100" disabled>Coming Soon</button>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <i class="bi bi-patch-question fs-1" style="color:#22d3ee;"></i>
+            <h4 class="mt-3">AI Quiz Generator</h4>
+            <p class="muted">Practice topics and test your knowledge.</p>
+            <button class="btn btn-ai w-100" disabled>Coming Soon</button>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <i class="bi bi-journal-text fs-1" style="color:#34d399;"></i>
+            <h4 class="mt-3">Smart Notes</h4>
+            <p class="muted">Generate short notes and easy summaries.</p>
+            <button class="btn btn-ai w-100" disabled>Coming Soon</button>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-8">
+        <div class="dashboard-card">
+            <h4><i class="bi bi-graph-up-arrow"></i> Learning Progress</h4>
+
+            <p class="muted mt-3">
+                Your quiz scores and study history will appear here
+                when progress tracking is implemented.
+            </p>
+
+            <div class="progress" style="height:10px;background:#29334c;">
+                <div class="progress-bar"
+                     style="width:0%;background:#8b5cf6;"></div>
+            </div>
+
+            <small class="muted">Progress tracking coming soon</small>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <h4><i class="bi bi-lightbulb"></i> Study Tip</h4>
+            <p class="muted mt-3">
+                Study one topic at a time. Take a quiz after studying
+                and revise questions you answered incorrectly.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
