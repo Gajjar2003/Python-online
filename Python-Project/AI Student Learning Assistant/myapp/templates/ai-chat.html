@@ -1,0 +1,57 @@
+
+{% extends 'base.html' %}
+
+{% block title %}AI Study Chat | StudyMate AI{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="dashboard-card">
+            <div class="text-center mb-4">
+                <i class="bi bi-robot display-3"
+                   style="color:#a78bfa;"></i>
+
+                <h2 class="mt-3">AI Study Assistant</h2>
+
+                <p class="muted">
+                    Ask any study question and get a simple explanation.
+                </p>
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <label class="form-label">Your question</label>
+
+                <textarea
+                    name="question"
+                    class="form-control mb-3"
+                    rows="4"
+                    placeholder="Example: Explain Python functions with examples..."
+                    required></textarea>
+
+                <button type="submit" class="btn btn-ai w-100">
+                    <i class="bi bi-stars"></i> Ask AI
+                </button>
+            </form>
+
+            {% if answer %}
+                <div class="mt-4 p-3 rounded"
+                     style="background:#0b1020;border:1px solid #35415c;">
+                    <h5 style="color:#a78bfa;">
+                        <i class="bi bi-lightbulb"></i> AI Answer
+                    </h5>
+
+                    <div style="white-space:pre-wrap;">{{ answer }}</div>
+                </div>
+            {% endif %}
+
+            <div class="text-center mt-4">
+                <a href="{% url 'dashboard' %}">
+                    <i class="bi bi-arrow-left"></i> Back to Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

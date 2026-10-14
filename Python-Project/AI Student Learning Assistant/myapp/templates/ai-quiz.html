@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% block title %}AI Quiz | StudyMate AI{% endblock %}
+
+{% block content %}
+
+<!-- Quiz Header -->
+<div class="mb-4">
+    <p style="color:#22d3ee;">TEST YOUR KNOWLEDGE</p>
+
+    <h1 class="fw-bold">
+        <i class="bi bi-patch-question"
+           style="color:#22d3ee;"></i>
+        AI Quiz Generator
+    </h1>
+
+    <p class="muted">
+        Generate an AI-powered quiz and improve your learning.
+    </p>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+
+        <!-- Topic Form -->
+        <div class="dashboard-card mb-4">
+
+            <h4 class="mb-3">
+                <i class="bi bi-lightning-charge"
+                   style="color:#a78bfa;"></i>
+                Create Your Quiz
+            </h4>
+
+            <p class="muted">
+                Enter any topic. Gemini AI will generate multiple-choice
+                questions for your practice.
+            </p>
+
+            {% for message in messages %}
+                <div class="alert alert-info">
+                    {{ message }}
+                </div>
+            {% endfor %}
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <label class="form-label mb-2">
+                    Enter Quiz Topic
+                </label>
+
+                <input
+                    type="text"
+                    name="topic"
+                    class="form-control mb-3"
+                    placeholder="Example: Python, Django, HTML, CSS..."
+                    value="{{ topic }}"
+                    required
+                    style="background:#111827;
+                           color:white;
+                           border:1px solid #374151;
+                           padding:12px;"
+                >
+
+                <button type="submit"
+                        name="action"
+                        value="generate_quiz"
+                        class="btn btn-ai w-100">
+                    <i class="bi bi-stars"></i>
+                    Generate Quiz with AI
+                </button>
+            </form>
+        </div>
+
+        <!-- Quiz Questions -->
+        {% if quiz %}
+
+            <div class="dashboard-card">
+
+                <div class="d-flex justify-content-between
+                            align-items-center flex-wrap gap-2 mb-4">
+
+                    <div>
+                        <h4 class="mb-1">
+                            <i class="bi bi-journal-check"
+                               style="color:#34d399;"></i>
+                            Your Quiz
+                        </h4>
+
+                        <p class="muted mb-0">
+                            Topic: {{ topic }}
+                        </p>
+                    </div>
+
+                    <span class="badge rounded-pill"
+                          style="background:#312e81;
+                                 color:#c4b5fd;
+                                 padding:10px 14px;">
+                        {{ quiz|length }} Questions
+                    </span>
+
+                </div>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <input type="hidden"
+                           name="action"
+                           value="submit_quiz">
+
+                    {% for item in quiz %}
+
+                        <div class="mb-4 p-3"
+                             style="background:#111827;
+                                    border:1px solid #29334c;
+                                    border-radius:12px;">
+
+                            <h5 class="mb-3">
+                                <span style="color:#22d3ee;">
+                                    Q{{ forloop.counter }}.
+                                </span>
+                                {{ item.question }}
+                            </h5>
+
+                            {% for option in item.options %}
+
+                                <label
+                                    for="q{{ forloop.parentloop.counter }}_{{ forloop.counter }}"
+                                    class="d-flex align-items-start gap-2 p-3 mb-2"
+                                    style="background:#1e293b;
+                                           border:1px solid #374151;
+                                           border-radius:8px;
+                                           cursor:pointer;">
+
+                                    <input
+                                        class="form-check-input mt-1"
+                                        type="radio"
+                                        name="question_{{ forloop.parentloop.counter0 }}"
+                                        value="{{ option }}"
+                                        id="q{{ forloop.parentloop.counter }}_{{ forloop.counter }}"
+                                        required
+                                    >
+
+                                    <span>{{ option }}</span>
+
+                                </label>
+
+                            {% endfor %}
+
+                        </div>
+
+                    {% endfor %}
+
+                    <button type="submit"
+                            class="btn btn-success w-100 py-3">
+                        <i class="bi bi-check-circle"></i>
+                        Submit Quiz
+                    </button>
+
+                </form>
+
+            </div>
+
+        {% endif %}
+
+        <!-- Back Button -->
+        <div class="mt-4">
+            <a href="{% url 'dashboard' %}"
+               class="btn btn-outline-light w-100">
+                <i class="bi bi-arrow-left"></i>
+                Back to Dashboard
+            </a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
