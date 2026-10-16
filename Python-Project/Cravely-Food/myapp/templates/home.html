@@ -1,0 +1,835 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cravely | Good Food. Great Mood.</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        :root {
+            --bg: #0b1020;
+            --card: #111827;
+            --border: #263142;
+            --orange: #ff7629;
+            --muted: #aab4c3;
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+        body {
+            background: var(--bg);
+            color: #f8fafc;
+        }
+
+        .food-layout {
+            display: grid;
+            grid-template-columns: 245px minmax(0, 1fr);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .food-sidebar {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 22px 14px;
+            position: sticky;
+            top: 95px;
+        }
+
+        .sidebar-title { color: #fff; font-size: 18px; font-weight: 800; padding: 0 10px; }
+        .sidebar-subtitle { color: #9ca3af; font-size: 12px; padding: 0 10px; margin: 6px 0 18px; }
+        .category-menu { display: flex; flex-direction: column; gap: 5px; }
+
+        .category-menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 10px;
+            color: #cbd5e1;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: .2s;
+        }
+
+        .category-menu a:hover,
+        .category-menu a.active {
+            background: rgba(255, 118, 41, .13);
+            color: var(--orange);
+        }
+
+        .menu-emoji { width: 30px; text-align: center; font-size: 22px; }
+        .category-menu a span:nth-child(2) { flex: 1; }
+
+        .sidebar-label {
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            padding: 20px 10px 8px;
+        }
+
+        .sidebar-offer {
+            margin-top: 22px;
+            padding: 15px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #ff7629, #c2410c);
+            color: #fff;
+        }
+
+        .sidebar-offer strong { display: block; font-size: 15px; }
+        .sidebar-offer p { font-size: 12px; margin: 5px 0 0; color: #fff1e8; }
+
+        .category-results {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .category-tile {
+            min-height: 165px;
+            padding: 20px;
+            position: relative;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            text-decoration: none;
+            color: #fff;
+            transition: transform .2s, border-color .2s;
+        }
+
+        .category-tile:hover {
+            transform: translateY(-4px);
+            border-color: var(--orange);
+            color: #fff;
+        }
+
+        .category-tile .food-emoji { display: block; font-size: 35px; margin-bottom: 14px; }
+        .category-tile h3 { font-size: 16px; font-weight: 750; margin-bottom: 5px; }
+        .category-tile p { color: #9ca3af; font-size: 12px; margin: 0; }
+
+        .tile-arrow { position: absolute; top: 17px; right: 17px; color: var(--orange); }
+
+        .mobile-category-toggle {
+            display: none;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 13px 16px;
+            color: #fff;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .mobile-category-list {
+            margin-bottom: 18px;
+            padding: 12px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .mobile-category-list a {
+            display: inline-block;
+            padding: 9px 11px;
+            margin: 3px;
+            color: #e2e8f0;
+            background: #1f2937;
+            border-radius: 9px;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .mobile-category-list a:hover { background: var(--orange); color: white; }
+
+        .product-card {
+            height: 100%;
+            overflow: hidden;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: transform .25s, border-color .25s;
+        }
+
+        .product-card:hover { transform: translateY(-5px); border-color: var(--orange); }
+
+        .product-image-wrap {
+            height: 180px;
+            overflow: hidden;
+            background: #202a39;
+        }
+
+        .product-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .product-placeholder {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange);
+            font-size: 45px;
+        }
+
+        .product-info { padding: 16px; }
+        .product-category { color: var(--orange); font-size: 12px; font-weight: 700; }
+
+        .product-info h3 {
+            color: #fff;
+            font-size: 17px;
+            font-weight: 750;
+            margin: 8px 0;
+        }
+
+        .product-info p {
+            color: var(--muted);
+            font-size: 13px;
+            min-height: 38px;
+            margin-bottom: 15px;
+        }
+
+        .product-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .product-bottom strong { color: #fff; font-size: 17px; }
+
+        .add-cart-btn {
+            border: 0;
+            border-radius: 9px;
+            padding: 8px 12px;
+            color: #fff;
+            background: var(--orange);
+            font-weight: 700;
+        }
+
+        .add-cart-btn:hover { background: #e85e12; }
+
+        .empty-products {
+            padding: 35px 20px;
+            margin-top: 15px;
+            text-align: center;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            color: #fff;
+        }
+
+        .empty-products > i { font-size: 42px; color: var(--orange); }
+        .empty-products p { color: var(--muted); }
+
+        .favourite-btn.is-favourite { color: var(--orange); }
+
+        .restaurant-card {
+            height: 100%;
+            overflow: hidden;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: .2s;
+        }
+
+        .restaurant-card:hover { transform: translateY(-4px); border-color: var(--orange); }
+        .restaurant-image-wrap { height: 210px; overflow: hidden; position: relative; }
+        .restaurant-image { width: 100%; height: 100%; object-fit: cover; }
+
+        .restaurant-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--orange);
+            color: white;
+            border-radius: 6px;
+            padding: 5px 9px;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .favourite-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 38px;
+            height: 38px;
+            border: 0;
+            border-radius: 50%;
+            background: white;
+            color: #222;
+            font-size: 18px;
+        }
+
+        .restaurant-info { padding: 18px; }
+        .restaurant-info h3 { font-size: 18px; font-weight: 800; color: white; }
+        .restaurant-cuisine { color: var(--muted); font-size: 13px; }
+
+        .rating-badge {
+            align-self: start;
+            background: #166534;
+            color: #dcfce7;
+            padding: 5px 8px;
+            border-radius: 7px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .restaurant-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 12px;
+            padding: 12px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .restaurant-link { color: var(--orange); font-weight: 700; }
+
+        .promo-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            padding: 45px;
+            border-radius: 24px;
+            background: linear-gradient(120deg, #231a1c, #382017);
+            border: 1px solid #553022;
+        }
+
+        .promo-content { max-width: 600px; }
+        .promo-content h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 850; margin: 14px 0; }
+        .promo-content h2 span { color: var(--orange); }
+        .promo-content p { color: var(--muted); line-height: 1.8; }
+        .promo-decoration { text-align: center; color: var(--orange); font-size: 65px; }
+        .promo-decoration span { display: block; font-size: 17px; font-weight: 800; }
+
+        .cravely-footer {
+            padding: 45px 0 20px;
+            border-top: 1px solid var(--border);
+            background: #080d19;
+        }
+
+        .footer-description { color: var(--muted); max-width: 350px; margin-top: 15px; }
+        .cravely-footer h6 { color: white; font-weight: 800; margin-bottom: 15px; }
+        .cravely-footer .col-6 > a { display: block; color: var(--muted); margin: 10px 0; }
+        .cravely-footer .col-6 > a:hover { color: var(--orange); }
+        .footer-note { color: var(--muted); font-size: 13px; }
+        .footer-note i { color: var(--orange); margin-right: 6px; }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-top: 1px solid var(--border);
+            margin-top: 30px;
+            padding-top: 18px;
+            color: #7f8b9d;
+            font-size: 12px;
+        }
+
+        [hidden] { display: none !important; }
+
+        @media (max-width: 991px) {
+            .food-layout { grid-template-columns: 1fr; }
+            .food-sidebar { display: none; }
+            .mobile-category-toggle { display: flex; }
+            .category-results { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 575px) {
+            .category-results { gap: 10px; }
+            .category-tile { padding: 15px; min-height: 150px; }
+            .product-image-wrap { height: 145px; }
+            .product-info { padding: 12px; }
+            .product-info h3 { font-size: 15px; }
+            .product-bottom { align-items: flex-start; flex-direction: column; }
+            .promo-banner { padding: 25px; }
+            .promo-decoration { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark cravely-nav sticky-top">
+    <div class="container">
+        <a class="navbar-brand cravely-brand" href="{% url 'home' %}">
+            <span class="brand-icon">C</span>
+            <span class="brand-name">Cravely<span>.</span></span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav mx-auto gap-lg-3">
+                <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#categories">Explore Food</a></li>
+                <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+                <a href="#products" class="nav-search" aria-label="Search">
+                    <i class="bi bi-search"></i>
+                </a>
+                <a href="#" class="nav-cart" aria-label="Shopping cart">
+                    <i class="bi bi-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="#" class="btn btn-cravely-outline">Login</a>
+                <a href="#" class="btn btn-cravely">Sign Up</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="bi bi-stars"></i> GOOD FOOD, GOOD MOOD
+                    </div>
+
+                    <h1>Your cravings.<br><span>Our mission.</span></h1>
+
+                    <p class="hero-description">
+                        From local favourites to irresistible bites,
+                        discover something delicious and get it delivered
+                        right to your doorstep.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#restaurants" class="btn btn-cravely btn-lg">
+                            Explore Restaurants
+                            <i class="bi bi-arrow-up-right ms-2"></i>
+                        </a>
+                        <a href="#categories" class="btn btn-dark-outline btn-lg">
+                            Explore Menu
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div><h4>50+</h4><p>Food choices</p></div>
+                        <div class="stat-divider"></div>
+                        <div><h4>4.8 <i class="bi bi-star-fill"></i></h4><p>Food experience</p></div>
+                        <div class="stat-divider"></div>
+                        <div><h4>Fast</h4><p>Doorstep delivery</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="hero-visual">
+                    <div class="hero-image-frame">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=85"
+                             alt="Freshly prepared pizza" class="hero-image">
+                    </div>
+
+                    <div class="floating-card floating-top">
+                        <span class="floating-icon"><i class="bi bi-lightning-charge-fill"></i></span>
+                        <div><strong>Fresh & Fast</strong><small>Made for your cravings</small></div>
+                    </div>
+
+                    <div class="floating-card floating-bottom">
+                        <div class="rating-stars">★★★★★</div>
+                        <strong>Made with love</strong>
+                        <small>Every bite matters</small>
+                    </div>
+
+                    <div class="hero-circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section-space" id="categories">
+    <div class="container">
+        <div class="section-heading">
+            <div>
+                <span class="section-eyebrow">WHAT ARE YOU CRAVING?</span>
+                <h2>Explore <span>categories</span></h2>
+                <p>Choose a category to see matching products.</p>
+            </div>
+        </div>
+
+        <button class="mobile-category-toggle" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mobileCategories"
+                aria-expanded="false">
+            <span><i class="bi bi-grid me-2"></i> Food Categories</span>
+            <i class="bi bi-chevron-down"></i>
+        </button>
+
+        <div class="collapse mobile-category-list" id="mobileCategories">
+            <a href="#products" onclick="selectCategory('All'); return false;">
+                🍽️ All Products
+            </a>
+
+            {% for category in categories %}
+            <a href="#products"
+               onclick="selectCategory('{{ category.name|escapejs }}'); return false;">
+                {{ category.icon }} {{ category.name }}
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="food-layout">
+            <aside class="food-sidebar">
+                <div class="sidebar-title">Food Menu</div>
+                <div class="sidebar-subtitle">Explore your favourites</div>
+
+                <nav class="category-menu">
+                    <a href="#products" class="active" data-filter="All"
+                       onclick="selectCategory('All'); return false;">
+                        <span class="menu-emoji">🍽️</span>
+                        <span>All Products</span>
+                    </a>
+
+                    <div class="sidebar-label">FOOD & DRINKS</div>
+
+                    {% for category in categories %}
+                    <a href="#products" data-filter="{{ category.name }}"
+                       onclick="selectCategory('{{ category.name|escapejs }}'); return false;">
+                        <span class="menu-emoji">{{ category.icon }}</span>
+                        <span>{{ category.name }}</span>
+                        <i class="bi bi-chevron-right small"></i>
+                    </a>
+                    {% endfor %}
+                </nav>
+
+                <div class="sidebar-offer">
+                    <strong><i class="bi bi-fire"></i> Hungry?</strong>
+                    <p>Discover something delicious today.</p>
+                </div>
+            </aside>
+
+            <div class="category-main">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="h5 fw-bold mb-0" id="categoryHeading">All Categories</h3>
+                    <span class="text-secondary small">{{ categories|length }} categories</span>
+                </div>
+
+                <div class="category-results" id="categoryGrid">
+                    {% for category in categories %}
+                    <a href="#products" class="category-tile"
+                       data-category="{{ category.name }}"
+                       onclick="selectCategory('{{ category.name|escapejs }}'); return false;">
+                        <i class="bi bi-arrow-up-right tile-arrow"></i>
+                        <span class="food-emoji">{{ category.icon }}</span>
+                        <h3>{{ category.name }}</h3>
+                        <p>{{ category.description }}</p>
+                    </a>
+                    {% empty %}
+                    <p>No food categories available.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section-space" id="products">
+    <div class="container">
+        <div class="section-heading">
+            <div>
+                <span class="section-eyebrow">FRESHLY PREPARED FOR YOU</span>
+                <h2 id="productsHeading">All <span>Products</span></h2>
+                <p id="productsDescription">Explore delicious food from all categories.</p>
+            </div>
+
+            <button type="button" class="btn btn-cravely-outline"
+                    onclick="selectCategory('All')">
+                <i class="bi bi-grid me-1"></i> All Products
+            </button>
+        </div>
+
+        <div class="row g-4" id="productsGrid">
+            {% for product in products %}
+            <div class="col-6 col-md-4 col-lg-3 product-item"
+                 data-category="{{ product.category }}">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        {% if product.image_url %}
+                        <img src="{{ product.image_url }}"
+                             alt="{{ product.name }}"
+                             class="product-image" loading="lazy">
+                        {% else %}
+                        <div class="product-placeholder">
+                            <i class="bi bi-egg-fried"></i>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">{{ product.category }}</span>
+                        <h3>{{ product.name }}</h3>
+                        <p>{{ product.description|default:"Delicious and freshly prepared." }}</p>
+
+                        <div class="product-bottom">
+                            <strong>₹{{ product.price }}</strong>
+                            <button type="button" class="add-cart-btn"
+                                    onclick="alert('Cart feature next step mein connect karenge!')">
+                                <i class="bi bi-plus-lg"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            {% empty %}
+            <div class="col-12" id="noProductsMessage">
+                <div class="empty-products">
+                    <i class="bi bi-basket"></i>
+                    <h4 class="mt-3">Products abhi available nahi hain</h4>
+                    <p>Admin panel se pehle products add karein.</p>
+                    <a href="/admin/" class="btn btn-cravely">Add Products</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div id="filteredEmpty" class="empty-products" hidden>
+            <i class="bi bi-search"></i>
+            <h4 class="mt-3">Is category mein products nahi hain</h4>
+            <p>Admin panel se is category ke products add kar sakte hain.</p>
+            <button class="btn btn-cravely" onclick="selectCategory('All')">
+                Show All Products
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- RESTAURANTS -->
+<section class="section-space restaurant-section" id="restaurants">
+    <div class="container">
+        <div class="section-heading">
+            <div>
+                <span class="section-eyebrow">HANDPICKED FOR YOU</span>
+                <h2>Trending <span>restaurants</span></h2>
+                <p>Discover your next favourite meal.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            {% for restaurant in restaurants %}
+            <div class="col-md-6 col-lg-4">
+                <article class="restaurant-card">
+                    <div class="restaurant-image-wrap">
+                        <img src="{{ restaurant.image }}"
+                             alt="{{ restaurant.name }}"
+                             class="restaurant-image" loading="lazy">
+                        <span class="restaurant-tag">{{ restaurant.tag }}</span>
+                        <button type="button" class="favourite-btn"
+                                aria-label="Add to favourites">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="restaurant-info">
+                        <div class="d-flex justify-content-between gap-2">
+                            <h3>{{ restaurant.name }}</h3>
+                            <span class="rating-badge">
+                                <i class="bi bi-star-fill"></i> {{ restaurant.rating }}
+                            </span>
+                        </div>
+
+                        <p class="restaurant-cuisine">{{ restaurant.cuisine }}</p>
+
+                        <div class="restaurant-meta">
+                            <span><i class="bi bi-clock"></i> {{ restaurant.time }}</span>
+                            <span>{{ restaurant.price }}</span>
+                        </div>
+
+                        <a href="#products" class="restaurant-link"
+                           onclick="selectCategory('All')">
+                            Explore food <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <p>No restaurants available right now.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section-space" id="about">
+    <div class="container">
+        <div class="promo-banner">
+            <div class="promo-content">
+                <span class="section-eyebrow">MADE FOR FOOD LOVERS</span>
+                <h2>Great food brings<br>people <span>together.</span></h2>
+                <p>Your favourite flavours, your favourite people, and a little more joy in every meal.</p>
+                <a href="#products" class="btn btn-cravely"
+                   onclick="selectCategory('All')">
+                    Find your favourite <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+
+            <div class="promo-decoration">
+                <i class="bi bi-emoji-heart-eyes-fill"></i>
+                <span>Eat happy.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="cravely-footer">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-5">
+                <a class="navbar-brand cravely-brand" href="{% url 'home' %}">
+                    <span class="brand-icon">C</span>
+                    <span class="brand-name">Cravely<span>.</span></span>
+                </a>
+                <p class="footer-description">
+                    Good food. Great mood. Bringing delicious moments
+                    closer to you, one meal at a time.
+                </p>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <h6>Explore</h6>
+                <a href="#categories">Food categories</a>
+                <a href="#products" onclick="selectCategory('All')">All products</a>
+                <a href="restaurants">Restaurants</a>
+                <a href="#about">About Cravely</a>
+            </div>
+
+            <div class="col-6 col-lg-4">
+                <h6>Our promise</h6>
+                <p class="footer-note"><i class="bi bi-heart-fill"></i> Fresh flavours, happier moments.</p>
+                <p class="footer-note"><i class="bi bi-shield-check"></i> A better food experience.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Cravely. All rights reserved.</span>
+            <span>GOOD FOOD. GREAT MOOD.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function selectCategory(name) {
+        const productItems = document.querySelectorAll(".product-item");
+        const menuLinks = document.querySelectorAll(".category-menu [data-filter]");
+        const heading = document.getElementById("productsHeading");
+        const description = document.getElementById("productsDescription");
+        const categoryHeading = document.getElementById("categoryHeading");
+        const productsGrid = document.getElementById("productsGrid");
+        const filteredEmpty = document.getElementById("filteredEmpty");
+        const noProductsMessage = document.getElementById("noProductsMessage");
+
+        let visibleCount = 0;
+
+        // Initially, all products are shown.
+        // When a category is clicked, only matching products are shown.
+        productItems.forEach(function (item) {
+            const itemCategory = (item.dataset.category || "").trim();
+            const matches = name === "All" || itemCategory === name;
+
+            item.hidden = !matches;
+
+            if (matches) {
+                visibleCount++;
+            }
+        });
+
+        // Update headings
+        if (name === "All") {
+            heading.innerHTML = 'All <span>Products</span>';
+            description.textContent = "Explore delicious food from all categories.";
+            categoryHeading.textContent = "All Categories";
+        } else {
+            heading.innerHTML = name + ' <span>Products</span>';
+            description.textContent = "Explore delicious " + name + " products.";
+            categoryHeading.textContent = name;
+        }
+
+        // Highlight active desktop sidebar category
+        menuLinks.forEach(function (link) {
+            link.classList.toggle("active", link.dataset.filter === name);
+        });
+
+        // Show the correct empty state
+        if (productItems.length === 0) {
+            productsGrid.hidden = false;
+            filteredEmpty.hidden = true;
+
+            if (noProductsMessage) {
+                noProductsMessage.hidden = false;
+            }
+        } else if (visibleCount === 0) {
+            productsGrid.hidden = true;
+            filteredEmpty.hidden = false;
+
+            if (noProductsMessage) {
+                noProductsMessage.hidden = true;
+            }
+        } else {
+            productsGrid.hidden = false;
+            filteredEmpty.hidden = true;
+
+            if (noProductsMessage) {
+                noProductsMessage.hidden = true;
+            }
+        }
+
+        // Close the mobile category menu after selection
+        const mobileMenu = document.getElementById("mobileCategories");
+        if (mobileMenu && mobileMenu.classList.contains("show")) {
+            bootstrap.Collapse.getOrCreateInstance(mobileMenu).hide();
+        }
+
+        document.getElementById("products").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+
+    // Favourite button interaction
+    document.querySelectorAll(".favourite-btn").forEach(function (button) {
+        button.addEventListener("click", function () {
+            const icon = button.querySelector("i");
+            button.classList.toggle("is-favourite");
+
+            if (button.classList.contains("is-favourite")) {
+                icon.classList.replace("bi-heart", "bi-heart-fill");
+            } else {
+                icon.classList.replace("bi-heart-fill", "bi-heart");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
