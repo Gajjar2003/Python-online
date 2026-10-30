@@ -1,11 +1,17 @@
 
-from django.shortcuts import render
-from myapp.models import *
+from django.shortcuts import render, redirect, get_object_or_404
+from django.db.models import Q
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from myapp.models import Product
 
 
+# HOME PAGE
+@login_required(login_url="user-login")
 def home(request):
 
-    # Food Categories
     categories = [
         {"name": "Chinese", "icon": "🥡", "description": "Noodles & Manchurian"},
         {"name": "French Fries", "icon": "🍟", "description": "Crispy & golden"},
@@ -21,7 +27,6 @@ def home(request):
         {"name": "Momos", "icon": "🥟", "description": "Steamed & crispy"},
     ]
 
-    # Restaurants
     restaurants = [
         {
             "name": "The Burger House",
@@ -52,16 +57,213 @@ def home(request):
         },
     ]
 
-
     products = Product.objects.filter(
         is_available=True
     ).order_by("name")
 
+    cart_data = request.session.get("cart", {})
+    cart_count = sum(cart_data.values())
 
     context = {
         "categories": categories,
         "restaurants": restaurants,
         "products": products,
+        "cart_count": cart_count,
     }
 
     return render(request, "home.html", context)
+
+
+# USER REGISTER
+def user_register(request):
+
+    if request.method == "POST":
+
+        fname = request.POST.get("fname")
+        lname = request.POST.get("lname")
+        email = request.POST.get("email")
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        if User.objects.filter(username=username).exists():
+
+            return render(request, "user-register.html", {
+                "err": "Username already exists!"
+            })
+
+        user = User.objects.create_user(
+            first_name=fname,
+            last_name=lname,
+            email=email,
+            username=username,
+            password=password
+        )
+
+        return render(request, "user-register.html", {
+            "meg": "User Register Successfully!"
+        })
+
+    return render(request, "user-register.html")
+
+
+# USER LOGIN
+def user_login(request):
+
+    if request.method == "POST":
+
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = authenticate(
+            request,
+            username=username,
+            password=password
+        )
+
+        if user is not None:
+
+            login(request, user)
+            return redirect("home")
+
+        return render(request, "user-login.html", {
+            "err": "Invalid Username and Password!"
+        })
+
+    return render(request, "user-login.html")
+
+
+# USER LOGOUT
+def user_logout(request):
+
+    logout(request)
+    return redirect("user-login")
+
+
+# SEARCH PRODUCT
+def search_product(request):
+
+    query = request.GET.get("q", "").strip()
+
+    products = Product.objects.filter(is_available=True)
+
+    if query:
+        products = products.filter(
+            Q(name__icontains=query) |
+            Q(category__icontains=query) |
+            Q(description__icontains=query)
+        )
+
+    context = {
+        "products": products,
+        "query": query,
+    }
+
+    return render(request, "search_product.html", context)
+
+
+
+@login_required(login_url="user-login")
+
+def add_to_cart(request, product_id):
+
+    product = get_object_or_404(Product, id=product_id)
+
+    cart = request.session.get("cart", {})
+
+    product_id = str(product.id)
+
+    if product_id in cart:
+        cart[product_id] += 1
+    else:
+        cart[product_id] = 1
+
+    request.session["cart"] = cart
+    request.session.modified = True
+
+    cart_count = sum(cart.values())
+
+    return JsonResponse({
+        "success": True,
+        "message": f"{product.name} added to cart successfully!",
+        "cart_count": cart_count
+    })
+
+
+
+# VIEW CART
+@login_required(login_url="user-login")
+def cart(request):
+
+    cart_data = request.session.get("cart", {})
+
+    products = []
+    grand_total = 0
+
+    for product_id, quantity in cart_data.items():
+
+        product = Product.objects.filter(id=product_id).first()
+
+        if product:
+
+            total = product.price * quantity
+            grand_total += total
+
+            products.append({
+                "product": product,
+                "quantity": quantity,
+                "total": total
+            })
+
+    cart_count = sum(cart_data.values())
+
+    return render(request, "cart.html", {
+        "products": products,
+        "grand_total": grand_total,
+        "cart_count": cart_count
+    })
+
+
+
+@login_required(login_url="user-login")
+def update_cart(request, product_id):
+
+    if request.method == "POST":
+
+        cart_data = request.session.get("cart", {})
+        product_id = str(product_id)
+
+        if product_id in cart_data:
+
+            action = request.POST.get("action")
+
+            if action == "increase":
+                cart_data[product_id] += 1
+
+            elif action == "decrease":
+                cart_data[product_id] -= 1
+
+                if cart_data[product_id] <= 0:
+                    del cart_data[product_id]
+
+        request.session["cart"] = cart_data
+        request.session.modified = True
+
+    return redirect("cart")
+
+
+
+@login_required(login_url="user-login")
+def remove_from_cart(request, product_id):
+
+    if request.method == "POST":
+
+        cart_data = request.session.get("cart", {})
+        product_id = str(product_id)
+
+        if product_id in cart_data:
+            del cart_data[product_id]
+
+        request.session["cart"] = cart_data
+        request.session.modified = True
+
+    return redirect("cart")

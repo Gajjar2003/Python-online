@@ -1,0 +1,505 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Products | Cravely</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        :root {
+            --dark: #0b1020;
+            --card: #151d31;
+            --orange: #ff7629;
+            --text: #ffffff;
+            --muted: #aab2c5;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #10182b;
+            padding: 15px 0;
+            border-bottom: 1px solid #263149;
+        }
+
+        .navbar-brand {
+            color: var(--orange) !important;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin: 0 8px;
+        }
+
+        .nav-link:hover {
+            color: var(--orange) !important;
+        }
+
+        /* Heading */
+        .search-heading {
+            margin-top: 45px;
+            margin-bottom: 30px;
+        }
+
+        .search-heading h2 {
+            font-weight: bold;
+        }
+
+        .search-heading span {
+            color: var(--orange);
+        }
+
+        /* Search Box */
+        .search-box {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .search-box input {
+            background: var(--card);
+            border: 1px solid #35415c;
+            color: white;
+            padding: 14px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .search-box input:focus {
+            background: var(--card);
+            color: white;
+            box-shadow: none;
+            border-color: var(--orange);
+        }
+
+        .search-box input::placeholder {
+            color: var(--muted);
+        }
+
+        .search-btn {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 10px 10px 0;
+            font-weight: bold;
+        }
+
+        .search-btn:hover {
+            background: #e95f15;
+            color: white;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: var(--card);
+            border: 1px solid #263149;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--orange);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .image-placeholder {
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #202b42;
+            color: var(--muted);
+        }
+
+        .product-card .card-body {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .category {
+            display: inline-block;
+            background: rgba(255, 118, 41, 0.15);
+            color: var(--orange);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            color: var(--muted);
+            font-size: 14px;
+            min-height: 42px;
+        }
+
+        .price {
+            color: var(--orange);
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* No Product */
+        .no-product {
+            background: var(--card);
+            border: 1px solid #263149;
+            border-radius: 15px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .no-product i {
+            font-size: 55px;
+            color: var(--orange);
+        }
+
+        .no-product p {
+            color: var(--muted);
+        }
+
+        /* Footer */
+        footer {
+            background: #10182b;
+            padding: 25px 0;
+            margin-top: 70px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        footer span {
+            color: var(--orange);
+            font-weight: bold;
+        }
+
+        /* Cravely Logo - Same as Homepage */
+
+.cravely-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: #ff7629;
+    color: white;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.brand-name {
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.brand-name span {
+    color: #ff7629;
+}
+
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.welcome-user {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.btn-logout {
+    background: #ff7629;
+    color: white;
+    padding: 9px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background: #e65d12;
+    color: white;
+}
+
+.btn-login,
+.btn-signup {
+    padding: 9px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-login {
+    color: white;
+    border: 1px solid #ff7629;
+}
+
+.btn-signup {
+    background: #ff7629;
+    color: white;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+          <a class="navbar-brand cravely-brand" href="{% url 'home' %}">
+    <span class="brand-icon">C</span>
+    <span class="brand-name">Cravely<span>.</span></span>
+</a>
+
+            <button class="navbar-toggler bg-light" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'search-product' %}">Search</a>
+                    </li>
+
+                   <div class="nav-actions">
+
+    {% if user.is_authenticated %}
+        <span class="welcome-user">
+            <i class="bi bi-person-circle"></i>
+            {{ user.username }}
+        </span>
+
+        <a href="{% url 'user-logout' %}" class="btn-logout">
+            <i class="bi bi-box-arrow-right"></i>
+            Logout
+        </a>
+
+    {% else %}
+        <a href="{% url 'user-login' %}" class="btn-login">
+            Login
+        </a>
+
+        <a href="{% url 'user-register' %}" class="btn-signup">
+            Sign Up
+        </a>
+    {% endif %}
+
+</div>
+
+             
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Search Section -->
+    <section class="container">
+
+        <div class="search-heading text-center">
+
+            <h2>Find Your <span>Favourite Food</span></h2>
+
+            <p style="color:#aab2c5;">
+                Search your favourite food from Cravely.
+            </p>
+
+        </div>
+
+
+        <!-- Search Form -->
+        <form method="GET" action="{% url 'search-product' %}"
+            class="search-box mb-5">
+
+            <div class="input-group">
+
+                <input type="text"
+                    name="q"
+                    class="form-control"
+                    placeholder="Search food, category..."
+                    value="{{ query }}">
+
+                <button type="submit" class="search-btn">
+                    <i class="bi bi-search"></i> Search
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- Product Heading -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h4 class="fw-bold">
+                {% if query %}
+                    Search Results
+                {% else %}
+                    All Products
+                {% endif %}
+            </h4>
+
+            <span style="color:#aab2c5;">
+                {{ products|length }} Products
+            </span>
+
+        </div>
+
+
+        <!-- Products -->
+        <div class="row g-4">
+
+            {% for product in products %}
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="product-card">
+
+                    <!-- Product Image -->
+                    {% if product.image_url %}
+
+                    <img src="{{ product.image_url }}"
+                        class="product-img"
+                        alt="{{ product.name }}"
+                        loading="lazy">
+
+                    {% else %}
+
+                    <div class="image-placeholder">
+                        <i class="bi bi-image fs-1"></i>
+                        <span class="ms-2">Image Not Available</span>
+                    </div>
+
+                    {% endif %}
+
+
+                    <!-- Product Details -->
+                    <div class="card-body">
+
+                        <span class="category">
+                            {{ product.category }}
+                        </span>
+
+                        <h5 class="product-name">
+                            {{ product.name }}
+                        </h5>
+
+                        <p class="description">
+                            {{ product.description|truncatewords:15 }}
+                        </p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <span class="price">
+                                ₹{{ product.price }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <!-- No Products Found -->
+            <div class="col-12">
+
+                <div class="no-product">
+
+                    <i class="bi bi-search"></i>
+
+                    <h3 class="mt-3 fw-bold">
+                        No Products Found!
+                    </h3>
+
+                    <p>
+                        Sorry, we couldn't find any food matching
+                        "{{ query }}".
+                    </p>
+
+                    <a href="{% url 'search-product' %}"
+                        class="btn text-white mt-3"
+                        style="background:#ff7629;">
+                        View All Products
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="container">
+
+            <h4><span>Cravely.</span></h4>
+
+            <p class="mb-0">
+                Good Food. Great Mood. © 2026 Cravely. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
