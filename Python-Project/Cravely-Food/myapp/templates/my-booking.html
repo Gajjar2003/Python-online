@@ -1,0 +1,124 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Bookings | Cravely</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #0b1020;
+            color: white;
+        }
+
+        .booking-card {
+            background: #111827;
+            border: 1px solid #263142;
+            border-radius: 12px;
+            padding: 22px;
+            margin-bottom: 20px;
+        }
+
+        .orange {
+            color: #ff7629;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark px-4 py-3"
+     style="background:#111827;">
+
+    <a href="{% url 'home' %}"
+       class="navbar-brand fw-bold orange">
+        Cravely
+    </a>
+
+    <a href="{% url 'home' %}"
+       class="btn btn-outline-light">
+        Home
+    </a>
+
+</nav>
+
+<div class="container py-5">
+
+    <h2 class="orange mb-4">My Restaurant Bookings</h2>
+
+    {% for booking in bookings %}
+
+    <div class="booking-card">
+
+        <div class="d-flex justify-content-between flex-wrap">
+            <h5>{{ booking.restaurant_name }}</h5>
+
+            <span class="text-secondary">
+                Booking #{{ booking.id }}
+            </span>
+        </div>
+
+        <hr>
+
+        <p>
+            <strong>Customer:</strong>
+            {{ booking.user.username }}
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            {{ booking.user.email }}
+        </p>
+
+        <p>
+            <strong>Date:</strong>
+            {{ booking.booking_date|date:"d M Y" }}
+        </p>
+
+        <p>
+            <strong>Session:</strong>
+            {{ booking.session }}
+        </p>
+
+        <p>
+            <strong>Booking Time:</strong>
+            {{ booking.booking_time|time:"h:i A" }}
+        </p>
+
+        <p>
+            <strong>Guests:</strong>
+            {{ booking.guests }}
+        </p>
+
+        <p>
+            <strong>Booked On:</strong>
+            {{ booking.created_at|date:"d M Y, h:i A" }}
+        </p>
+
+    </div>
+
+    {% empty %}
+
+    <div class="text-center py-5">
+        <h4>No Bookings Found!</h4>
+
+        <p class="text-secondary">
+            You haven't booked any restaurant table yet.
+        </p>
+
+        <a href="{% url 'home' %}"
+           class="btn btn-warning">
+            Explore Restaurants
+        </a>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
